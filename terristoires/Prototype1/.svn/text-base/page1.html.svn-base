@@ -1,0 +1,40 @@
+
+<div id="dataviz1" style="background: url('base-0.png') no-repeat left; height:100%;">
+
+<table  style="position:absolute; bottom:10%">
+
+<TR>
+<TD valign="bottom"> <div id="Val1" style="display:inline; float:left;"> NB1</div></TD>
+<TD><div id="dataviz-nb1" style="background: url('base-1.png') no-repeat bottom left; height:100px; width:200px; "> </div></TD>
+</TR> </table>
+
+<table  style="position:absolute; bottom:18%">
+
+<TR>
+<TD valign="bottom"> <div id="Val2" style="display:inline; float:left;"> NB2</div></TD>
+<TD><div id="dataviz-nb2" style="background: url('base-2.png') no-repeat bottom left; height:100px; width:100px; "> </div></TD>
+</TR> </table>
+
+</div> 
+</div> 
+<script type="text/javascript" src="jquery.js"> </script>
+<script type="text/javascript"> 
+	var taillebase=219;
+	
+	function settaille(tailleim, id)
+	{
+	tailleim=taillebase*tailleim/100;
+	$('#dataviz-nb'+id).animate({height: tailleim+'px'},750);
+	}
+	</script>
+	
+Valeur 1 :
+<button onclick="settaille(100, 1);">100</button>
+<button onclick="settaille(50, 1);">50</button>
+<button onclick="settaille(25, 1);">25</button>
+<BR>
+Valeur 2 :
+<button onclick="settaille(100, 2);">100</button>
+<button onclick="settaille(50, 2);">50</button>
+<button onclick="settaille(25, 2);">25</button>
+<BR>
