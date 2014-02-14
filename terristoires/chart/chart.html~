@@ -1,3 +1,4 @@
+<!-- inspired from easypiechart.js -->
 <!doctype html>
 <html lang="fr">
 <head>
@@ -5,6 +6,11 @@
    <title>Test chart</title>
    <script type="text/javascript">
       var CanvasRenderer = function(el) {
+      
+         /*
+         Inspired from https://github.com/rendro/easy-pie-chart
+         */
+      
 	      var cachedBackground;
 	      var canvas = document.createElement('canvas');
 
@@ -20,7 +26,6 @@
          options = new Object();
          options.size = 400;
          options.lineWidth = 10;
-         options.barColor = '#45f96a';
          options.easing =function (x, t, b, c, d) { // more can be found here: http://gsgd.co.uk/sandbox/jquery/easing/
 			      t = t / (d/2);
 			      if (t < 1) {
@@ -28,9 +33,6 @@
 			      }
 			      return -c/2 * ((--t)*(t-2) - 1) + b;
 		      };
-		   options.onStart= function(from, to) {return;};
-		   options.onStep= function(from, to, currentValue) {	return;};
-		   options.onStop= function(from, to) {return;};
 		   options.animate= {
 			   duration: 1000,
 			   enabled: true
@@ -65,30 +67,32 @@
 	      };
 	      
 	      
-	      var drawCircle = function(color, lineWidth, percent) {
-		      percent = Math.min(Math.max(-1, percent || 0), 1);
-		      var isNegative = percent <= 0 ? true : false;
+	      var drawCircle = function(lineWidth, percent) {
+		      percent1 = Math.min(Math.max(-1, percent.greenLine || 0), 1);
+		      percent2 = Math.min(Math.max(-1, percent.whiteLine || 0), 1);
+		      percent3 = Math.min(Math.max(-1, percent.redLine || 0), 1);
+		      percent4 = Math.min(Math.max(-1, percent.yellowLine || 0), 1);
 
 		      ctx.beginPath();
-		      ctx.arc(0, 0, radius, 0, Math.PI * 2 * (percent*75/100), isNegative);
+		      ctx.arc(0, 0, radius, 0, Math.PI * 2 * (percent1*75/100), false);
 		      ctx.strokeStyle = '#6BB0AF';
 		      ctx.lineWidth = lineWidth +8;
 		      ctx.stroke();
 		      
 		      ctx.beginPath();
-		      ctx.arc(0, 0, radius - 30, 0, Math.PI * 2 * (percent*75/100), isNegative);
+		      ctx.arc(0, 0, radius - 30, 0, Math.PI * 2 * (percent2*75/100), false);
 		      ctx.strokeStyle = '#EBE9E4';
 		      ctx.lineWidth = lineWidth+2;
 		      ctx.stroke();
 		      
 		      ctx.beginPath();
-		      ctx.arc(0, 0, radius - 60, 0, Math.PI * 2 * (percent*75/100), isNegative);
+		      ctx.arc(0, 0, radius - 60, 0, Math.PI * 2 * (percent3*75/100), false);
 		      ctx.strokeStyle = '#BE615C';
 		      ctx.lineWidth = lineWidth;
 		      ctx.stroke();
 		      
 		      ctx.beginPath();
-		      ctx.arc(0, 0, radius - 90, 0, Math.PI * 2 * (percent*75/100), isNegative);
+		      ctx.arc(0, 0, radius - 90, 0, Math.PI * 2 * (percent4*75/100), false);
 		      ctx.strokeStyle = '#F7DE8C';
 		      ctx.lineWidth = lineWidth-2;
 		      ctx.stroke();
@@ -111,7 +115,8 @@
           * Draw the complete chart
           * @param {number} percent Percent shown by the chart between -100 and 100
           */
-         this.draw = function(percent) {
+         this.draw = function(percents) {
+         
 	         // do we need to render a background
 	         if (!!options.scaleColor || !!options.trackColor) {
 		         // getImageData and putImageData are supported
@@ -130,17 +135,14 @@
 	         }
 
 	         ctx.lineCap = options.lineCap;
-
-	         // if barcolor is a function execute it and pass the percent as a value
-	         var color;
-	         if (typeof(options.barColor) === 'function') {
-		         color = options.barColor(percent);
-	         } else {
-		         color = options.barColor;
-	         }
+	         
+	         percents.greenLine = percents.greenLine / 100;
+	         percents.whiteLine = percents.whiteLine / 100;
+	         percents.redLine = percents.redLine / 100;
+	         percents.yellowLine = percents.yellowLine / 100;
 
 	         // draw bar
-	         drawCircle(color, options.lineWidth, percent / 100);
+	         drawCircle(options.lineWidth, percents);
          }.bind(this);
 
          /**
@@ -148,18 +150,27 @@
           * @param {number} from Starting percentage
           * @param {number} to   Final percentage
           */
-         this.animate = function(from, to) {
+         this.animate = function(to) {
 	         var startTime = Date.now();
-	         options.onStart(from, to);
+	         
+	         if(typeof(from) == 'undefined') {
+	            from = {'greenLine':0,'whiteLine':0,'redLine':0,'yellowLine':0}
+	         }
+	         
 	         var animation = function() {
 		         var process = Math.min(Date.now() - startTime, options.animate.duration);
-		         var currentValue = options.easing(this, process, from, to - from, options.animate.duration);
+		         var currentValue = {
+	               'greenLine' : options.easing(this, process, from.greenLine, to.greenLine - from.greenLine, options.animate.duration),
+	               'whiteLine' : options.easing(this, process, from.whiteLine, to.whiteLine - from.whiteLine, options.animate.duration),
+	               'redLine' : options.easing(this, process, from.redLine, to.redLine - from.redLine, options.animate.duration),
+	               'yellowLine' : options.easing(this, process, from.yellowLine, to.yellowLine - from.yellowLine, options.animate.duration)
+	            }
+		         
 		         this.draw(currentValue);
-		         options.onStep(from, to, currentValue);
-		         if (process >= options.animate.duration) {
-			         options.onStop(from, to);
-		         } else {
+		         if (process < options.animate.duration) {
 			         reqAnimationFrame(animation);
+		         } else {
+		            from = to;
 		         }
 	         }.bind(this);
 
@@ -173,16 +184,59 @@
 </head>
 <body>
 
+<style type="text/css">
+.villes {
+  z-index: 2;
+  line-height:30px;
+  display:block;
+  width:190px;
+  text-align:right;
+}
+.ville {
+   
+}
+.graphique {
+  position: relative;
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.graphique canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+</style>
+
 <p>
-Exemple : <button onclick="setPercent(100);">100</button> <button onclick="setPercent(75);" >75</button> <button onclick="setPercent(50);" >50</button> <button onclick="setPercent(25);">25</button> <button onclick="setPercent(0);">0</button>
-<div id="working">
-</div>
+   Exemple :
+   <button onclick="setPercent(100);">100</button>
+   <button onclick="setPercent(75);" >75</button>
+   <button onclick="setPercent(50);" >50</button>
+   <button onclick="setPercent(25);">25</button>
+   <button onclick="setPercent(0);">0</button>
 </p>
+
+
+<span class="graphique" id="working">
+   <span class="villes">
+      <span class="ville">nantes</span><br/>
+      <span class="ville">rennes</span><br/>
+      <span class="ville">paris</span><br/>
+      <span class="ville">lyon</span>
+   </span>
+</span>
+
+
+
 <script type="text/javascript">
 canvas = new CanvasRenderer(document.getElementById('working'));
 function setPercent(p) {
-   canvas.animate(0, p);
+   to = {'greenLine':p,'whiteLine':Math.abs(p-100),'redLine':Math.abs(p+25-100),'yellowLine':Math.abs(p-75+100)}
+   canvas.animate(to);
 }
+setPercent(50);
 </script>
 
 </body>
