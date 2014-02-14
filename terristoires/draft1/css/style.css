@@ -1,0 +1,143 @@
+/*Polices used*/
+@font-face {
+   font-family: 'brandonRegular';
+   src:url('../font/brandon-grotesque-regular.eot');
+   src:url('../font/brandon-grotesque-regular.eot?#iefix') format('embedded-opentype'),
+   url('../font/brandon-grotesque-regular.woff') format('woff'),
+   url('../font/brandon-grotesque-regular.ttf') format('truetype'),
+   url('../font/brandon-grotesque-regular.svg#brandon_grot_regular') format('svg');
+}
+@font-face {
+   font-family: 'brandonLight';
+   src:url('../font/brandon-grotesque-light.eot');
+   src:url('../font/brandon-grotesque-lightr.eot?#iefix') format('embedded-opentype'),
+   url('../font/brandon-grotesque-light.woff') format('woff'),
+   url('../font/brandon-grotesque-light.ttf') format('truetype'),
+   url('../font/brandon-grotesque-light.svg#brandon_grot_light') format('svg');
+}
+@font-face {
+   font-family: 'brandonMed';
+   src:url('../font/brandon-med.eot');
+   src:url('../font/brandon-med.eot?#iefix') format('embedded-opentype'),
+   url('../font/brandon-med.woff') format('woff'),
+   url('../font/brandon-med.ttf') format('truetype'),
+   url('../font/brandon-med.svg#brandon_grot_med') format('svg');
+}
+
+body {
+   color:#ffffff;
+   font-family:'brandonLight';
+}
+
+.title {
+   color:#ffffff;
+   text-align:center;
+   text-transform:uppercase;
+}
+
+h1 {
+   padding-top:20%;
+   font-family:'brandonLight';
+   font-weight:bold;
+   font-size:5em;
+   
+}
+h2 {
+   font-family:'brandonMed';
+   text-transform:uppercase;
+   height:10%;
+   line-height:2.5em;
+   font-size:1.9em;
+}
+
+/* sub of big title */
+h3 {
+
+   border-top:#ffffff solid 2px;
+   margin-left:25%;
+   margin-right:25%;
+   padding-top:2%;
+
+}
+
+p {
+   
+   text-align:justify;
+   font-family:'brandonMed';
+   font-size:0.9em;
+}
+
+p:first-letter {
+   text-transform:capitalize;
+}
+
+
+
+.page {
+}
+
+#page1 {
+   background-position:center;
+   background-image:url("../img/background-page1.svg");
+   background-repeat:no-repeat;
+   height:90%;
+}
+
+#page6 {
+   background-position:center;
+   background-image:url("../img/background-page6.svg");
+   background-repeat:no-repeat ;
+}
+
+#page8 img{
+   width:15%;
+   margin:1%;
+   float:left;
+}
+
+#page9 img {
+   display:block;
+   margin:10% auto;
+}
+
+/************************
+Footer
+************************/
+.logo-social-footer {
+   display:block;
+   width:30%;
+   margin-top:10%;
+}
+
+.logo-social-facebook-footer {
+   margin-left:32%;
+   float:left;
+}
+.logo-social-twitter-footer {
+   margin-left:2%;
+   float:right;
+}
+
+.content-footer {
+   margin-top:5%;
+}
+
+.logo-car-footer {
+   display:block;
+   margin:10%;
+}
+
+
+/* color of background */
+.bg-green {
+   background-color:#cbe3cb;
+}
+.bg-blue {
+   background-color:#afdef2;
+}
+.bg-gray {
+   background-color:#a19a94;
+}
+.bg-red {
+   background-color:#f09ba0;
+}
