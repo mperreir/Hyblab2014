@@ -83,6 +83,38 @@ p:first-letter {
    height:90%;
 }
 
+#page4 {}
+
+.villes {
+   z-index: 2;
+   line-height:30px;
+   padding-right:2%;
+   text-align:right;
+   float:left;
+}
+.ville {
+   text-transform:uppercase;
+}
+.graphique {
+   position: relative;
+   display: inline-block;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   text-align: center;
+}
+.graphique canvas {
+   float:right;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.shadow-page4 {
+   display:block;
+   margin:auto;
+   width:50%;
+   margin-bottom:10%;
+}
+
 #page6 {
    background-position:center;
    background-image:url("../img/background-page6.svg");
