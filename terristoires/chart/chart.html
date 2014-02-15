@@ -6,6 +6,11 @@
    <title>Test chart</title>
    <script type="text/javascript">
       var CanvasRenderer = function(el) {
+      
+         /*
+         Inspired from https://github.com/rendro/easy-pie-chart
+         */
+      
 	      var cachedBackground;
 	      var canvas = document.createElement('canvas');
 
@@ -179,23 +184,60 @@
 </head>
 <body>
 
+<style type="text/css">
+.villes {
+  z-index: 2;
+  line-height:30px;
+  display:block;
+  width:190px;
+  text-align:right;
+}
+.ville {
+   text-transform:capitalize;
+}
+.graphique {
+  position: relative;
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.graphique canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+</style>
+
 <p>
-Exemple : <button onclick="setPercent(100);">100</button> <button onclick="setPercent(75);" >75</button> <button onclick="setPercent(50);" >50</button> <button onclick="setPercent(25);">25</button> <button onclick="setPercent(0);">0</button>
-<div id="working">
-<span>
-Nantes <br/>
-Rennes <br/>
-Paris <br/>
-Lyon
-</span>
-</div>
+   Exemple :
+   <button onclick="setPercent(100);">100</button>
+   <button onclick="setPercent(75);" >75</button>
+   <button onclick="setPercent(50);" >50</button>
+   <button onclick="setPercent(25);">25</button>
+   <button onclick="setPercent(0);">0</button>
 </p>
+
+
+<span class="graphique" id="working">
+   <span class="villes">
+      <span class="ville">nantes</span><br/>
+      <span class="ville">rennes</span><br/>
+      <span class="ville">paris</span><br/>
+      <span class="ville">lyon</span>
+   </span>
+</span>
+
+
+
 <script type="text/javascript">
 canvas = new CanvasRenderer(document.getElementById('working'));
 function setPercent(p) {
    to = {'greenLine':p,'whiteLine':Math.abs(p-100),'redLine':Math.abs(p+25-100),'yellowLine':Math.abs(p-75+100)}
    canvas.animate(to);
 }
+setPercent(50);
 </script>
 
 </body>
