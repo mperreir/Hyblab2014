@@ -1,0 +1,31 @@
+<H1>representation dataviz</H1>
+<table border style="middle;width:100%" Id="monTableau">
+<TR>
+	<TD ALIGN="right">Selection Ville 1</TD>
+	<TD ALIGN="middle">Critere</TD>
+	<TD ALIGN="left">Selection Ville 2</TD>
+</TR>
+
+
+
+
+<script src="lirecsv.js"></script>
+<script type="text/javascript" src="jquery.js"> </script>
+<script type="text/javascript"> 
+
+
+
+var csv = '"critere", "ville1", "ville2", "ville3"\n"taille", 12.3, 2.3, 8.7\n"pop", 4.5, 1.2, -5.6\n';
+var montab = csv2array(csv);
+
+affichertab(montab);
+
+genererdataviz(montab, 1, 2);
+
+</script>
+
+
+
+
+
+

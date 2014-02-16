@@ -1,0 +1,78 @@
+<table border style="middle;width:100%" Id="monTableau">
+<TR>
+	<TD ALIGN="right">Selection Ville 1</TD>
+	<TD ALIGN="middle">Critere</TD>
+	<TD ALIGN="left">Selection Ville 2</TD>
+</TR>
+</table>
+
+
+
+
+<script type="text/javascript" src="jquery.js"> </script>
+<script type="text/javascript"> 
+
+var arrayLignes = document.getElementById("monTableau").rows; //l'array est stocké dans une variable
+var longueur = arrayLignes.length;//on peut donc appliquer la propriété length
+var i=0; //on définit un incrémenteur qui représentera la clé
+
+while(i<longueur)
+{
+    if(i % 2 == 0)//si la clé est paire
+    {
+        arrayLignes[i].style.backgroundColor = "#bdcbf5";
+    }
+    else //elle est impaire
+    {
+        arrayLignes[i].style.backgroundColor = "#829eeb";
+    }
+    i++;
+}
+
+var ligne = document.getElementById("monTableau").insertRow(-1);
+var colonne1 = ligne.insertCell(0);
+colonne1.innerHTML += "<H1>salut</H1>";
+
+</script>
+
+<H1> New </H1>
+
+
+
+<script src="jquery-csv.js"></script>
+<script type="text/javascript"> 
+
+function affichertab(data)
+{
+	document.write("<table border>");
+	for(var ligne=0; ligne<data.length; ++ligne)
+	{
+		document.write("<TR>");
+		for(var colonne=0; colonne<data[ligne].length; ++colonne)
+		{
+			document.write("<TD>");
+			document.write(data[ligne][colonne]);
+			document.write("</TD>");
+		}
+		document.write("</TR>");
+		document.write("<br/>");
+	}
+	document.write("</table>");
+}
+
+
+var csv = 'tab.csv';
+var data = $.csv.toObjects(csv);
+var tabtest = new Array();
+tabtest[0] = new Array(1,2,3);
+tabtest[1] = new Array(4,5,6);
+
+affichertab(tabtest);
+document.write("<BR>");
+affichertab(data);
+</script>
+
+
+
+
+
