@@ -151,26 +151,12 @@ function genererdataviz(data, idville1, idville2)
  	 tmp.insertCell(2);
 	}
 	
-
-	//Affichage nom des villes
-	arrayLignes[0].cells[0].innerHTML=data[0][idville1];
-	arrayLignes[0].cells[0].align="right";
-	arrayLignes[0].cells[0].style="width:40%";
-	
-	arrayLignes[0].cells[1].innerHTML=""
-	arrayLignes[0].cells[1].align = "middle";
-	arrayLignes[0].cells[1].style="width:20%";
-	
-	arrayLignes[0].cells[2].style="width:40%";
-	arrayLignes[0].cells[2].innerHTML=data[0][idville2];
-	arrayLignes[0].cells[2].align = "left";
-
-
 	
 	var i=1;
+
 	while(i<arrayLignes.length)
 	{
-	arrayLignes[i].cells[0].innerHTML='<div id="dataviz-'+idville1+'-cr'+i+'" style="background: red right; height:16px; width:0%; ">' + data[i][idville1] + '</div>';
+	arrayLignes[i].cells[0].innerHTML='<div id="dataviz-'+idville1+'-cr'+i+'" style="background: red right; height:16px; width:'+data[i][idville1]+'%; ">' + data[i][idville1] + '</div>';
 	arrayLignes[i].cells[0].align = "right";
 	arrayLignes[i].cells[0].style="width:40%";
 	
@@ -178,16 +164,14 @@ function genererdataviz(data, idville1, idville2)
 	arrayLignes[i].cells[1].align = "middle";
 	arrayLignes[i].cells[1].style="width:20%";
 	
-	arrayLignes[i].cells[2].innerHTML='<div id="dataviz-'+idville2+'-cr'+i+'" style="background: red right; height:16px; width:0%; ">' + data[i][idville2] + '</div>';
+	arrayLignes[i].cells[2].innerHTML='<div id="dataviz-'+idville2+'-cr'+i+'" style="background: red right; height:16px; width:'+data[i][idville2]+'%; ">' + data[i][idville2] + '</div>';
 	arrayLignes[i].cells[2].align = "left";
 	arrayLignes[i].cells[2].style="width:40%";
 	
 	
-	$('#dataviz-'+idville1+'-cr'+i).animate({width: data[i][idville1]+'%'},750);
-	$('#dataviz-'+idville2+'-cr'+i).animate({width: data[i][idville2]+'%'},750);
+
 	i++;
 	}
-	
 }
 
 /*
