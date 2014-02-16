@@ -43,11 +43,10 @@ h1 {
    
 }
 h2 {
-   font-family:'brandonMed';
+   padding-top:3%;
+   font-family:'brandonRegular';
    text-transform:uppercase;
-   height:10%;
-   line-height:2.5em;
-   font-size:1.9em;
+   font-size:1.2em;
 }
 
 /* sub of big title */
@@ -112,6 +111,7 @@ p:first-letter {
    display:block;
    margin:auto;
    width:50%;
+   margin-bottom:10%;
 }
 
 #page6 {

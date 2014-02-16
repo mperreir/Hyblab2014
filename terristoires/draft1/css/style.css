@@ -43,11 +43,9 @@ h1 {
    
 }
 h2 {
-   font-family:'brandonMed';
-   text-transform:uppercase;
-   height:10%;
-   line-height:2.5em;
-   font-size:1.9em;
+   padding-top:3%;
+   font-family:'brandonRegular';
+   font-size:1.2em;
 }
 
 /* sub of big title */
