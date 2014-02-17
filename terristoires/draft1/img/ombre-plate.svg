@@ -21,10 +21,10 @@
    inkscape:version="0.48.3.1 r9886"
    width="100%"
    height="100%"
-   sodipodi:docname="ombre.svg"><metadata
+   sodipodi:docname="ombre-plate.svg"><metadata
    id="metadata15"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
    id="defs13" /><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
@@ -46,7 +46,8 @@
    inkscape:window-maximized="1"
    inkscape:current-layer="Calque_1" />
 <switch
-   id="switch3">
+   id="switch3"
+   transform="matrix(1,0,0,0.41860094,0,23.50422)">
 	<foreignObject
    requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"
    x="0"
@@ -62,14 +63,17 @@
    i:extraneous="self"
    id="g7">
 		<ellipse
-   cx="97.807"
+   cx="97.806999"
    cy="24.719"
-   rx="91.538"
+   rx="91.538002"
    ry="15.708"
    id="ellipse9"
-   fill="#5A9594"
-   opacity="0.5"
-   d="m 189.345,24.719 c 0,8.675289 -40.98296,15.708 -91.538001,15.708 -50.555042,0 -91.5380018,-7.032711 -91.5380018,-15.708 0,-8.675289 40.9829598,-15.7080003 91.5380018,-15.7080003 50.555041,0 91.538001,7.0327113 91.538001,15.7080003 z" />
+   d="m 189.345,24.719 c 0,8.675289 -40.98296,15.708 -91.538001,15.708 -50.555042,0 -91.5380018,-7.032711 -91.5380018,-15.708 0,-8.675289 40.9829598,-15.7080003 91.5380018,-15.7080003 50.555041,0 91.538001,7.0327113 91.538001,15.7080003 z"
+   sodipodi:cx="97.806999"
+   sodipodi:cy="24.719"
+   sodipodi:rx="91.538002"
+   sodipodi:ry="15.708"
+   style="opacity:0.5;fill:#5a9594" />
 	</g>
 </switch>
 <i:pgf
