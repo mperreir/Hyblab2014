@@ -9,6 +9,7 @@
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.dropdown.js"></script>
     <script src="js/vendor/round-chart.js"></script>
   </head>
   <body>
@@ -91,8 +92,30 @@
    </div>
    
    <div id="page5" class="page row bg-gray">
-      <h2 class="title">thématique des jeux de données</h2>
-   </div>
+         <h2 class="title">thématique des jeux de données</h2>
+
+		<script src="js/csv-match.js"></script>
+		
+		<table Id="tableau-match">
+		<TR>
+			<TD Id="nomVille1" ALIGN="right" style="width:45%">progressbar Ville 1</TD>
+			<TD ALIGN="middle" style="width:10%"></TD>
+			<TD Id="nomVille2" ALIGN="left" style="width:45%">progressbar Ville 2</TD>
+		</TR>
+		</table>
+		<BR>
+		<script type="text/javascript"> 
+			var csv = '"critere", "ville1", "ville2", "ville3"\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n';
+			var montab = csv2array(csv);
+			
+			
+			//affichertab(montab);
+			genererdataviz(montab, 1, 2);
+		</script>
+
+
+		<img src="img/ombre-plate.svg" alt="shadow" class="shadow-page5"/>
+	  </div>
    
    <div id="page6" class="page row bg-blue">
       <h1 class="title">et l'ouest ?<h1>
