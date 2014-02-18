@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test OSM</title>
-    <script src="OpenLayers.js"></script>
+    <script src="../draft1/js/vendor/jquery.js"></script>
 
    <style type="text/css">
    #map {
@@ -19,6 +19,49 @@
    .point img {
       width:200px;
    }
+   /*
+   bon point en 1280px
+   .point {
+      border:1px solid black;
+      position:absolute;
+      bottom:59.4%;
+      left:19.6%;
+      display:block;
+   }
+   .point img {
+      width:66px;
+   }
+   bon point en 1000px
+   .point {
+       
+      border:1px solid black;
+      position:absolute;
+      bottom:59.4%;
+      left:20.1%;
+      display:block;
+   }
+   .point img {
+      width:40px;
+   }
+   bon point en 700px
+   .point {
+       border:1px solid black;
+      position:absolute;
+      bottom:59.5%;
+      left:20%;
+      display:block;
+   }
+   .point img {
+      width:28px;
+   }
+   bon point en 400px
+   -> width:15px;
+   en 320px -> 13px
+   en 800px -> 33px
+   
+   en 1280px -> 60px
+   en 1920px -> 85px
+   */
    </style>
   </head>
   <body>
@@ -26,8 +69,75 @@
    test<br>lol
   </p>
    <div id="map">
-      <span class="point"><img src="point.svg" /></span>
-      <img class="carte" src="cartes.svg"/>
+      <!--<span class="point"><img src="point.svg" /></span>-->
+      <img class="carte" src="carte.svg"/>
    </div>
+   <script type="text/javascript">
+   var MapsFrance = function(el) {
+   
+      var map = $(el);
+      map.css('position','relative');
+      var option = new Object();
+      option.srcpoint = 'point.svg';
+      option.altpoint = 'point situant une ville';
+   
+      /**
+       * Add a point to the map
+       */
+      this.addPoint = function(x,y,name) {
+         var point = document.createElement('img');
+         $(point).attr('src',option.srcpoint);
+         $(point).attr('alt',option.altpoint);
+         $(point).css('position','absolute');
+         $(point).css('display','block');
+         
+         console.log($(document).width());
+         // ratio : 33px -> 800px
+         
+         $(point).css('width',(33*$(document).width()/800)+'px');
+         $(point).css('opacity',0);
+         
+         // TODO point affiche le nom on hover
+         $(point).attr('title',name);
+         
+         
+         // valeur étalon : nantes
+         // latidude 47.218371
+         // longitude -1.553621
+         // bottom:59.5%;
+         // left:20%;
+         var correctionLeft = 4.4;
+         var left =(20*(y+correctionLeft))/(-1.553621+correctionLeft);
+         
+         
+         var correctionBottom = 41.4;
+         var bottom = (59.5*(x-correctionBottom))/(47.218371-correctionBottom); 
+         
+         $(point).css('left',left+'%');
+         $(point).css('bottom',100+'%');
+
+         // ajout du point sur la map
+         map.append(point);
+         
+         // animation d'apparition
+         $(point).animate({'opacity':1,'bottom':bottom+'%'},1000);
+      }
+   }
+   
+   test = new MapsFrance('#map');
+   var data = [{'nom':'Brest','latitude':48.390394,'longitude':-4.1},
+      {'nom':'Strasbourg','latitude':48.583148,'longitude':7.747882000000004},
+      {'nom':'Rennes','latitude':48.113475,'longitude':-1.675707999999986},
+      {'nom':'Marseille','latitude':43.296482,'longitude':5.369779999999992},
+      {'nom':'Nantes','latitude':47.218371,'longitude':-1.553621},
+      {'nom':'Nice','latitude':43.696036,'longitude':7.26559199999997},
+      {'nom':'Paris','latitude':48.856614,'longitude':2.3522219000000177},
+      {'nom':'Le Mans','latitude':48.006110000001,'longitude':0.1995560000000296},
+      {'nom':'Bordeaux','latitude':44.837789,'longitude':-0.5791799999999512}]
+   
+   for(i=0;i<data.length;i++) {
+      test.addPoint(data[i].latitude,data[i].longitude,data[i].nom);
+   }
+   </script>
   </body>
 </html>
