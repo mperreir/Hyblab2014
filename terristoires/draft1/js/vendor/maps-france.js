@@ -2,28 +2,55 @@ var MapsFrance = function(el) {
    
    var map = $(el);
    map.css('position','relative');
+   
    var option = new Object();
-   option.srcpoint = 'point.svg';
+   option.srcpoint = 'img/Point.svg';
    option.altpoint = 'point situant une ville';
+   option.onclick = function(evt){
+   
+      var ville = $(this).attr('data-ville');
+      
+      $.getJSON( "data/villes.json", function( data ) {
+      
+         for(i=0;i<data.length;i++) {
+            if(data[i].nom == ville) {
+               $('#picto-nb-hab').html(data[i].population);
+               $('#picto-nb-jeux-donnees').html(data[i].jeuxDeDonnees);
+               var ratio = (Math.round(data[i].jeuxDeDonnees/data[i].population*100000*100))/100;
+               $('#picto-ratio-hab').html(ratio);
+            }
+         }
+      });
+   };
+   
+   // préchargement de l'image du point
+   var img = new Image();
+   img.src=option.srcpoint;
 
    /**
-    * Add a point to the map
+    * Ajoute un point à la carte
     */
    this.addPoint = function(x,y,name) {
       var point = document.createElement('img');
+      
+      $(point).click(option.onclick);
+      
       $(point).attr('src',option.srcpoint);
       $(point).attr('alt',option.altpoint);
       $(point).css('position','absolute');
       $(point).css('display','block');
       
-      console.log($(document).width());
-      // ratio : 33px -> 800px
-      
-      $(point).css('width',(33*$(document).width()/800)+'px');
+      // ratio : 20px -> 1000px
+      $(point).css('width',(28*$(document).width()/1000)+'px');
       $(point).css('opacity',0);
       
-      // TODO point affiche le nom on hover
+      // point affiche le nom on hover
       $(point).attr('title',name);
+      $(point).attr('class','has-tip tip-top');
+      $(point).attr('data-tooltip','');
+      $(point).attr('data-ville',name);
+      
+      
       
       
       // valeur étalon : nantes
@@ -46,5 +73,14 @@ var MapsFrance = function(el) {
       
       // animation d'apparition
       $(point).animate({'opacity':1,'bottom':bottom+'%'},1000);
+   }
+   
+   /**
+    * Supprime tous les points
+    */
+   this.clear = function() {
+      map.find('.has-tip').each(function() {
+         $(this).remove();
+      });
    }
 }
