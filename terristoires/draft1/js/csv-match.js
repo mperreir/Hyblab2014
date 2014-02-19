@@ -163,8 +163,8 @@ function genererdataviz(data, idville1, idville2)
 	
 
 	//Affichage nom des villes
-   var listville1='<a data-dropdown="drop1" class="small secondary radius button dropdown">'+data[0][idville1]+'</a><ul align="left" id="drop1" data-dropdown-content class="f-dropdown">';
-   var listville2='<a data-dropdown="drop2" class="small secondary radius button dropdown">'+data[0][idville2]+'</a><ul align="left" id="drop2" data-dropdown-content class="f-dropdown">';
+   var listville1='<a data-dropdown="drop1" class="tiny secondary radius button dropdown">'+data[0][idville1]+'</a><ul align="left" id="drop1" data-dropdown-content class="f-dropdown">';
+   var listville2='<a data-dropdown="drop2" class="tiny secondary radius button dropdown">'+data[0][idville2]+'</a><ul align="left" id="drop2" data-dropdown-content class="f-dropdown">';
 
    i=1;
    while(i< data[0].length)
@@ -180,7 +180,7 @@ function genererdataviz(data, idville1, idville2)
    listville2=listville2+'</ul>';
 	
 	arrayLignes[0].cells[0].innerHTML=listville1;
-	arrayLignes[0].cells[1].innerHTML='<button class="small secondary radius" onclick="genererdataviz(montab, '+idville2+', '+idville1+');">inverser</button>';
+	arrayLignes[0].cells[1].innerHTML='<button class="tiny secondary radius" onclick="genererdataviz(montab, '+idville2+', '+idville1+');">inverser</button>';
 	arrayLignes[0].cells[2].innerHTML=listville2;
 	
 	i=1;

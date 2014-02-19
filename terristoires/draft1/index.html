@@ -194,11 +194,11 @@
    
       <h2 class="title">l'open data en application</h2>
       <div class="small-12 medium-5 large-5 columns">
-         <a href="http://nanteslive.fr/">
-            <img src="img/logo_nanteslive.png" alt="nantes live logo"/>
+         <a href="http://foglo.fr">
+            <img src="img/logo_foglo.png" alt="foglo logo"/>
          </a>
          <p>
-            application mobile gratuite pour iPhone et tablette iPad qui regroupe les actualités, vidéos et services pratiques nantais, en temps réel.
+            application web gratuite qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
          </p>
          
          <a href="http://www.rengo.fr/rennes/">
@@ -218,11 +218,11 @@
             application web gratuite qui permet de calculer des itinéraires accessibles aux personnes à mobilité réduite dans la ville de Rennes (ainsi que Montpellier).
          </p>
          
-         <a href="http://www.greenraid.fr/">
-            <img src="img/logo_greenraid.png" alt="green raid logo"/>
+         <a href="https://play.google.com/store/apps/details?id=net.naonedbus&hl=fr">
+            <img src="img/logo_naonedbus.png" alt="naoned bus logo"/>
          </a>
          <p>
-            application mobile et web gratuite, qui permet de trouver autour de soi des lieux et des infos correspondant à un mode de vie locale et durable.
+            application mobile gratuite pour Android permettant de consulter les horaires des transports nantais (réseau Tan, disponibilité des bicloos et parkings de la ville.).
          </p>
       </div>
    </div>
@@ -344,19 +344,11 @@
    
    
    // chargement de la liste des villes
-   var page5Loaded = false;
-   var montab;
-   $("#page5").hover(function () {
-      if(!page5Loaded) {
-         page5Loaded = true;
-         $.ajax( "data/theme.csv" )
-         .done(function(csv) {
-            montab = csv2array(csv);
-            genererdataviz(montab, 1, 2);
-         });
-         //var csv = '"critere", "ville1", "ville2", "ville3"\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n';
-      }
-   }, function () {});
+   $.ajax( "data/theme.csv" )
+   .done(function(csv) {
+      montab = csv2array(csv);
+      genererdataviz(montab, 1, 2);
+   });
    
   </script>
   </body>
