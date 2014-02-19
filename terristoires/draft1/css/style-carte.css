@@ -1,0 +1,33 @@
+.map {
+	height:248px;
+	width:362px;
+	background :url("../img/temp3.png") left top no-repeat;
+	position:relative;
+}
+
+.map .overlay{
+	height:248px;
+	width:362px;
+	background :url("../img/temp3.png") 362px top no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+.map img{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+}
+
+
+#imagedepart {
+	height:10%;
+	width:10%;
+	position:absolute;
+	top:0;
+	left:0;
+
+}
