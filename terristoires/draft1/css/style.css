@@ -88,6 +88,14 @@ p:first-letter {
    height:90%;
 }
 
+#page3 img {
+   border:none;
+}
+
+#carteDeFrance {
+   margin-top:5%;
+}
+
 #page4 {}
 
 .villes {

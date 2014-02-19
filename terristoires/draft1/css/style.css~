@@ -45,7 +45,6 @@ h1 {
 h2 {
    padding-top:3%;
    font-family:'brandonRegular';
-   text-transform:uppercase;
    font-size:1.2em;
 }
 
@@ -56,6 +55,13 @@ h3 {
    margin-left:25%;
    margin-right:25%;
    padding-top:2%;
+
+}
+h4 {
+
+	color:#ffffff;
+   font-family:'brandonRegular';
+   font-size:1.5em;
 
 }
 
@@ -80,6 +86,15 @@ p:first-letter {
    background-image:url("../img/background-page1.svg");
    background-repeat:no-repeat;
    height:90%;
+}
+
+#page3 img {
+   border:none;
+}
+
+#carteDeFrance {
+   margin-top:5%;
+   padding:10%;
 }
 
 #page4 {}
@@ -113,6 +128,38 @@ p:first-letter {
    width:50%;
    margin-bottom:10%;
 }
+.shadow-page5 {
+   display:block;
+   margin:auto;
+   width:40%;
+   margin-bottom:10%;
+}
+
+#page5 table{
+	width:100%;
+	background: rgba(255,255,255,0);
+	display : block; 
+	padding-top: 1px; 
+	padding-bottom: 1px;
+	border-width:0px;
+	margin-top: 0; 
+	margin-bottom: 0; 
+	margin: 0; 
+	line-height: 0px;
+	color:white;
+
+
+}
+#page5 table tr
+{
+	background: rgba(255,255,255,0);
+}
+
+#page5 table td
+{
+	width:10%;
+}
+
 
 #page6 {
    background-position:center;
