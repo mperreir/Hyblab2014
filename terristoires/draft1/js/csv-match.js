@@ -120,7 +120,7 @@ function csv2array(data, delimeter) {
   return array;
 }
 
-
+/*
 function affichertab(data)
 {
 	document.write("<table border>");
@@ -137,95 +137,73 @@ function affichertab(data)
 		document.write("<br/>");
 	}
 	document.write("</table>");
+}*/
+
+function actualise(v1,v2) {
+   $.ajax( "data/theme.csv" )
+    .done(function(csv) {
+      montab = csv2array(csv);
+      genererdataviz(montab, v1, v2);
+   });
 }
 
 function genererdataviz(data, idville1, idville2)
 {
-var i=0;
+   var i=0;
 	var coul= new Array("#8dc1bd", "#eae9e4", "#bf8a82", "#f6e59d");
 	var arrayLignes = document.getElementById("tableau-match").rows;
 	
 	while(arrayLignes.length < data.length)
 	{
-	 var tmp = document.getElementById("tableau-match").insertRow(-1);
-	 tmp.insertCell(0);
- 	 tmp.insertCell(1);
- 	 tmp.insertCell(2);
+      var tmp = document.getElementById("tableau-match").insertRow(-1);
+      tmp.insertCell(0);
+      tmp.insertCell(1);
+      tmp.insertCell(2);
 	}
 	
 
 	//Affichage nom des villes
-var listville1='<a href="#" data-dropdown="drop1" class="small secondary radius button dropdown">'+data[0][idville1]+'</a><br>	<ul align="left" id="drop1" data-dropdown-content class="f-dropdown">';
-var listville2='<a href="#" data-dropdown="drop2" class="small secondary radius button dropdown">'+data[0][idville2]+'</a><br>	<ul align="left" id="drop2" data-dropdown-content class="f-dropdown">';
+   var listville1='<a data-dropdown="drop1" class="small secondary radius button dropdown">'+data[0][idville1]+'</a><ul align="left" id="drop1" data-dropdown-content class="f-dropdown">';
+   var listville2='<a data-dropdown="drop2" class="small secondary radius button dropdown">'+data[0][idville2]+'</a><ul align="left" id="drop2" data-dropdown-content class="f-dropdown">';
 
-i=1;
-while(i< data[0].length)
-{
-	if(i!=idville1 && i!=idville2)
-	{
-	listville1=listville1+'<li><a onclick="genererdataviz(montab, '+i+', '+idville2+');">'+data[0][i]+'</a></li>';
-	listville2=listville2+'<li><a onclick="genererdataviz(montab, '+idville1+', '+i+');">'+data[0][i]+'</a></li>';
-	}
-	i++;
-}
-listville1=listville1+'</ul>';
-listville2=listville2+'</ul>';
-	
+   i=1;
+   while(i< data[0].length)
+   {
+	   if(i!=idville1 && i!=idville2)
+	   {
+	   listville1=listville1+'<li style="text-align:left;"><a onclick="actualise('+i+', '+idville2+');">'+data[0][i]+'</a></li>';
+	   listville2=listville2+'<li><a onclick="actualise('+idville1+', '+i+');">'+data[0][i]+'</a></li>';
+	   }
+	   i++;
+   }
+   listville1=listville1+'</ul>';
+   listville2=listville2+'</ul>';
 	
 	arrayLignes[0].cells[0].innerHTML=listville1;
 	arrayLignes[0].cells[1].innerHTML='<button class="small secondary radius" onclick="genererdataviz(montab, '+idville2+', '+idville1+');">inverser</button>';
 	arrayLignes[0].cells[2].innerHTML=listville2;
-
-
-
 	
 	i=1;
 	while(i<arrayLignes.length)
 	{
-	//arrayLignes[i].cells[0].innerHTML='<div id="dataviz-'+idville1+'-cr'+i+'" style="background: '+coul[(i-1)%4]+' right; height:100%; width:0%; ">' + data[i][idville1] + '</div>';
+	
+	// right
 	arrayLignes[i].cells[0].innerHTML='<div id="dataviz-'+idville1+'-cr'+i+'" style="background: '+coul[(i-1)%4]+' right; height:100%; width:0%; ">.</div>';
 	arrayLignes[i].cells[0].align = "right";
-	arrayLignes[i].cells[0].style="width:40%";
 
 	
+	// middle
 	arrayLignes[i].cells[1].innerHTML="<h4>"+data[i][0]+"</h4>";
 	arrayLignes[i].cells[1].align = "middle";
-	arrayLignes[i].cells[1].style="width:20%";
 	
-	//arrayLignes[i].cells[2].innerHTML='<div id="dataviz-'+idville2+'-cr'+i+'" style="background: '+coul[(i-1)%4]+' right; height:100%; width:0%; ">' + data[i][idville2] + '</div>';
+	// left
 	arrayLignes[i].cells[2].innerHTML='<div id="dataviz-'+idville2+'-cr'+i+'" style="background: '+coul[(i-1)%4]+' right; height:100%; width:0%; ">.</div>';
 	
 	
-	arrayLignes[i].cells[2].align = "left";
-	//arrayLignes[i].cells[2].style="width:40%";
-	
-	
-	$('#dataviz-'+idville1+'-cr'+i).animate({width: data[i][idville1]+'%'},750);
-	$('#dataviz-'+idville2+'-cr'+i).animate({width: data[i][idville2]+'%'},750);
+	$('#dataviz-'+idville1+'-cr'+i).animate({'width': data[i][idville1]+'%'},750);
+	$('#dataviz-'+idville2+'-cr'+i).animate({'width': data[i][idville2]+'%'},750);
 
 	i++;
 	}
-	
 }
-
-
-
-/*
-	for(var ligne=1; ligne<data.length; ++ligne)
-	{
-		document.write(data[ligne][idville1]);
-		document.write(data[ligne][0]);	
-		document.write(data[ligne][idville2]);
-		document.write("<BR>");
-	
-	}
-		//arrayLignes[i].cells[2].style.backgroundColor = "#bdcb15";
-*/
-
-
-
-
-//var csv = '"x", "y", "z"\n12.3, 2.3, 8.7\n4.5, 1.2, -5.6\n';
-//var marray = csv2array(csv);
-//affichertab(marray);
 

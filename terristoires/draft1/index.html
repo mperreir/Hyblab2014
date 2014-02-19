@@ -14,6 +14,7 @@
     <!-- Partie du fait maison -->
     <script src="js/vendor/round-chart.js"></script>
     <script src="js/vendor/maps-france.js"></script>
+    <script src="js/csv-match.js"></script>
   </head>
   <body>
   
@@ -42,7 +43,7 @@
       <div class="small-12 medium-10 medium-centered large-10 large-centered columns">
          <div class="flex-video">
             <!--
-            <iframe src="//www.youtube.com/embed/MCIVuPr2EYw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
+            <iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
             -->
          </div>
       </div>
@@ -113,30 +114,21 @@
    </div>
    
    <div id="page5" class="page row bg-gray">
-         <h2 class="title">thématique des jeux de données</h2>
+      <h2 class="title">thématique des jeux de données</h2>
 
-		<script src="js/csv-match.js"></script>
+      <div class="small-12 medium-12 large-12 columns">
 		
-		<table Id="tableau-match">
-		<TR>
-			<TD Id="nomVille1" ALIGN="right" style="width:45%">progressbar Ville 1</TD>
-			<TD ALIGN="middle" style="width:10%"></TD>
-			<TD Id="nomVille2" ALIGN="left" style="width:45%">progressbar Ville 2</TD>
-		</TR>
-		</table>
-		<BR>
-		<script type="text/javascript"> 
-			var csv = '"critere", "ville1", "ville2", "ville3"\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n';
-			var montab = csv2array(csv);
-			
-			
-			//affichertab(montab);
-			genererdataviz(montab, 1, 2);
-		</script>
+		   <table id="tableau-match" width="100%">
+		   <tr>
+			   <td id="nomVille1" align="right" style="width:45%"></td>
+			   <td align="middle" style="width:10%"></td>
+			   <td Id="nomVille2" align="left" style="width:45%"></td>
+		   </tr>
+		   </table>
 
-
-		<img src="img/ombre-plate.svg" alt="shadow" class="shadow-page5 show-for-medium-up"/>
-	  </div>
+		   <img src="img/ombre-plate.svg" alt="shadow" class="shadow-page5 show-for-medium-up"/>
+		</div>
+	</div>
    
    <div id="page6" class="page row bg-blue">
       <h1 class="title">et l'ouest ?<h1>
@@ -151,7 +143,7 @@
       <div class="small-12 medium-10 medium-centered large-10 large-centered columns">
          <div class="flex-video">
             <!--
-            <iframe src="//www.youtube.com/embed/GP7aP67qQjQ" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
+            <iframe src="//www.youtube.com/embed/Qu6SuzxMWNM" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
             -->
          </div>
          <p>
@@ -207,7 +199,6 @@
       <div class="small-12 medium-8 large-8 columns">
          <p class="content-footer">
          &copy; Nom prénom etc..
-         <span data-tooltip class="has-tip" title="Tooltips are awesome, you should totally use them!">extended information</span>
          </p>
       </div>
       
@@ -216,6 +207,11 @@
       </div>
    
    </footer>
+   
+   <div style="display:none;">
+      <a href="#" data-dropdown="drop" class="button dropdown">Dropdown Button</a><br> <ul id="drop" data-dropdown-content class="f-dropdown"> <li><a href="#">This is a link</a></li> <li><a href="#">This is another</a></li> <li><a href="#">Yet another</a></li> </ul>
+      <span data-tooltip class="has-tip" title="Tooltips are awesome, you should totally use them!">extended information</span>
+   </div>
   
   <script type="text/javascript"> 
   $(document).foundation({
@@ -308,6 +304,22 @@
       }
    
    },function() {});
+   
+   
+   // chargement de la liste des villes
+   var page5Loaded = false;
+   var montab;
+   $("#page5").hover(function () {
+      if(!page5Loaded) {
+         page5Loaded = true;
+         $.ajax( "data/theme.csv" )
+         .done(function(csv) {
+            montab = csv2array(csv);
+            genererdataviz(montab, 1, 2);
+         });
+         //var csv = '"critere", "ville1", "ville2", "ville3"\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n"taille", 12.3, 20.3, 8.7\n"population", 40.5, 1.2, 50.6\n"transport", 80.5, 10.2, 50.6\n';
+      }
+   }, function () {});
    
   </script>
   </body>
