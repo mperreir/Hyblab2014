@@ -18,22 +18,13 @@
     <script src="js/csv-match.js"></script>
   </head>
   <body>
-  
-  <!--
-  save
-/*{'nom':'Brest','latitude':48.390394,'longitude':-4.1,'population':,'jeuxDeDonnees':},*/
-/*{'nom':'Strasbourg','latitude':48.583148,'longitude':7.3},*/
-/*{'nom':'Le Mans','latitude':48.006110000001,'longitude':0.1995560000000296},*/
-/*{'nom':'Lille','latitude':50.62925,'longitude':2.5},*/
-/*{'nom':'Toulouse','latitude':43.604652,'longitude':1.4442090000000007},*/
-/*{'nom':'Montpellier','latitude':43.610769,'longitude':3.8767159999999876},*/
-/*{'nom':'Angers','latitude':47.478419,'longitude':-0.5631660000000238}*/
-  -->
 
    <div id="page1" class="page row bg-green">
       <div class="columns small-12 large-12 columns">
-         <h1 class="title">open data</h1>
-         <h3 class="title">ou en est l'ouest ?</h3>
+         <div id="main-title">
+            <h1 class="title">open data</h1>
+            <h3 class="title">ou en est l'ouest ?</h3>
+         </div>
       </div>
    </div>
    
@@ -41,45 +32,37 @@
    <div id="page2" class="page row bg-blue">
       <h2 class="title">l'open data en question</h2>
       
-      <div class="small-12 medium-10 medium-centered large-10 large-centered columns">
+      <div class="small-12 medium-8 medium-centered large-8 large-centered columns">
          <div class="flex-video">
-            <!--
             <iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
-            -->
          </div>
       </div>
    </div>
    
    <div id="page3" class="page row bg-gray">
-      <div class="small-12 medium-10 large-10 large-centered medium-centered columns">
-         <h2 class="title">l'open data en France</h2>
-         <div class="row">
-            <div class="small-12 medium-10 large-10 large-centered medium-centered columns" id="carteDeFrance">
-               <img src="img/carte-France-page3.svg" alt="maps of France"/>
-            </div>
-         </div>
-         <div class="row">
-            <div class="small-12 medium-10 large-10 large-centered medium-centered columns">
-               <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
-                  <li>
-                     <img src="img/pictogramme-nombre-d-habitant-page3.svg" alt="picture face of one people"/>
-                     <span id="picto-nb-hab">0</span> habitants
-                  </li>
-                  <li>
-                     <img src="img/pictogramme-jeux-de-donnees-page3.svg" alt="chart"/>
-                     <span id="picto-nb-jeux-donnees">0</span> jeux de données
-                  </li>
-                  <li>
-                     <img src="img/pictogramme-nombre-de-donnees-par-habitants-page3.svg" alt="two arrow"/>
-                     <span id="picto-ratio-hab">0</span> jeux de données par habitant (x100000)
-                  </li>
-                  <li>
-                     <img src="img/pictogramme-thematique-des jeux-de-donnees-page3.svg" alt="house with two tree"/>
-                     <span id="picto-nb-hab">thématiques des jeux de données</span>
-                  </li>
-               </ul>
-            </div>
-         </div>
+      <h2 class="title">l'open data en France</h2>
+      <div class="small-12 medium-9 large-9 columns" id="carteDeFrance">
+         <img src="img/carte-France-page3.svg" alt="maps of France"/>
+      </div>
+      <div class="small-12 medium-3 large-3 columns" id="side-page3">
+         <ul class="small-block-grid-2 medium-block-grid-1 large-block-grid-1">
+            <li>
+               <img src="img/pictogramme-nombre-d-habitant-page3.svg" alt="picture face of one people"/><br/>
+               <span id="picto-nb-hab">0</span> habitants
+            </li>
+            <li>
+               <img src="img/pictogramme-jeux-de-donnees-page3.svg" alt="chart"/><br/>
+               <span id="picto-nb-jeux-donnees">0</span> jeux de données
+            </li>
+            <li>
+               <img src="img/pictogramme-nombre-de-donnees-par-habitants-page3.svg" alt="two arrow"/><br/>
+               <span id="picto-ratio-hab">0</span> jeux de données par habitant (x100000)
+            </li>
+            <li>
+               <img src="img/pictogramme-thematique-des jeux-de-donnees-page3.svg" alt="house with two tree"/><br/>
+               <span id="picto-nb-hab">thématiques des jeux de données</span>
+            </li>
+         </ul>
       </div>
    </div>
    
@@ -93,19 +76,19 @@
                      <span class="ville">nantes</span><br/>
                      <span class="ville">rennes</span><br/>
                      <span class="ville">paris</span><br/>
-                     <span class="ville">bordeau</span>
+                     <span class="ville">bordeaux</span>
                   </div>
                </div>
                <img src="img/ombre.svg" alt="shadow" class="shadow-page4 show-for-medium-up"/>
             </div>
             <div class="small-12 medium-6 large-6 columns">
-               <h2 class="title">radio de données par habitants (x100000)</h2>
+               <h2 class="title">ratio de données par habitants (x100000)</h2>
                <div class="graphique" id="ratio-jeux-donnees">
                   <div class="villes">
                      <span class="ville">nantes</span><br/>
                      <span class="ville">rennes</span><br/>
                      <span class="ville">paris</span><br/>
-                     <span class="ville">bordeau</span>
+                     <span class="ville">bordeaux</span>
                   </div>
                </div>
                <img src="img/ombre.svg" alt="shadow" class="shadow-page4 show-for-medium-up"/>
@@ -194,28 +177,11 @@
    
       <h2 class="title">l'open data en application</h2>
       <div class="small-12 medium-5 large-5 columns">
-         <a href="http://foglo.fr">
-            <img src="img/logo_foglo.png" alt="foglo logo"/>
-         </a>
-         <p>
-            application web gratuite qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
-         </p>
-         
          <a href="http://www.rengo.fr/rennes/">
             <img src="img/logo_rengo.png" alt="rengo logo"/>
          </a>
          <p>
             application mobile gratuite qui indique en temps réel, les horaires et disponibilités de nombreux services de transports rennais (trains, bus, vélos, parkings, etc.). Cette application est également disponible pour les villes de Nantes, Bordeaux, Strasbourg...
-         </p>
-      </div>
-      <div class="large-2 medium-2 columns">
-      </div>
-      <div class="small-12 medium-5 large-5 columns">
-         <a href="http://www.handimap.org/">
-            <img src="img/logo_handimap.png" alt="handimap.org logo"/>
-         </a>
-         <p>
-            application web gratuite qui permet de calculer des itinéraires accessibles aux personnes à mobilité réduite dans la ville de Rennes (ainsi que Montpellier).
          </p>
          
          <a href="https://play.google.com/store/apps/details?id=net.naonedbus&hl=fr">
@@ -223,6 +189,24 @@
          </a>
          <p>
             application mobile gratuite pour Android permettant de consulter les horaires des transports nantais (réseau Tan, disponibilité des bicloos et parkings de la ville.).
+         </p>
+      </div>
+      <div class="large-2 medium-2 columns">
+      </div>
+      <div class="small-12 medium-5 large-5 columns">
+      
+         <a href="http://foglo.fr">
+            <img src="img/logo_foglo.png" alt="foglo logo"/>
+         </a>
+         <p>
+            application web gratuite qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
+         </p>
+
+         <a href="http://www.handimap.org/">
+            <img src="img/logo_handimap.png" alt="handimap.org logo"/>
+         </a>
+         <p>
+            application web gratuite qui permet de calculer des itinéraires accessibles aux personnes à mobilité réduite dans la ville de Rennes (ainsi que Montpellier).
          </p>
       </div>
    </div>
