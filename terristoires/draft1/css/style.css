@@ -58,15 +58,12 @@ h3 {
 
 }
 h4 {
-
 	color:#ffffff;
    font-family:'brandonRegular';
    font-size:1.5em;
-
 }
 
 p {
-   
    text-align:justify;
    font-family:'brandonMed';
    font-size:0.9em;
@@ -86,17 +83,28 @@ p:first-letter {
    background-image:url("../img/background-page1.svg");
    background-repeat:no-repeat;
    height:90%;
+   position:relative;
 }
 
 #page3 img {
    border:none;
 }
 
+#side-page3 {
+   margin-top:10%;
+}
+#side-page3 img {
+   width:50%;
+}
+
 #carteDeFrance {
    margin-top:5%;
 }
 
-#page4 {}
+#page4 h2{
+   display:block;
+   height:50px;;
+}
 
 .villes {
    z-index: 2;
@@ -175,6 +183,10 @@ p:first-letter {
 #page9 img {
    display:block;
    margin:10% auto;
+}
+
+#page9 p {
+   font-size:1.1em;
 }
 
 /************************
