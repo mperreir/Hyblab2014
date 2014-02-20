@@ -81,11 +81,15 @@ nav {
    left:1%;
 }
 nav img{
+   border:none;
    width:40px;
+}
+
+nav a{
    border:none;
 }
 
-nav span{
+.has-tip {
    border:none;
 }
 
@@ -148,13 +152,11 @@ nav span{
    display:block;
    margin:auto;
    width:50%;
-   margin-bottom:5%;
 }
 .shadow-page5 {
    display:block;
    margin:auto;
    width:40%;
-   margin-bottom:5%;
 }
 
 #page5 table{

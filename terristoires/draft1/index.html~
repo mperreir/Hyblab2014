@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style-carte.css" />
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/jquery.scrollto.js"></script>
     <script src="js/foundation/foundation.js"></script>
     <script src="js/foundation/foundation.dropdown.js"></script>
     <script src="js/foundation/foundation.tooltip.js"></script>
@@ -21,15 +22,15 @@
   <body>
   
    <nav>
-      <span><img data-tooltip class="has-tip tip-right" title="début" src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <span data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></span><br>
-      <a data-magellan-destination="page9" data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page1"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page2"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page3"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page4"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page5"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page6"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page7"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page8"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="a" href="#page9"><img src="img/ptvide.svg"/></a>
    </nav>
 
    <div id="page1" class="page row bg-green">
@@ -176,7 +177,7 @@
       </div>
    </div>
    
-   <div data-magellan-destination="page9" id="page9" class="page row bg-blue">
+   <div id="page9" class="page row bg-blue">
    
       <h2 class="title">l'open data en application</h2>
       <div class="small-12 medium-5 large-5 columns">
@@ -347,6 +348,13 @@
       montab = csv2array(csv);
       genererdataviz(montab, 1, 2);
    });
+   
+   // menu animé
+   $(function() {
+    $('nav').bind('click', 'a', function(event) {
+        $.scrollTo(event.target.hash, 250);
+    });
+});
    
   </script>
   </body>

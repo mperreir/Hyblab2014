@@ -81,11 +81,18 @@ nav {
    left:1%;
 }
 nav img{
+   border:none;
    width:40px;
+}
+
+nav a{
    border:none;
 }
 
-nav span{
+.has-tip {
+   border:none;
+}
+.has-tip:hover {
    border:none;
 }
 
