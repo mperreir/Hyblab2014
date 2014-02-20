@@ -108,9 +108,9 @@
 		
 		   <table id="tableau-match" width="100%">
 		   <tr>
-			   <td id="nomVille1" align="right" style="width:45%"></td>
-			   <td align="middle" style="width:10%"></td>
-			   <td Id="nomVille2" align="left" style="width:45%"></td>
+			   <td id="nomVille1" align="right" style="width:41%"></td>
+			   <td align="middle" style="width:18%"></td>
+			   <td Id="nomVille2" align="left" style="width:41%"></td>
 		   </tr>
 		   </table>
 
@@ -293,9 +293,14 @@
             }
             
             // écriture des villes
-            <span class="ville">nantes</span> <span id="ville-jdd-Nantes"></span><br/>
-            $('#ville-jdd').html();
-            $('#ville-ratio').html();
+            for(i=0;i<choixVillesGraph.length;i++) {
+               $('#ville-jdd').append('<span class="ville">'+choixVillesGraph[i]+'</span> '+nombreJeux[choixVillesGraph[i]]+'<br>');
+            }
+            
+            for(i=0;i<choixVillesGraph.length;i++) {
+               $('#ville-ratio').append('<span class="ville">'+choixVillesGraph[i]+'</span> '+ratios[choixVillesGraph[i]]+'<br>');
+            }
+            
             
             // recherche des max
             maxNomJeux = 0;

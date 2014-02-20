@@ -77,10 +77,6 @@
                <h2 class="title">nombre de jeux de données</h2>
                <div class="graphique" id="nb-jeux-donnees">
                   <div class="villes" id="ville-jdd">
-                     
-                     <span class="ville">rennes</span> <span id="ville-jdd-Rennes"></span><br/>
-                     <span class="ville">paris</span> <span id="ville-jdd-Paris"></span><br/>
-                     <span class="ville">bordeaux</span> <span id="ville-jdd-Bordeaux"></span>
                   </div>
                </div>
                <img src="img/ombre.svg" alt="shadow" class="shadow-page4 show-for-medium-up"/>
@@ -89,10 +85,6 @@
                <h2 class="title">ratio de données pour 100 000 habitants</h2>
                <div class="graphique" id="ratio-jeux-donnees">
                   <div class="villes" id="ville-ratio">
-                     <span class="ville" >nantes</span> <span id="ville-ratio-"></span><br/>
-                     <span class="ville" >rennes</span> <span id="ville-ratio-"></span><br/>
-                     <span class="ville" >paris</span> <span id="ville-ratio-"></span> <br/>
-                     <span class="ville" >bordeaux</span> <span id="ville-ratio-"></span>
                   </div>
                </div>
                <img src="img/ombre.svg" alt="shadow" class="shadow-page4 show-for-medium-up"/>
@@ -293,9 +285,14 @@
             }
             
             // écriture des villes
-            <span class="ville">nantes</span> <span id="ville-jdd-Nantes"></span><br/>
-            $('#ville-jdd').html();
-            $('#ville-ratio').html();
+            for(i=0;i<choixVillesGraph.length;i++) {
+               $('#ville-jdd').append('<span class="ville">'+choixVillesGraph[i]+'</span> '+nombreJeux[choixVillesGraph[i]]+'<br>');
+            }
+            
+            for(i=0;i<choixVillesGraph.length;i++) {
+               $('#ville-ratio').append('<span class="ville">'+choixVillesGraph[i]+'</span> '+ratios[choixVillesGraph[i]]+'<br>');
+            }
+            
             
             // recherche des max
             maxNomJeux = 0;
