@@ -74,19 +74,24 @@ p:first-letter {
 }
 
 /*menu*/
-nav {
+#menu-fixed {
+   background-color:argb(255,255,255,0);
    z-index:20;
-   position:fixed;
-   top:20%;
-   left:1%;
 }
-nav img{
+#menu-fixed img{
    border:none;
-   width:40px;
 }
 
-nav a{
+#menu-fixed dd {
+   background:url('../img/ptvide.png') center no-repeat;
+}
+
+#menu-fixed a{
    border:none;
+}
+
+#menu-fixed .active a{
+   background:url('../img/ptplein.png') center no-repeat ;
 }
 
 .has-tip {
@@ -247,4 +252,7 @@ Footer
 }
 .bg-red {
    background-color:#f09ba0;
+}
+.content .active {
+   background:#f09ba0;
 }

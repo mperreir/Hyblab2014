@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test dataviz</title>
+    <title>L'open data dans l'ouest</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style-carte.css" />
@@ -14,6 +14,7 @@
     <script src="js/foundation/foundation.dropdown.js"></script>
     <script src="js/foundation/foundation.tooltip.js"></script>
     <script src="js/foundation/foundation.magellan.js"></script>
+    <script src="js/foundation/foundation.accordion.js"></script>
     <!-- Partie du fait maison -->
     <script src="js/vendor/round-chart.js"></script>
     <script src="js/vendor/maps-france.js"></script>
@@ -21,19 +22,22 @@
   </head>
   <body>
   
-   <nav>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page1"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page2"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page3"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page4"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page5"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page6"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page7"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="début" href="#page8"><img src="img/ptvide.svg"/></a><br>
-      <a data-tooltip class="has-tip tip-right" title="a" href="#page9"><img src="img/ptvide.svg"/></a>
-   </nav>
+   <div data-magellan-expedition="fixed" id="menu-fixed">
+      <dl class="sub-nav">
+         <dd data-magellan-arrival="page1"><a href="#page1" data-tooltip class="has-tip tip-bottom" title="État des lieux de l'open data"> </a></dd>
+         <dd data-magellan-arrival="page2"><a href="#page2" data-tooltip class="has-tip tip-bottom" title="L'open data en question"> </a></dd>
+         <dd data-magellan-arrival="page3"><a href="#page3" data-tooltip class="has-tip tip-bottom" title="Les collectivités de l'Ouest jouent le jeu"> </a></dd>
+         <dd data-magellan-arrival="page4"><a href="#page4" data-tooltip class="has-tip tip-bottom" title="Nombre de données disponibles"> </a></dd>
+         <dd data-magellan-arrival="page5"><a href="#page5" data-tooltip class="has-tip tip-bottom" title="Comparateur de thématiques"> </a></dd>
+         <dd data-magellan-arrival="page6"><a href="#page6" data-tooltip class="has-tip tip-bottom" title="Et l'ouest"> </a></dd>
+         <dd data-magellan-arrival="page7"><a href="#page7" data-tooltip class="has-tip tip-bottom" title="Grand ouest"> </a></dd>
+         <dd data-magellan-arrival="page8"><a href="#page8" data-tooltip class="has-tip tip-bottom" title="Interviews"> </a></dd>
+         <dd data-magellan-arrival="page9"><a href="#page9" data-tooltip class="has-tip tip-bottom" title="L'open data en application"> </a></dd>
+      </dl>
+   </div>
 
-   <div id="page1" class="page row bg-green">
+   <a name="page1"></a>
+   <div data-magellan-destination="page1" id="page1" class="page row bg-green">
       <div class="columns small-12 large-12 columns">
          <div id="main-title">
             <h1 class="title">open data</h1>
@@ -42,8 +46,8 @@
       </div>
    </div>
    
-   
-   <div id="page2" class="page row bg-blue">
+   <a name="page2"></a>
+   <div data-magellan-destination="page2" id="page2" class="page row bg-blue">
       <h2 class="title">l'open data en question</h2>
       
       <div class="small-12 medium-8 medium-centered large-8 large-centered columns">
@@ -53,8 +57,9 @@
       </div>
    </div>
    
-   <div id="page3" class="page row bg-gray">
-      <h2 class="title">l'open data en France</h2>
+   <a name="page3"></a>
+   <div data-magellan-destination="page3" id="page3" class="page row bg-gray">
+      <h2 class="title">les collectivités de l'Ouest jouent le jeu</h2>
       <div class="small-12 medium-9 large-9 columns" id="carteDeFrance">
          <img src="img/carte-France-page3.svg" alt="maps of France"/>
       </div>
@@ -81,7 +86,8 @@
       </div>
    </div>
    
-   <div id="page4" class="page row bg-red">
+   <a name="page4"></a>
+   <div data-magellan-destination="page4" id="page4" class="page row bg-red">
       <div class="small-12 medium-11 medium-centered large-11 large-centered columns">
          <div class="row">
             <div class="small-12 medium-6 large-6 columns">
@@ -104,7 +110,8 @@
       </div>
    </div>
    
-   <div id="page5" class="page row bg-gray">
+   <a name="page5"></a>
+   <div  data-magellan-destination="page5" id="page5" class="page row bg-gray">
       <h2 class="title">thématiques des jeux de données</h2>
 
       <div class="small-12 medium-12 large-12 columns">
@@ -121,11 +128,13 @@
 		</div>
 	</div>
    
-   <div id="page6" class="page row bg-blue">
+   <a name="page6"></a>
+   <div data-magellan-destination="page6" id="page6" class="page row bg-blue">
       <h1 class="title">et l'ouest ?<h1>
    </div>
    
-   <div id="page7" class="page row bg-green">
+   <a name="page7"></a>
+   <div data-magellan-destination="page7" id="page7" class="page row bg-green">
 
 		<div class="small-12 large-6 medium-6 columns">
 		   	<H4 id="nomdepartementselection" style="middle"></H4>
@@ -169,20 +178,93 @@
 
 	</div>
    
-   <div id="page8" class="page row bg-red">
+   <a name="page8"></a>
+   <div data-magellan-destination="page8" id="page8" class="page row bg-red">
       <h2 class="title">interviews</h2>
       
       <div class="small-12 medium-8 medium-centered large-8 large-centered columns">
-         <div class="flex-video">
-            <iframe src="//www.youtube.com/embed/Qu6SuzxMWNM" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
-         </div>
-         <p>
-            Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open data dans l'Ouest.
-         </p>
+      
+         <dl class="accordion" data-accordion> 
+            <dd>
+               <a href="#panel1">Aller vers une plus grande ouverture</a> 
+               <div id="panel1" class="content active">
+                  <div class="flex-video">
+                     <iframe src="//www.youtube.com/embed/Qu6SuzxMWNM" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <p>
+                     Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open data dans l'Ouest.
+                  </p>
+               </div>
+            </dd>
+            <dd>
+               <a href="#panel2">Promouvoir l'Open Data auprès des citoyens</a>
+               <div id="panel2" class="content">
+               <p>
+1) Quels sont les usages des données ouvertes ?<br>
+
+"Il y a au moins quatre usages possibles des données ouvertes : la consultation (par exemple consulter directement une donnée brute pour savoir combien il y a de policiers municipaux dans ma ville), la médiation (comme réaliser une datavisualisation), la réalisation d'applications mobiles ou web (telles que des applications iPhone), la réutilisation spécialisée (par exemple quand une entreprise ou un particulier utilise une donnée pour faire un calcul ou améliorer un processus)."<br>
+
+2) Pensez-vous que cela puisse intéresser les citoyens ?<br>
+
+"Bien sûr, selon les thématiques qui sont traitées par les données. Par exemple, les données concernant les prénoms les plus populaires sont très consultées sur les portails Data. 
+Il faut cependant mettre en place des dispositifs qui permettent aux citoyens de découvrir les données et de ses les approprier. Les lieux de type 'Infolab' peuvent être dédiés à cela, vous pouvez vous référer à mon article de blog sur ce sujet : <a href="http://donneesouvertes.info/2012/10/11/lopen-data-et-le-grand-public-on-nattrape-pas-les-mouches-avec-du-vinaigre/">"L'Open Data et le grand public, on n’attrape pas les mouches avec du vinaigre".</a>"<br>
+
+3) Quelles sont les données, les thématiques qui intéressent le plus ?<br>
+
+"Cela dépend du type de réutilisateurs. Les développeurs et les profils techniques sont très intéressés par les données liées aux transports et aux déplacements (horaires de bus, disponibilité en temps réel des vélos en libre-service, etc.). Les datajournalistes s'intéressent plutôt aux données statistiques ou budgétaires, par exemple <a href="https://www.google.com/fusiontables/DataSource?docid=1xvJwLapFYwAzTMAfGyVrHgNXWukY5VI7UUwUfn4#map:id=3">le classement des 100 premières polices municipales de France</a>, <a href="http://www.data-projet.com/carte-accident-29">la localisation des accidents de la route</a>, ou encore <a href="http://www.liberation.fr/economie/2014/01/29/budget-de-l-etat-ou-economiser-des-milliards_976108">la représentation du budget de l'État</a>. Tout cela peut être réalisé à partir des données ouvertes publiées par les collectivités et l'Etat.
+Enfin, le citoyen s'intéresse davantage aux données liées à sa commune ou à sa vie quotidienne : par exemple les prénoms les plus populaires, la liste des associations subventionnées, et tout ce qui concerne le patrimoine (bâtiments historiques, etc...)."<br>
+
+4) Que faudrait-il faire pour améliorer la démarche Open Data ?<br>
+
+"Il faudrait encourager l'interaction entre les producteurs (ceux qui produisent de la donnée, acteurs publics et privés) et les réutilisateurs de données.
+De plus, mettre en place des lieux et des parcours dédiés à la donnée, des Infolabs sur le modèle des Fablabs, ainsi que mieux faire connaître l'offre de données qui existe déjà en ligne."<br>
+</p>
+               </div>
+            </dd>
+            <dd>
+               <a href="#panel3">La démarche Open Data à Nantes</a>
+               <div id="panel3" class="content">
+<p>       
+Interview d'Alexandre Cherré, community manager à Nantes Métropole.<br>
+
+1) Est-ce que l'Open Data a été difficile à mettre en place dans votre collectivité ?<br>
+
+"L’Open Data nantais a démarré sous l’impulsion de Jean-Marc Ayrault en 2011 en lien avec l’association Libertic. L'objectif était d’améliorer les services aux habitants et de faciliter le développement d’applications innovantes. Une organisation dédiée a été mise en place afin de permettre l’ouverture d’une première version de la plateforme en quelques mois.
+Si Nantes n’était pas la première collectivité à ouvrir ses données, le sujet demeurait neuf et plusieurs questions, dont certaines exigeaient une réelle expertise, devaient être débattues : le choix de la licence sous laquelle les données seraient ouvertes, la question de la facturation ou de la gratuité des données libérées, le contrôle éventuel de la fiabilité des réutilisations, le choix ou non d’orienter les données ouvertes vers des services dont l’intérêt était préalablement identifié par la collectivité et les choix d’animation de la communauté de réutilisateurs (travail en coproduction avec l’association LiberTIC).
+À cela s’ajoutait la mise en œuvre d’un mode de pilotage adéquat permettant d’associer la Direction Générale et les directions compétentes sur les divers sujets concernés (informatique, communication, innovation, promotion, thématiques)."
+
+2) quels sont les usages des données libérées ?<br>
+
+"Les données libérées par Nantes l’ont été selon 3 thématiques prioritaires : la mobilité en liaison avec l’optimisation de la politique de déplacements sur l’agglomération, l’environnement avec Nantes Capitale Verte 2013, la culture et le tourisme en association avec les événements Voyage à Nantes.
+À ces trois thématiques prioritaires initialement définies est venue s’ajouter celle du budget que Nantes a ouvert dès 2012.
+L’appel à projets « Rendez-moi la ville plus facile » organisé en 2012 par Nantes a permis de se rendre compte de la diversité des réutilisations possibles puisque 121 dossiers de candidatures avaient été déposés à cette occasion (dont 52 % en provenance des particuliers et des associations, 26 % d’entreprises et 22 % d’étudiants).
+Les principales réutilisations connues par nos services concernent principalement les données de mobilité, notamment grâce à des développements d’applications mobiles (Statiophone, Naoned Bus, Open Nantes). Elles s’appuient en général sur les flux de données mis à jour en temps réel sur la plateforme Open Data qui donnent le nombre de places disponibles dans les parkings publics, des temps de parcours sur des tronçons de l’agglomération ou encore des informations de fluidité du trafic routier."<br>
+
+3) Pensez-vous que cela puisse intéresser les citoyens ?<br>
+
+"L’ouverture des données permet de développer le tissu économique local et d’améliorer les services rendus aux usagers et entreprises du territoire. L’objectif de la démarche Open Data est un choix politique et répond à un enjeu de transparence et une certaine conception de coconstruction de la ville : la transmission, le partage et la réutilisation de ces données dématérialisées favorisent, à terme, l’innovation et l’activité tout en améliorant la vie quotidienne des habitants. Il est vrai que le <a href="http://data.nantes.fr">portail Open Data</a> ne connaît pas l’affluence d’un site grand public. Toutefois, le forum mis à disposition, les événements organisés autour de la démarche et le nombre de services développés laisse à penser que cette démarche intéresse de plus en plus les citoyens. Les récentes ouvertures de données sur les résultats des précédents scrutins électoraux à Nantes ou sur les bureaux de vote alimentent par exemple les travaux d’associations, de collectifs et de citoyens dans la perspective du prochain scrutin municipal."<br>
+
+4) Quelles sont les données, les thématiques qui intéressent le plus ?<br>
+
+"Les données les plus téléchargées sont celles de la thématique ‘Mobilité’ (localisation des équipements publics, services – horaires - tarifs, données TAN), et plus particulièrement les flux de données temps réel qui se prêtent bien au développement de services mobiles innovants. Mais les données ouvertes dans la thématique ‘Environnement’ suscitent également de nombreux accès (déchèteries, jours de collecte des déchets, tri’sac)."<br>
+
+5) Qu'est-ce qu'il faudrait faire pour améliorer la démarche Open Data ?<br>
+
+"Les pistes d’amélioration de la démarche Open Data sont les suivantes : développer d’avantage l’ouverture des données auprès du plus grand nombre de villes, métropole et collectivités locales, améliorer l’interopérabilité des données ouvertes par différents acteurs du territoire afin que les services développés aient une portée qui ne soit pas uniquement locale, renforcer les animations autour des données libérées sur le territoire et les relations avec les réutilisateurs de nos données, répondre plus efficacement aux demandes des citoyens et optimiser les circuits de production et de mise à jour des données, pérenniser les applications et les services développés autour des données ouvertes (modèle économique à trouver)."<br>
+
+6) Et concrètement quelles est votre mission aujourd'hui ?<br>
+
+"C’est dans ce contexte que Nantes Métropole et la Ville de Nantes font partie des membres fondateurs de la récente association Open Data France (http://opendatafrance.net) dont la mission est de regrouper et soutenir les collectivités engagées activement dans une démarche d’ouverture des données publiques et de favoriser toutes les démarches entreprises par ces collectivités dans le but de la promotion de l’open data en France."<br>
+
+A noter que le portail Open data a valu aux collectivités le prix Gazette des Communes, remis en novembre dernier.﻿</p>
+               </div>
+            </dd>
+         </dl>
       </div>
    </div>
    
-   <div id="page9" class="page row bg-blue">
+   <a name="page9"></a>
+   <div data-magellan-destination="page9" id="page9" class="page row bg-blue">
    
       <h2 class="title">l'open data en application</h2>
       <div class="small-12 medium-5 large-5 columns">
@@ -208,7 +290,7 @@
             <img src="img/logo_foglo.png" alt="foglo logo"/>
          </a>
          <p>
-            application web gratuite qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, Tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
+            application web gratuite et nantaise qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, Tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
          </p>
 
          <a href="http://www.handimap.org/">
@@ -228,7 +310,42 @@
       
       <div class="small-12 medium-8 large-8 columns">
          <p class="content-footer">
-         &copy; Nom prénom etc..
+        Terri(s)toires :
+
+Capucine Saez 
+journaliste et coordinatrice 
+<br>
+SciencesCom :
+
+Anne-Lise Vinet
+journaliste et coordinatrice
+
+Marguerite de Crécy
+journaliste
+
+Élise Béthus
+journaliste
+
+Sophie Frappier
+journaliste
+
+<br>
+Polytech'Nantes :
+
+Florent Guillemot
+développeur
+
+Vladimir Bagazov
+développeur
+
+<br>
+AGR :
+
+Flavien Fruneau
+graphiste
+
+Paul Le Grix
+graphiste﻿
          </p>
       </div>
       
@@ -252,10 +369,7 @@
      // pixels from the top of destination for it to be considered active
      destination_threshold: 20,
      // calculation throttling to increase framerate
-     throttle_delay: 50,
-     tooltips: {
-      touch_close_text: 'appuyer pour fermer'
-     }
+     throttle_delay: 50
   });
   
    // chargement des données pour la carte de france
@@ -354,12 +468,7 @@
       genererdataviz(montab, 1, 2);
    });
    
-   // menu animé
-   $(function() {
-    $('nav').bind('click', 'a', function(event) {
-        $.scrollTo(event.target.hash, 250);
-    });
-   });
+   
    
   </script>
   </body>
