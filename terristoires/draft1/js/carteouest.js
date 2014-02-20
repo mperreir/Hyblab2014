@@ -1,6 +1,34 @@
 var diviseur=4;
-var ListeDepartements=['finistere', 'morbihan', 'cotearmor',  "ile-et-vilaine", "loire-atlantique", "vendee", "maine-et-loire",  "mayenne", "sarthe"];
+var grandouestar = new Array();
+var ListeDepartements=new Array();
+var NomVilleprincipaleDpt=new Array();
+var NBDonneVilleprincipaleDpt=new Array();
+var NBdonneDepartements=new Array();
 
+function initialiseouest(grandouestar)
+{
+ListeDepartements=grandouestar[0];
+console.log(ListeDepartements);
+
+NomVilleprincipaleDpt=grandouestar[1];
+console.log(NomVilleprincipaleDpt);
+NBDonneVilleprincipaleDpt=grandouestar[2];
+NBdonneDepartements=grandouestar[3];
+}
+
+
+$.ajax( "data/grandouest.csv" )
+.done(function(grandouestcsv) {
+grandouestar = csv2array(grandouestcsv);
+initialiseouest(grandouestar);
+});
+
+
+
+//var ListeDepartements=['finistere', 'morbihan', 'cotearmor',  "ile-et-vilaine", "loire-atlantique", "vendee", "maine-et-loire",  "mayenne", "sarthe"];
+//var NomVilleprincipaleDpt=['Brest', 'Vannes', "Côtes d'Armor",  "Rennes", "Nantes", "La Roche sur Yon", "Angers",  "Laval", "Le Mans"];
+//var NBDonneVilleprincipaleDpt=[10, 0, 0,  168, 96, 0, 81,  0, 23];
+//var NBdonneDepartements=[0, 0, 0, 0, 196, 0, 74, 0, 0];
 
 
 jQuery(function($){
@@ -8,7 +36,7 @@ $('.map').append('<div class="overlay">');
 $('.map area').mouseover(function(){
 var index= $(this).index();
 var left= -index * 1445/diviseur - 1450/diviseur;
-loadimageouest(index);
+loadinfoouest(index);
 $('.map .overlay').css({
 	backgroundPosition : left+"px"
 });
@@ -42,10 +70,33 @@ for (var i=0; i<ListeDepartements.length; i++)
 	im.src="img/"+ListeDepartements[i]+".svg";
 }
 
+
 function loadimageouest(iddept)
 {
-
-$("#departementselection").attr("src", "img/"+ListeDepartements[iddept]+".svg");
-$("#nomdepartementselection").html(ListeDepartements[iddept]);
+	//image département
+	$("#departementselection").attr("src", "img/"+ListeDepartements[iddept]+".svg");
+	// Nom département
+	$("#nomdepartementselection").html("<h4>"+ListeDepartements[iddept].toUpperCase()+"</h4>");
 }
+
+
+function loadinfoouest(iddept)
+{
+	loadimageouest(iddept);
+	if ( NBdonneDepartements[iddept]!=0)
+		$("#infodepartementselection").html("<h4>Nombre de données de la région : " + NBdonneDepartements[iddept]+"</h4>");
+	else
+		$("#infodepartementselection").html("");
+
+
+if ( NBDonneVilleprincipaleDpt[iddept]!=0)
+		$("#infovilledepartementselection").html("Nombre de données de la ville de " + NomVilleprincipaleDpt[iddept]+" : " + NBDonneVilleprincipaleDpt[iddept]+"");
+	else
+		$("#infovilledepartementselection").html("");
+ 
+}
+
+
+
+
 
