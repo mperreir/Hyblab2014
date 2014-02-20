@@ -73,9 +73,24 @@ p:first-letter {
    text-transform:capitalize;
 }
 
+/*menu*/
+nav {
+   z-index:20;
+   position:fixed;
+   top:20%;
+   left:1%;
+}
+nav img{
+   width:40px;
+   border:none;
+}
 
+nav span{
+   border:none;
+}
 
 .page {
+   padding:5%;
 }
 
 #page1 {
@@ -103,7 +118,7 @@ p:first-letter {
 
 #page4 h2{
    display:block;
-   height:200px;;
+   height:50px;;
 }
 
 .villes {
@@ -133,13 +148,13 @@ p:first-letter {
    display:block;
    margin:auto;
    width:50%;
-   margin-bottom:10%;
+   margin-bottom:5%;
 }
 .shadow-page5 {
    display:block;
    margin:auto;
    width:40%;
-   margin-bottom:10%;
+   margin-bottom:5%;
 }
 
 #page5 table{
@@ -154,8 +169,6 @@ p:first-letter {
 	margin: 0; 
 	line-height: 0px;
 	color:white;
-
-
 }
 #page5 table tr
 {
@@ -182,7 +195,7 @@ p:first-letter {
 
 #page9 img {
    display:block;
-   margin:10% auto;
+   margin:3% auto;
 }
 
 #page9 p {
