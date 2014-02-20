@@ -199,7 +199,7 @@ function genererdataviz(data, idville1, idville2)
 	// left
 	arrayLignes[i].cells[2].innerHTML='<div id="dataviz-'+idville2+'-cr'+i+'" style="background: '+coul[(i-1)%4]+' right; height:100%; width:0%; ">'+data[i][idville2]+'</div>';
 	
-	
+
 	$('#dataviz-'+idville1+'-cr'+i).animate({'width': data[i][idville1]+'%'},750);
 	$('#dataviz-'+idville2+'-cr'+i).animate({'width': data[i][idville2]+'%'},750);
 

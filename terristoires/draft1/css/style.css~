@@ -27,6 +27,7 @@
 body {
    color:#ffffff;
    font-family:'brandonLight';
+   z-index:10;
 }
 
 .title {
@@ -43,7 +44,7 @@ h1 {
    
 }
 h2 {
-   padding-top:3%;
+   padding-top:1%;
    font-family:'brandonRegular';
    font-size:1.2em;
 }
@@ -61,6 +62,10 @@ h4 {
 	color:#ffffff;
    font-family:'brandonRegular';
    font-size:1.5em;
+   margin:0px;
+}
+h5 {
+   color:#ffffff;
 }
 
 p {
@@ -76,7 +81,7 @@ p:first-letter {
 /*menu*/
 #menu-fixed {
    background-color:argb(255,255,255,0);
-   z-index:20;
+   z-index:5;
 }
 #menu-fixed img{
    border:none;
@@ -84,6 +89,10 @@ p:first-letter {
 
 #menu-fixed dd {
    background:url('../img/ptvide.png') center no-repeat;
+}
+#menu-fixed dl {
+   display:block;
+   margin:auto;
 }
 
 #menu-fixed a{
@@ -176,8 +185,7 @@ p:first-letter {
 	border-width:0px;
 	margin-top: 0; 
 	margin-bottom: 0; 
-	margin: 0; 
-	line-height: 0px;
+	margin: 0;
 	color:white;
 }
 #page5 table tr
@@ -185,11 +193,9 @@ p:first-letter {
 	background: rgba(255,255,255,0);
 }
 
-#page5 table td
-{
-	width:10%;
+#page5 table td {
+   padding:0px;
 }
-
 
 #page6 {
    background-position:center;
@@ -251,8 +257,5 @@ Footer
    background-color:#a19a94;
 }
 .bg-red {
-   background-color:#f09ba0;
-}
-.accordion div {
    background-color:#f09ba0;
 }
