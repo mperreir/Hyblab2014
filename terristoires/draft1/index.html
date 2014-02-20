@@ -12,6 +12,7 @@
     <script src="js/foundation/foundation.js"></script>
     <script src="js/foundation/foundation.dropdown.js"></script>
     <script src="js/foundation/foundation.tooltip.js"></script>
+    <script src="js/foundation/foundation.magellan.js"></script>
     <!-- Partie du fait maison -->
     <script src="js/vendor/round-chart.js"></script>
     <script src="js/vendor/maps-france.js"></script>
@@ -20,14 +21,22 @@
   <body>
   
    <nav>
-   
+      <a href="#page1"><img data-tooltip class="has-tip tip-right" title="début" src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début" href="#page2"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a><br>
+      <a data-tooltip class="has-tip tip-right" title="début"><img src="img/ptvide.svg"/></a><br>
+      <a data-magellan-destination="page9" data-tooltip class="has-tip tip-right" title="a"><img src="img/ptvide.svg"/></a>
    </nav>
 
    <div id="page1" class="page row bg-green">
       <div class="columns small-12 large-12 columns">
          <div id="main-title">
             <h1 class="title">open data</h1>
-            <h3 class="title">ou en est l'ouest ?</h3>
+            <h3 class="title">où en est l'ouest ?</h3>
          </div>
       </div>
    </div>
@@ -49,6 +58,7 @@
          <img src="img/carte-France-page3.svg" alt="maps of France"/>
       </div>
       <div class="small-12 medium-3 large-3 columns" id="side-page3">
+         <p>Cliquer sur la ville pour obtenir plus d'information</p>
          <ul class="small-block-grid-2 medium-block-grid-1 large-block-grid-1">
             <li>
                <img src="img/pictogramme-nombre-d-habitant-page3.svg" alt="picture face of one people"/><br/>
@@ -94,7 +104,7 @@
    </div>
    
    <div id="page5" class="page row bg-gray">
-      <h2 class="title">thématique des jeux de données</h2>
+      <h2 class="title">thématiques des jeux de données</h2>
 
       <div class="small-12 medium-12 large-12 columns">
 		
@@ -161,13 +171,12 @@
             <iframe src="//www.youtube.com/embed/Qu6SuzxMWNM" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
          </div>
          <p>
-            <img src="img/facebook.svg" alt="face"/>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, 
+            Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open data dans l'Ouest.
          </p>
       </div>
    </div>
    
-   <div id="page9" class="page row bg-blue">
+   <div data-magellan-destination="page9" id="page9" class="page row bg-blue">
    
       <h2 class="title">l'open data en application</h2>
       <div class="small-12 medium-5 large-5 columns">
@@ -175,14 +184,14 @@
             <img src="img/logo_rengo.png" alt="rengo logo"/>
          </a>
          <p>
-            application mobile gratuite qui indique en temps réel, les horaires et disponibilités de nombreux services de transports rennais (trains, bus, vélos, parkings, etc.). Cette application est également disponible pour les villes de Nantes, Bordeaux, Strasbourg...
+            application mobile gratuite qui indique en temps réel les horaires et disponibilités de nombreux services de transports rennais (trains, bus, vélos, parkings, etc.). Cette application est également disponible pour les villes de Nantes, Bordeaux, Strasbourg...
          </p>
          
          <a href="https://play.google.com/store/apps/details?id=net.naonedbus&hl=fr">
             <img src="img/logo_naonedbus.png" alt="naoned bus logo"/>
          </a>
          <p>
-            application mobile gratuite pour Android permettant de consulter les horaires des transports nantais (réseau Tan, disponibilité des bicloos et parkings de la ville.).
+            application mobile gratuite pour Android permettant de consulter les horaires des transports nantais (réseau Tan, disponibilité des bicloos et parkings de la ville).
          </p>
       </div>
       <div class="large-2 medium-2 columns">
@@ -193,7 +202,7 @@
             <img src="img/logo_foglo.png" alt="foglo logo"/>
          </a>
          <p>
-            application web gratuite qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
+            application web gratuite qui fournit aux utilisateurs un tableau de bord regroupant divers services (météo, Tan, parkings, qualité de l'air, twitter, facebook, rss, ...).
          </p>
 
          <a href="http://www.handimap.org/">
