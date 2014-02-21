@@ -71,8 +71,8 @@ h5 {
 
 p {
    text-align:justify;
-   font-family:'brandonMed';
-   font-size:1em;
+   font-family:'brandonRegular';
+   font-size:1.2em;
 }
 
 p:first-letter {

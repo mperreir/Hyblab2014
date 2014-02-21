@@ -47,7 +47,7 @@ h1 {
 h2 {
    padding-top:0px;
    font-family:'brandonRegular';
-   font-size:1.2em;
+   font-size:1.3em;
 }
 
 /* sub of big title */
@@ -72,7 +72,7 @@ h5 {
 p {
    text-align:justify;
    font-family:'brandonRegular';
-   font-size:1em;
+   font-size:1.2em;
 }
 
 p:first-letter {
