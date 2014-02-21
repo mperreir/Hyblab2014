@@ -8,10 +8,8 @@ var NBdonneDepartements=new Array();
 function initialiseouest(grandouestar)
 {
 ListeDepartements=grandouestar[0];
-console.log(ListeDepartements);
 
 NomVilleprincipaleDpt=grandouestar[1];
-console.log(NomVilleprincipaleDpt);
 NBDonneVilleprincipaleDpt=grandouestar[2];
 NBdonneDepartements=grandouestar[3];
 }

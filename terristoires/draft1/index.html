@@ -10,23 +10,28 @@
   </head>
   <body>
   
-   <div data-magellan-expedition="fixed" id="menu-fixed">
-      <dl class="sub-nav">
-         <dd data-magellan-arrival="page1"><a href="#page1" data-tooltip class="has-tip tip-bottom" title="État des lieux de l'open data"> </a></dd>
-         <dd data-magellan-arrival="page2"><a href="#page2" data-tooltip class="has-tip tip-bottom" title="L'open data en question"> </a></dd>
-         <dd data-magellan-arrival="page3"><a href="#page3" data-tooltip class="has-tip tip-bottom" title="Les collectivités de l'Ouest jouent le jeu"> </a></dd>
-         <dd data-magellan-arrival="page4"><a href="#page4" data-tooltip class="has-tip tip-bottom" title="Nombre de données disponibles"> </a></dd>
-         <dd data-magellan-arrival="page5"><a href="#page5" data-tooltip class="has-tip tip-bottom" title="Comparateur de thématiques"> </a></dd>
-         <dd data-magellan-arrival="page6"><a href="#page6" data-tooltip class="has-tip tip-bottom" title="Et l'ouest"> </a></dd>
-         <dd data-magellan-arrival="page7"><a href="#page7" data-tooltip class="has-tip tip-bottom" title="Grand ouest"> </a></dd>
-         <dd data-magellan-arrival="page8"><a href="#page8" data-tooltip class="has-tip tip-bottom" title="Interviews"> </a></dd>
-         <dd data-magellan-arrival="page9"><a href="#page9" data-tooltip class="has-tip tip-bottom" title="L'open data en application"> </a></dd>
-      </dl>
+  <!-- NE PAS AJOUTER D'ÉlÉMENTS ICI -->
+   <div data-magellan-expedition="fixed" id="menu-fixed" class="show-for-medium-up">
+      <div class="row" style="width:100%;">
+         <div class="columns large-9 medium-9 large-centered medium-centered">
+            <dl class="sub-nav">
+               <dd data-magellan-arrival="page1"><a href="#page1" data-tooltip class="has-tip tip-bottom" title="État des lieux de l'open data"> </a></dd>
+               <dd data-magellan-arrival="page2"><a href="#page2" data-tooltip class="has-tip tip-bottom" title="L'open data en question"> </a></dd>
+               <dd data-magellan-arrival="page3"><a href="#page3" data-tooltip class="has-tip tip-bottom" title="L'Open Data des métropoles françaises"> </a></dd>
+               <dd data-magellan-arrival="page4"><a href="#page4" data-tooltip class="has-tip tip-bottom" title="Nombre de données disponibles"> </a></dd>
+               <dd data-magellan-arrival="page5"><a href="#page5" data-tooltip class="has-tip tip-bottom" title="Comparateur de thématiques"> </a></dd>
+               <dd data-magellan-arrival="page6"><a href="#page6" data-tooltip class="has-tip tip-bottom" title="Et l'ouest"> </a></dd>
+               <dd data-magellan-arrival="page7"><a href="#page7" data-tooltip class="has-tip tip-bottom" title="Grand ouest"> </a></dd>
+               <dd data-magellan-arrival="page8"><a href="#page8" data-tooltip class="has-tip tip-bottom" title="Interviews"> </a></dd>
+               <dd data-magellan-arrival="page9"><a href="#page9" data-tooltip class="has-tip tip-bottom" title="L'open data en application"> </a></dd>
+            </dl>
+         </div>
+      </div>
    </div>
 
    <a name="page1"></a>
    <div data-magellan-destination="page1" id="page1" class="page row bg-green">
-      <div class="columns small-12 large-12 columns">
+      <div class="small-12 large-12 columns">
          <div id="main-title">
             <h1 class="title">open data</h1>
             <h3 class="title">où en est l'ouest ?</h3>
@@ -42,12 +47,16 @@
          <div class="flex-video">
             <iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
          </div>
+         <p>
+         "Un vent d'ouverture s'est profilé sur quelques zones de France depuis quelques années. Rennes, capitale bretonne, a été l'une des premières à ouvrir ses données publiques. Depuis, qu'en est-il de l'Open Data dans le Grand Ouest ? Est-ce que la taille des villes est déterminante dans la décision de libérer massivement les données ? Quelles sont les thématiques phares ? Et quels types d'applications ont été crées et sur quels supports ?
+C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartographiée permettant de visualiser cette avancée des collectivités dans le numérique citoyen."
+         </p>
       </div>
    </div>
    
    <a name="page3"></a>
    <div data-magellan-destination="page3" id="page3" class="page row bg-gray">
-      <h2 class="title">les collectivités de l'Ouest jouent le jeu</h2>
+      <h2 class="title">l'Open Data des métropoles françaises</h2>
       <div class="small-12 medium-9 large-9 columns" id="carteDeFrance">
          <img src="img/carte-France-page3.svg" alt="maps of France"/>
       </div>
@@ -144,6 +153,9 @@
 		
 		<div class="small-12 large-6 medium-6 columns">
 
+         <p style="font-weight:1.2em">
+            cliquer sur les départements pour afficher les informations
+         </p>
 			<div class="map">
 			<img src="img/vide.png" width="362" height="248" border="0" usemap="#mapouest" />
 
@@ -177,7 +189,7 @@
                <a href="#panel1">Aller vers une plus grande ouverture</a> 
                <div id="panel1" class="content active vide">
                   <div class="flex-video">
-                     <iframe src="//www.youtube.com/embed/Qu6SuzxMWNM" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
+                     <iframe src="//www.youtube.com/embed/kQbtz7zlTUw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
                   </div>
                   <p>
                      Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open data dans l'Ouest.
@@ -375,6 +387,17 @@ graphiste﻿
 
    // hack de foundation sans passer par sass
    $('.content').css('background-color','#f09ba0');
+   $('.content a').css('background-color','#f09ba0');
+   $('#menu-index:eq(2)').css({
+      'display':'none',
+      'opacity':'0'
+   });
+   // barre qui bouge
+   $('#menu-index:eq(1)').css({
+      'margin':'auto',
+      'display':'block',
+      'background-color':'#cbe3cb'
+   });
    
    // chargement des données pour la carte de france
    var map = new MapsFrance('#carteDeFrance');

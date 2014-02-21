@@ -28,6 +28,7 @@ body {
    color:#ffffff;
    font-family:'brandonLight';
    z-index:10;
+   background-color:argb(255,255,255,0);
 }
 
 .title {
@@ -70,8 +71,8 @@ h5 {
 
 p {
    text-align:justify;
-   font-family:'brandonMed';
-   font-size:0.9em;
+   font-family:'brandonRegular';
+   font-size:1em;
 }
 
 p:first-letter {
@@ -79,10 +80,6 @@ p:first-letter {
 }
 
 /*menu*/
-#menu-fixed {
-   background-color:argb(255,255,255,0);
-   z-index:5;
-}
 #menu-fixed img{
    border:none;
 }
@@ -101,6 +98,10 @@ p:first-letter {
 
 #menu-fixed .active a{
    background:url('../img/ptplein.png') center no-repeat ;
+}
+
+[data-magellan-expedition] {
+   background-color:#cbe3cb;
 }
 
 .has-tip {
