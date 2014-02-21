@@ -47,7 +47,7 @@ h1 {
 h2 {
    padding-top:0px;
    font-family:'brandonRegular';
-   font-size:1.2em;
+   font-size:1.3em;
 }
 
 /* sub of big title */
@@ -249,10 +249,10 @@ Footer
 
 /* color of background */
 .bg-green {
-   background-color:#cbe3cb;
+   background-color:#B6D8B6;
 }
 .bg-blue {
-   background-color:#afdef2;
+   background-color:#5FA8A5;
 }
 .bg-gray {
    background-color:#a19a94;
