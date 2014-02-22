@@ -6,6 +6,8 @@ var MapsFrance = function(el) {
    var option = new Object();
    option.srcpoint = 'img/Point.svg';
    option.altpoint = 'point situant une ville';
+   option.zindex = 1000;
+   option.maxWidthPoint = 30;
    option.onclick = function(evt){
    
       var ville = $(this).attr('data-ville');
@@ -40,8 +42,11 @@ var MapsFrance = function(el) {
       $(point).css('position','absolute');
       $(point).css('display','block');
       
-      // ratio : 20px -> 1000px
-      $(point).css('width',(28*$(document).width()/1000)+'px');
+      widthPoint = option.maxWidthPoint*$(document).width()/1000;
+      if($(document).width() > 1000) {
+         widthPoint = option.maxWidthPoint;
+      }
+      $(point).css('width',widthPoint+'px');
       $(point).css('opacity',0);
       
       // point affiche le nom on hover
@@ -49,9 +54,6 @@ var MapsFrance = function(el) {
       $(point).attr('class','has-tip tip-top');
       $(point).attr('data-tooltip','');
       $(point).attr('data-ville',name);
-      
-      
-      
       
       // valeur étalon : nantes
       // latidude 47.218371
@@ -67,13 +69,19 @@ var MapsFrance = function(el) {
       
       $(point).css('left',left+'%');
       $(point).css('bottom',100+'%');
+      $(point).attr('data-ville-bottom',bottom);
 
       // ajout du point sur la map
       map.append(point);
-      
-      // animation d'apparition
-      $(point).animate({'opacity':1,'bottom':bottom+'%'},1000);
    }
+   
+   // lance l'animation sur les points
+   this.launchAnimate = function() {
+      map.find('.has-tip').each(function() {
+         var bottom = $(this).attr('data-ville-bottom');
+         $(this).animate({'opacity':1,'bottom':bottom+'%'},1000);
+      });
+   };
    
    /**
     * Supprime tous les points
