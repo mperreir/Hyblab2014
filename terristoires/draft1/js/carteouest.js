@@ -15,15 +15,15 @@ NBdonneDepartements=grandouestar[3];
 }
 
 
-$.ajax( "data/grandouest.csv" )
-.done(function(grandouestcsv) {
-grandouestar = csv2array(grandouestcsv);
-initialiseouest(grandouestar);
+$.ajax( "data/grandouest.csv" ).done(function(grandouestcsv) {
+
+   grandouestar = csv2array(grandouestcsv);
+   initialiseouest(grandouestar);
 });
 
 
 
-//var ListeDepartements=['finistere', 'morbihan', 'cotearmor',  "ile-et-vilaine", "loire-atlantique", "vendee", "maine-et-loire",  "mayenne", "sarthe"];
+//var ListeDepartements=['finistere', 'morbihan', 'cotearmor',  "ile-et-vilaine", "loire-atlantique", "vendee", "maine-et-loire","mayenne", "sarthe"];
 //var NomVilleprincipaleDpt=['Brest', 'Vannes', "Côtes d'Armor",  "Rennes", "Nantes", "La Roche sur Yon", "Angers",  "Laval", "Le Mans"];
 //var NBDonneVilleprincipaleDpt=[10, 0, 0,  168, 96, 0, 81,  0, 23];
 //var NBdonneDepartements=[0, 0, 0, 0, 196, 0, 74, 0, 0];
@@ -71,8 +71,17 @@ for (var i=0; i<ListeDepartements.length; i++)
 
 function loadimageouest(iddept)
 {
+   var imgDep = {"finistère":"finistere",
+   "morbihan":"morbihan",
+   "côte d'armor":"cotearmor",
+   "ille et vilaine":"ile-et-vilaine",
+   "loire atlantique":"loire-atlantique",
+   "vendée":"vendee",
+   "maine et loire":"maine-et-loire",
+   "mayenne":"mayenne",
+   "sarthe":"sarthe"};
 	//image département
-	$("#departementselection").attr("src", "img/"+ListeDepartements[iddept]+".svg");
+	$("#departementselection").attr("src", "img/"+imgDep[ListeDepartements[iddept]]+".svg");
 	// Nom département
 	$("#nomdepartementselection").html("<h4>"+ListeDepartements[iddept].toUpperCase()+"</h4>");
 }
