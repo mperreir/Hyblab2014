@@ -466,6 +466,8 @@ graphiste﻿
             for(i=0;i<dataVille.length;i++) {
                map.addPoint(dataVille[i].latitude,dataVille[i].longitude,dataVille[i].nom);
             }
+            
+            map.launchAnimate();
          });
       }
    },function() {});
