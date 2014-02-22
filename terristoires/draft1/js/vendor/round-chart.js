@@ -22,7 +22,7 @@ var CanvasRenderer = function(el) {
    $(".villes").css("width",options.size/2);
    $(el).css("height",options.size);
    
-   options.lineWidth = 10;
+   options.lineWidth = 12;
    options.easing =function (x, t, b, c, d) { // more can be found here: http://gsgd.co.uk/sandbox/jquery/easing/
 	      t = t / (d/2);
 	      if (t < 1) {
@@ -73,13 +73,13 @@ var CanvasRenderer = function(el) {
       ctx.beginPath();
       ctx.arc(0, 0, radius, 0, Math.PI * 2 * (percent1*75/100), false);
       ctx.strokeStyle = '#6BB0AF';
-      ctx.lineWidth = lineWidth +8;
+      ctx.lineWidth = lineWidth;
       ctx.stroke();
       
       ctx.beginPath();
       ctx.arc(0, 0, radius - 30, 0, Math.PI * 2 * (percent2*75/100), false);
       ctx.strokeStyle = '#EBE9E4';
-      ctx.lineWidth = lineWidth+2;
+      ctx.lineWidth = lineWidth;
       ctx.stroke();
       
       ctx.beginPath();
@@ -91,7 +91,7 @@ var CanvasRenderer = function(el) {
       ctx.beginPath();
       ctx.arc(0, 0, radius - 90, 0, Math.PI * 2 * (percent4*75/100), false);
       ctx.strokeStyle = '#F7DE8C';
-      ctx.lineWidth = lineWidth-2;
+      ctx.lineWidth = lineWidth;
       ctx.stroke();
    };
    

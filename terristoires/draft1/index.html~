@@ -12,13 +12,13 @@
   
   <!-- NE PAS AJOUTER D'ÉlÉMENTS ICI -->
    <div data-magellan-expedition="fixed" id="menu-fixed" class="show-for-medium-up">
-      <div class="row" style="width:100%;">
+      <div class="row">
          <div class="columns large-9 medium-9 large-centered medium-centered">
             <dl class="sub-nav">
-               <dd data-magellan-arrival="page1"><a href="#page1" data-tooltip class="has-tip tip-bottom" title="État des lieux de l'open data"> </a></dd>
+               <dd data-magellan-arrival="page1"><a href="#page1" data-tooltip class="has-tip tip-bottom" title="État des lieux de l'Open Data"> </a></dd>
                <dd data-magellan-arrival="page22"><a href="#page22" data-tooltip class="has-tip tip-bottom" title="Introduction sur l'Open Data"> </a></dd>
                <dd data-magellan-arrival="page2"><a href="#page2" data-tooltip class="has-tip tip-bottom" title="L'open data en question"> </a></dd>
-               <dd data-magellan-arrival="page3"><a href="#page3" data-tooltip class="has-tip tip-bottom" title="L'Open Data des métropoles françaises"> </a></dd>
+               <dd data-magellan-arrival="page3"><a href="#page3" data-tooltip class="has-tip tip-bottom" title="L'Open Data de métropoles françaises"> </a></dd>
                <dd data-magellan-arrival="page4"><a href="#page4" data-tooltip class="has-tip tip-bottom" title="Nombre de données disponibles"> </a></dd>
                <dd data-magellan-arrival="page5"><a href="#page5" data-tooltip class="has-tip tip-bottom" title="Comparateur de thématiques"> </a></dd>
                <dd data-magellan-arrival="page6"><a href="#page6" data-tooltip class="has-tip tip-bottom" title="Et l'ouest"> </a></dd>
@@ -86,7 +86,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
    
    <a name="page3"></a>
    <div data-magellan-destination="page3" id="page3" class="page row bg-gray">
-      <h2 class="title">l'Open Data des métropoles françaises</h2>
+      <h2 class="title">l'Open Data de métropoles françaises</h2>
       <div class="small-12 medium-9 large-9 columns" id="carteDeFrance">
          <img src="img/carte-France-page3.svg" alt="maps of France"/>
       </div>
@@ -103,7 +103,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
             </li>
             <li>
                <img src="img/pictogramme-nombre-de-donnees-par-habitants-page3.svg" alt="two arrow"/><br/>
-               <span id="picto-ratio-hab">0</span> jeux de données pour 100 000 habitant
+               <span id="picto-ratio-hab">0</span> jeux de données pour 100 000 habitants
             </li>
             <li>
                <img src="img/pictogramme-thematique-des jeux-de-donnees-page3.svg" alt="house with two tree"/><br/>
@@ -114,11 +114,6 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
       <p>sélection des villes non exhaustive</p>
       <p>Les jeux de données des villes sélectionnées proviennent du site data.gouv qui offre des données d’envergure nationale.
       Ces villes ont été retenues pour leur ressemblance démographique avec les villes de Nantes, Rennes, Angers ou du Mans.</p>
-
-
-
-
-
    </div>
    
    <a name="page4"></a>
@@ -171,32 +166,13 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
    <a name="page7"></a>
    <div data-magellan-destination="page7" id="page7" class="page row bg-green">
 		<h2 class="title">grand ouest</h2>
-		<div class="small-12 large-6 medium-6 columns">
-		   <H4 id="nomdepartementselection" style="middle"></H4>
-	   	<div id="infodepartementselection" style="middle"></div>
-			<div style="position:relative">
-				<div style="position:absolute; top:4%; left:20%; ">
-					
-					<div style="position:absolute; top:0%; left:30%; ">
-					
-				</div>
-				</div>
-				
-				<img id="departementselection" src="img/cotearmor.svg" width="50%" height="50%"/>
-				<div id="infovilledepartementselection" style="middle"></div>
-			</div>
 		
-		</div>
-
-		
-		<div class="small-12 large-6 medium-6 columns">
-
+		<div class="small-12 medium-push-6 large-push-6 large-6 medium-6 columns">
          <p style="font-weight:1.2em">
             cliquer sur les départements pour afficher les informations
          </p>
 			<div class="map">
 			<img src="img/vide.png" width="362" height="248" border="0" usemap="#mapouest" />
-
 
 			<map name="mapouest">
 			<area id="dep-1" shape="poly" coords="23,208,40,119,112,86,243,56,289,79,294,60,353,82,355,272,305,298,319,358,382,369,386,395,338,421,340,471,318,445,253,425,236,408,173,401,173,420,107,419,122,383,21,309,23,289,150,291,135,253,84,244,76,205,127,209,120,162" onclick="loadimageouest(0)" />
@@ -210,9 +186,21 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
 			<area  id="dep-9" shape="poly" coords="1158,451,1295,519,1333,526,1453,397,1453,324,1420,296,1392,293,1345,260,1338,258,1338,218,1314,205,1268,237,1210,251,1215,289,1183,377" onclick="loadimageouest(8)" />
 			</map>
 
-			
 			</div>
 		</div>
+		<div class="small-12 medium-pull-6 large-pull-6 large-6 medium-6 columns">
+		   <H4 id="nomdepartementselection" style="middle"></H4>
+	   	<div id="infodepartementselection" style="middle"></div>
+			<div style="position:relative">
+				<div style="position:absolute; top:4%; left:20%; ">
+					<div style="position:absolute; top:0%; left:30%; "></div>
+				</div>
+				<img id="departementselection" src="img/cotearmor.svg" width="50%" height="50%"/>
+				<div id="infovilledepartementselection" style="middle"></div>
+			</div>
+		</div>
+
+
       <p>Les informations recensées pour l’Ouest ont été collectées sur les plateformes Open Data de chacune des collectivités locales concernées.</p>
 	</div>
    
@@ -417,11 +405,6 @@ graphiste﻿
       </div>
    
    </footer>
-   
-   <div style="display:none;">
-      <a href="#" data-dropdown="drop" class="button dropdown">Dropdown Button</a><br> <ul id="drop" data-dropdown-content class="f-dropdown"> <li><a href="#">This is a link</a></li> <li><a href="#">This is another</a></li> <li><a href="#">Yet another</a></li> </ul>
-      <span data-tooltip class="has-tip" title="Tooltips are awesome, you should totally use them!">extended information</span>
-   </div>
   
    <script src="js/vendor/modernizr.js"></script>
     <script src="js/vendor/jquery.js"></script>
@@ -451,7 +434,7 @@ graphiste﻿
    // hack de foundation sans passer par sass
    $('.content').css({
       'background-color':'#f09ba0',
-      'text-align':'center'
+      'text-align':'justify'
    });
    $('.content a').css('background-color','#f09ba0');
    $('#menu-index:eq(2)').css({
