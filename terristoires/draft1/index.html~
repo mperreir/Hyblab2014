@@ -213,7 +213,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
 			
 			</div>
 		</div>
-      <p>Les informations recensées pour l’Ouest ont été collectées sur les plateformes Opendata de chacune des collectivités locales concernées.</p>
+      <p>Les informations recensées pour l’Ouest ont été collectées sur les plateformes Open Data de chacune des collectivités locales concernées.</p>
 	</div>
    
    <a name="page8"></a>
@@ -230,7 +230,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
                      <iframe src="//www.youtube.com/embed/kQbtz7zlTUw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
                   </div>
                   <p>
-                     Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open data dans l'Ouest.
+                     Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open Data dans l'Ouest.
                   </p>
                </div>
             </dd>
@@ -449,7 +449,10 @@ graphiste﻿
    });
 
    // hack de foundation sans passer par sass
-   $('.content').css('background-color','#f09ba0');
+   $('.content').css({
+      'background-color':'#f09ba0',
+      'text-align':'center'
+   });
    $('.content a').css('background-color','#f09ba0');
    $('#menu-index:eq(2)').css({
       'display':'none',
