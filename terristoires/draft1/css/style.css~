@@ -38,7 +38,7 @@ body {
 }
 
 h1 {
-   padding-top:20%;
+   padding-top:10%;
    font-family:'brandonLight';
    font-weight:bold;
    font-size:5em;
@@ -56,7 +56,6 @@ h3 {
    border-top:#ffffff solid 2px;
    margin-left:25%;
    margin-right:25%;
-   padding-top:2%;
 
 }
 h4 {
@@ -130,9 +129,6 @@ p:first-letter {
 #side-page3 {
    margin-top:10%;
 }
-#side-page3 img {
-   width:50%;
-}
 
 #carteDeFrance {
    margin-top:5%;
@@ -202,6 +198,44 @@ p:first-letter {
    background-position:center;
    background-image:url("../img/background-page6.svg");
    background-repeat:no-repeat ;
+}
+#page6 h1 {
+   padding-bottom:10%;
+}
+
+/* page7 */
+.map {
+	height:248px;
+	width:362px;
+	background :url("../img/ouest-decoup.png") left top no-repeat;
+	position:relative;
+}
+
+.map .overlay{
+	height:248px;
+	width:362px;
+	background :url("../img/ouest-decoup.png") 362px top no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+.map img{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+}
+
+
+#imagedepart {
+	height:10%;
+	width:10%;
+	position:absolute;
+	top:0;
+	left:0;
+
 }
 
 #page8 img{

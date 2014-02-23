@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>L'open data dans l'ouest</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -59,7 +59,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
          <div class="row">
             <div class="small-12 medium-6 large-6 large-centered medium-centered columns">
                <div class="flex-video">
-                  <iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
+                  <!--<iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>-->
                </div>
             </div>
          </div>
@@ -94,7 +94,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
          <ul class="small-block-grid-2 medium-block-grid-1 large-block-grid-1">
             <li>
                <img src="img/pictogramme-nombre-d-habitant-page3.svg" alt="picture face of one people"/><br/>
-               <span id="picto-nb-hab">0</span> habitants
+               <span id="picto-nb-hab">0</span> habitant<span id="add-s-habitant"></span>
             </li>
             <li>
                <img src="img/pictogramme-jeux-de-donnees-page3.svg" alt="chart"/><br/>
@@ -219,7 +219,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
                <a href="#panel1">Aller vers une plus grande ouverture</a> 
                <div id="panel1" class="content active vide">
                   <div class="flex-video">
-                     <iframe src="//www.youtube.com/embed/kQbtz7zlTUw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
+                     <!--<iframe src="//www.youtube.com/embed/kQbtz7zlTUw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>-->
                   </div>
                   <p>
                      Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open Data dans l'Ouest.
@@ -253,7 +253,7 @@ De plus, mettre en place des lieux et des parcours dédiés à la donnée, des I
             <dd>
                <a href="#panel3">La démarche Open Data à Nantes</a>
                <div id="panel3" class="content vide">
-<p>Interview d'Alexandre Cherré, community manager à Nantes Métropole.</p>
+<p>Interview d'Alexandre Cherré et son équipe, community manager à Nantes Métropole.</p>
 
 <h5>Est-ce que l'Open Data a été difficile à mettre en place dans votre collectivité ?</h5>
 
@@ -304,7 +304,7 @@ Les principales réutilisations connues par nos services concernent principaleme
             application mobile gratuite qui indique en temps réel les horaires et disponibilités de nombreux services de transports rennais (trains, bus, vélos, parkings, etc.). Cette application est également disponible pour les villes de Nantes, Bordeaux, Strasbourg...
          </p>
          
-         <a href="https://play.google.com/store/apps/details?id=net.naonedbus&hl=fr">
+         <a href="https://play.google.com/store/apps/details?id=net.naonedbus&amp;hl=fr">
             <img src="img/logo_naonedbus.png" alt="naoned bus logo"/>
          </a>
          <p>
@@ -410,19 +410,14 @@ graphiste﻿
    </footer>
   
    <script src="js/vendor/modernizr.js"></script>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/jquery.scrollto.js"></script>
-    <script src="js/foundation/foundation.js"></script>
-    <script src="js/foundation/foundation.dropdown.js"></script>
-    <script src="js/foundation/foundation.tooltip.js"></script>
-    <script src="js/foundation/foundation.magellan.js"></script>
-    <script src="js/foundation/foundation.accordion.js"></script>
-    <!-- Partie du fait maison -->
-    <script src="js/vendor/round-chart.js"></script>
-    <script src="js/vendor/maps-france.js"></script>
-    <script src="js/csv-match.js"></script>
-    <script src="js/carteouest.js"></script>
-  <script type="text/javascript"> 
+   <script src="js/vendor/jquery.js"></script>
+   <script src="js/foundation.min.js"></script>
+   <!-- Partie du fait maison -->
+   <script src="js/round-chart.js"></script>
+   <script src="js/maps-france.js"></script>
+   <script src="js/csv-match.js"></script>
+   <script src="js/carteouest.js"></script>
+   <script type="text/javascript"> 
    $(document).foundation({
      // specify the class used for active divs
      active_class: 'active',

@@ -16,10 +16,21 @@ var MapsFrance = function(el) {
       
          for(i=0;i<data.length;i++) {
             if(data[i].nom == ville) {
-               $('#picto-nb-hab').html(data[i].population);
+               // ajout d'espace blanc tous les 3 chiffres
+               var popu = "";
+               var tabPop = (data[i].population+"").split("");
+               for(j=0;j<tabPop.length;j++) {
+                  if(j%3 == 0){
+                     popu= " "+popu;
+                  }
+                  popu = tabPop[tabPop.length-1-j]+ popu;
+                  console.log(popu);
+               }
+               $('#picto-nb-hab').html(popu);
                $('#picto-nb-jeux-donnees').html(data[i].jeuxDeDonnees);
                var ratio = (Math.round(data[i].jeuxDeDonnees/data[i].population*100000*100))/100;
                $('#picto-ratio-hab').html(ratio);
+               $('#add-s-habitant').html('s');
             }
          }
       });
