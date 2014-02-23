@@ -59,7 +59,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
          <div class="row">
             <div class="small-12 medium-6 large-6 large-centered medium-centered columns">
                <div class="flex-video">
-                  <!--<iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>-->
+                  <iframe src="//www.youtube.com/embed/p5xJKl-wBiU" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
                </div>
             </div>
          </div>
@@ -111,7 +111,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
          </ul>
       </div>
       <p>sélection des villes non exhaustive</p>
-      <p>Les jeux de données des villes sélectionnées proviennent du site data.gouv qui offre des données d’envergure nationale.
+      <p>Les jeux de données des villes sélectionnées proviennent du site <a href="http://www.data.gouv.fr/">data.gouv</a> qui offre des données d’envergure nationale.
       Ces villes ont été retenues pour leur ressemblance démographique avec les villes de Nantes, Rennes, Angers ou du Mans.</p>
    </div>
    
@@ -145,9 +145,9 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
 
       <div class="small-12 medium-12 large-12 columns">
 		
-		   <table id="tableau-match" width="100%">
+		   <table id="tableau-match" style="width:100%;">
 		   <tr>
-			   <td id="nomVille1" align="right" style="width:41%"></td>
+			   <td id="nomVille1" align="right" style="width:41%;align:right;"></td>
 			   <td align="middle" style="width:18%"></td>
 			   <td Id="nomVille2" align="left" style="width:41%"></td>
 		   </tr>
@@ -219,10 +219,10 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
                <a href="#panel1">Aller vers une plus grande ouverture</a> 
                <div id="panel1" class="content active vide">
                   <div class="flex-video">
-                     <!--<iframe src="//www.youtube.com/embed/kQbtz7zlTUw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>-->
+                     <iframe src="//www.youtube.com/embed/kQbtz7zlTUw" width="420" height="315"  frameborder="0" allowfullscreen></iframe>
                   </div>
                   <p>
-                     Claire Gallon, cofondatrice de l'association LiberTIC qui promeut l'ouverture des données en France, revient sur le mouvement Open Data dans l'Ouest.
+                     Claire Gallon, cofondatrice de l'association <a href="http://libertic.wordpress.com/ ">LibertTic</a> qui promeut l'ouverture des données en France, revient sur le mouvement Open Data dans l'Ouest.
                   </p>
                </div>
             </dd>
@@ -258,8 +258,8 @@ De plus, mettre en place des lieux et des parcours dédiés à la donnée, des I
 <h5>Est-ce que l'Open Data a été difficile à mettre en place dans votre collectivité ?</h5>
 
 <p>
-"L’Open Data nantais a démarré sous l’impulsion de Jean-Marc Ayrault en 2011 en lien avec l’association Libertic. L'objectif était d’améliorer les services aux habitants et de faciliter le développement d’applications innovantes. Une organisation dédiée a été mise en place afin de permettre l’ouverture d’une première version de la plateforme en quelques mois.
-Si Nantes n’était pas la première collectivité à ouvrir ses données, le sujet demeurait neuf et plusieurs questions, dont certaines exigeaient une réelle expertise, devaient être débattues : le choix de la licence sous laquelle les données seraient ouvertes, la question de la facturation ou de la gratuité des données libérées, le contrôle éventuel de la fiabilité des réutilisations, le choix ou non d’orienter les données ouvertes vers des services dont l’intérêt était préalablement identifié par la collectivité et les choix d’animation de la communauté de réutilisateurs (travail en coproduction avec l’association LiberTIC).
+"L’Open Data nantais a démarré sous l’impulsion de Jean-Marc Ayrault en 2011 en lien avec l’association <a href="http://libertic.wordpress.com/ ">LibertTic</a>. L'objectif était d’améliorer les services aux habitants et de faciliter le développement d’applications innovantes. Une organisation dédiée a été mise en place afin de permettre l’ouverture d’une première version de la plateforme en quelques mois.
+Si Nantes n’était pas la première collectivité à ouvrir ses données, le sujet demeurait neuf et plusieurs questions, dont certaines exigeaient une réelle expertise, devaient être débattues : le choix de la licence sous laquelle les données seraient ouvertes, la question de la facturation ou de la gratuité des données libérées, le contrôle éventuel de la fiabilité des réutilisations, le choix ou non d’orienter les données ouvertes vers des services dont l’intérêt était préalablement identifié par la collectivité et les choix d’animation de la communauté de réutilisateurs (travail en coproduction avec l’association <a href="http://libertic.wordpress.com/ ">LibertTic</a>).
 À cela s’ajoutait la mise en œuvre d’un mode de pilotage adéquat permettant d’associer la Direction Générale et les directions compétentes sur les divers sujets concernés (informatique, communication, innovation, promotion, thématiques)."</p>
 
 <h5>Quels sont les usages des données libérées ?</h5>
@@ -357,57 +357,49 @@ Plus de trois ans après l’ouverture des premières données à Rennes, le ph�
    </div>
    
    <footer class="row bg-gray">
-      <div class="small-12 medium-2 large-2 columns">
-         <a href="https://twitter.com/terristoires" ><img src="img/twitter.svg" alt="twitter logo" class="logo-social-footer logo-social-facebook-footer"/></a>
-         <a href="https://www.facebook.com/terristoires.info" ><img src="img/facebook.svg" alt="facebook logo" class="logo-social-footer logo-social-twitter-footer"/></a>
+      <div class="small-12 large-12 medium-12 columns">
+         <div class="row">
+            <div class="small-12 medium-2 large-2 columns">
+               <a href="https://twitter.com/terristoires" ><img src="img/twitter.svg" alt="twitter logo" class="logo-social-footer logo-social-facebook-footer"/></a>
+               <a href="https://www.facebook.com/terristoires.info" ><img src="img/facebook.svg" alt="facebook logo" class="logo-social-footer logo-social-twitter-footer"/></a>
+            </div>
+            
+            <div class="small-12 medium-8 large-8 columns">
+               <p class="content-footer">
+                  Terri(s)toires : Capucine Saez journaliste et coordinatrice <br>
+                  SciencesCom : Anne-Lise Vinet journaliste et coordinatrice <a href="http://fr.linkedin.com/pub/marguerite-de-crécy/8a/59/7a3">Marguerite de Crécy journaliste</a> <a href="http://fr.linkedin.com/in/elisebethus">Élise Béthus journaliste</a> Sophie Frappier journaliste<br>
+                  Polytech'Nantes : <a href="http://fr.linkedin.com/pub/florent-guillemot/6a/87b/863/">Florent Guillemot développeur</a> <a href="http://fr.linkedin.com/pub/vladimir-b/7b/749/9/">Vladimir Bagazov développeur</a><br>
+                  AGR : Flavien Fruneau graphiste <a href="https://www.behance.net/paullegrix">Paul Le Grix graphiste﻿</a>
+               </p>
+            </div>
+            
+            <div class="small-12 medium-2 large-2 columns">
+               <img src="img/footer-car.svg" alt="flying car" class="logo-car-footer"/>
+            </div>
+         </div>
       </div>
-      
-      <div class="small-12 medium-8 large-8 columns">
-         <p class="content-footer">
-        Terri(s)toires :
-
-Capucine Saez 
-journaliste et coordinatrice 
-<br>
-SciencesCom :
-
-Anne-Lise Vinet
-journaliste et coordinatrice
-
-Marguerite de Crécy
-journaliste
-
-Élise Béthus
-journaliste
-
-Sophie Frappier
-journaliste
-
-<br>
-Polytech'Nantes :
-
-Florent Guillemot
-développeur
-
-Vladimir Bagazov
-développeur
-
-<br>
-AGR :
-
-Flavien Fruneau
-graphiste
-
-Paul Le Grix
-graphiste﻿
-         </p>
-      </div>
-      
-      <div class="small-12 medium-2 large-2 columns">
-         <img src="img/footer-car.svg" alt="flying car" class="logo-car-footer"/>
-      </div>
-   
    </footer>
+   <div style="margin:auto;">
+      <a href="http://www.terristoires.info"><img src="img/logo_footer/Terristoires.jpg" alt="Terristoire"/></a>
+      <a href="http://www.ouestmedialab.fr"><img src="img/logo_footer/Ouest-Medialab.jpg" alt="Ouest Médialab"/></a>
+      <a href="http://www.agrnantes.fr"><img src="img/logo_footer/AGR.jpg" alt="AGR, L’école de l’Image"/></a>
+      <a href="http://web.polytech.univ-nantes.fr"><img src="img/logo_footer/Polytech-Nantes.jpg" alt="Polytech'Nantes"/></a>
+      <a href="http://www.sciencescom.org"><img src="img/logo_footer/SciencesCom.jpg" alt="ScienceCom"/></a>
+      <a href="http://www.orange.fr"><img src="img/logo_footer/Orange.jpg" alt="Orange"/></a>
+      <a href="http://www.paysdelaloire.fr"><img src="img/logo_footer/Region-Pays-de-la-Loire.jpg" alt="Région Pays de la loire"/></a>
+      <a href="http://www.univ-nantes.fr"><img src="img/logo_footer/Universite-de-Nantes.jpg" alt="Université de Nantes"/></a>
+   </div>
+   <div style="float:left;">
+      <a href="http://creativecommons.org"><img src="img/logo_footer/Creative-Commons.jpg" alt="Creative Commons"/></a>
+      <a href="http://opensource.org"><img src="img/logo_footer/Open-source-initiative.jpg" alt="Open source initiative"/></a>
+      <a href="http://www.etalab.gouv.fr"><img src="img/logo_footer/Etalab-gouv.jpg" alt="Etalab gouv"/></a>
+   </div>
+   <div style="float:right;">
+      <p style="color:#000000;">
+      Un projet issu des ateliers du
+      <a href="http://www.hyblab.fr"><img src="img/logo_footer/HybLab.jpg" alt="Hyblab datajournalisme"/></a>
+      </p>
+   </div>
   
    <script src="js/vendor/modernizr.js"></script>
    <script src="js/vendor/jquery.js"></script>
