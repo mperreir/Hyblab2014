@@ -9,7 +9,7 @@
   </head>
   <body>
   
-  <!-- NE PAS AJOUTER D'ÉlÉMENTS ICI -->
+  <!-- NE PAS AJOUTER D'ÉLÉMENTS ICI -->
    <div data-magellan-expedition="fixed" id="menu-fixed" class="show-for-medium-up">
       <div class="row">
          <div class="columns large-9 medium-11 large-centered medium-centered">
@@ -106,7 +106,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
             </li>
             <li>
                <img src="img/pictogramme-thematique-des-jeux-de-donnees-page3.svg" alt="house with two tree"/><br/>
-               thématiques des jeux de données
+               Thématiques des jeux de données
             </li>
          </ul>
       </div>
