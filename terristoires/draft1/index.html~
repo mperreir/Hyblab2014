@@ -98,11 +98,11 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
             </li>
             <li>
                <img src="img/pictogramme-jeux-de-donnees-page3.svg" alt="chart"/><br/>
-               <span id="picto-nb-jeux-donnees">0</span> jeux de données
+               <span id="picto-nb-jeux-donnees">0</span> jeu<span class="add-x-jeu"></span> de données
             </li>
             <li>
                <img src="img/pictogramme-nombre-de-donnees-par-habitants-page3.svg" alt="two arrow"/><br/>
-               <span id="picto-ratio-hab">0</span> jeux de données pour 100 000 habitants
+               <span id="picto-ratio-hab">0</span> jeu<span class="add-x-jeu"></span> de données pour 100 000 habitants
             </li>
             <li>
                <img src="img/pictogramme-thematique-des-jeux-de-donnees-page3.svg" alt="house with two tree"/><br/>
@@ -528,16 +528,12 @@ Plus de trois ans après l’ouverture des premières données à Rennes, le ph�
    
    },function() {});
    
-   
    // chargement de la liste des villes
    $.ajax( "data/theme.csv" )
    .done(function(csv) {
       montab = csv2array(csv);
       genererdataviz(montab, 1, 2);
    });
-   
-   
-   
   </script>
   </body>
 </html>
