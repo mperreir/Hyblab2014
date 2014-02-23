@@ -101,7 +101,7 @@ p:first-letter {
 }
 
 [data-magellan-expedition] {
-   background-color:#cbe3cb;
+   background-color:#B6D8B6;
 }
 
 .has-tip {

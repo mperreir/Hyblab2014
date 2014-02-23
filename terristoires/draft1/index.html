@@ -6,25 +6,24 @@
     <title>L'open data dans l'ouest</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style-carte.css" />
   </head>
   <body>
   
   <!-- NE PAS AJOUTER D'ÉlÉMENTS ICI -->
    <div data-magellan-expedition="fixed" id="menu-fixed" class="show-for-medium-up">
       <div class="row">
-         <div class="columns large-9 medium-9 large-centered medium-centered">
+         <div class="columns large-9 medium-11 large-centered medium-centered">
             <dl class="sub-nav">
                <dd data-magellan-arrival="page1"><a href="#page1" data-tooltip class="has-tip tip-bottom" title="État des lieux de l'Open Data"> </a></dd>
                <dd data-magellan-arrival="page22"><a href="#page22" data-tooltip class="has-tip tip-bottom" title="Introduction sur l'Open Data"> </a></dd>
-               <dd data-magellan-arrival="page2"><a href="#page2" data-tooltip class="has-tip tip-bottom" title="L'open data en question"> </a></dd>
+               <dd data-magellan-arrival="page2"><a href="#page2" data-tooltip class="has-tip tip-bottom" title="L'Open Data en question"> </a></dd>
                <dd data-magellan-arrival="page3"><a href="#page3" data-tooltip class="has-tip tip-bottom" title="L'Open Data de métropoles françaises"> </a></dd>
                <dd data-magellan-arrival="page4"><a href="#page4" data-tooltip class="has-tip tip-bottom" title="Nombre de données disponibles"> </a></dd>
                <dd data-magellan-arrival="page5"><a href="#page5" data-tooltip class="has-tip tip-bottom" title="Comparateur de thématiques"> </a></dd>
                <dd data-magellan-arrival="page6"><a href="#page6" data-tooltip class="has-tip tip-bottom" title="Et l'ouest"> </a></dd>
                <dd data-magellan-arrival="page7"><a href="#page7" data-tooltip class="has-tip tip-bottom" title="Grand ouest"> </a></dd>
                <dd data-magellan-arrival="page8"><a href="#page8" data-tooltip class="has-tip tip-bottom" title="Interviews"> </a></dd>
-               <dd data-magellan-arrival="page9"><a href="#page9" data-tooltip class="has-tip tip-bottom" title="L'open data en application"> </a></dd>
+               <dd data-magellan-arrival="page9"><a href="#page9" data-tooltip class="has-tip tip-bottom" title="L'Open Data en application"> </a></dd>
                <dd data-magellan-arrival="page10"><a href="#page10" data-tooltip class="has-tip tip-bottom" title="Conclusion"> </a></dd>
             </dl>
          </div>
@@ -106,8 +105,8 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
                <span id="picto-ratio-hab">0</span> jeux de données pour 100 000 habitants
             </li>
             <li>
-               <img src="img/pictogramme-thematique-des jeux-de-donnees-page3.svg" alt="house with two tree"/><br/>
-               <span id="picto-nb-hab">thématiques des jeux de données</span>
+               <img src="img/pictogramme-thematique-des-jeux-de-donnees-page3.svg" alt="house with two tree"/><br/>
+               thématiques des jeux de données
             </li>
          </ul>
       </div>
@@ -160,7 +159,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
    
    <a name="page6"></a>
    <div data-magellan-destination="page6" id="page6" class="page row bg-blue">
-      <h1 class="title">et l'ouest ?<h1>
+      <h1 class="title">et l'ouest ?</h1>
    </div>
    
    <a name="page7"></a>
@@ -174,7 +173,7 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
                   cliquer sur les départements pour afficher les informations
                </p>
 			      <div class="map">
-			      <img src="img/vide.png" width="362" height="248" border="0" usemap="#mapouest" />
+			      <img src="img/vide.png" alt="carteVide" style="width:362;height:248;" usemap="#mapouest" />
 
 			      <map name="mapouest">
 			      <area id="dep-1" shape="poly" coords="23,208,40,119,112,86,243,56,289,79,294,60,353,82,355,272,305,298,319,358,382,369,386,395,338,421,340,471,318,445,253,425,236,408,173,401,173,420,107,419,122,383,21,309,23,289,150,291,135,253,84,244,76,205,127,209,120,162" onclick="loadimageouest(0)" />
@@ -191,14 +190,11 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
 			      </div>
 		      </div>
 		      <div class="small-12 medium-pull-6 large-pull-6 large-6 medium-6 columns">
-		         <H4 id="nomdepartementselection" style="middle"></H4>
-	         	<div id="infodepartementselection" style="middle"></div>
-			      <div style="position:relative">
-				      <div style="position:absolute; top:4%; left:20%; ">
-					      <div style="position:absolute; top:0%; left:30%; "></div>
-				      </div>
-				      <img id="departementselection" src="img/cotearmor.svg" width="50%" height="50%"/>
-				      <div id="infovilledepartementselection" style="middle"></div>
+		         <h4 id="nomdepartementselection" style="text-align:center;"></h4>
+	         	<div id="infodepartementselection" style="text-align:center;"></div>
+			      <div style="position:relative;">
+				      <img id="departementselection" src="img/cotearmor.svg" style="width:50%;" alt="image département"/>
+				      <div id="infovilledepartementselection"></div>
 			      </div>
 		      </div>
 		   </div>
@@ -233,64 +229,63 @@ C'est en partant de ces interrogations qu'est née l'idée d'une réponse cartog
             <dd>
                <a href="#panel2">Promouvoir l'Open Data auprès des citoyens</a>
                <div id="panel2" class="content vide">
-               <p>
 <h5>Quels sont les usages des données ouvertes ?</h5>
 
-"Il y a au moins quatre usages possibles des données ouvertes : la consultation (par exemple consulter directement une donnée brute pour savoir combien il y a de policiers municipaux dans ma ville), la médiation (comme réaliser une datavisualisation), la réalisation d'applications mobiles ou web (telles que des applications iPhone), la réutilisation spécialisée (par exemple quand une entreprise ou un particulier utilise une donnée pour faire un calcul ou améliorer un processus)."<br>
+<p>"Il y a au moins quatre usages possibles des données ouvertes : la consultation (par exemple consulter directement une donnée brute pour savoir combien il y a de policiers municipaux dans ma ville), la médiation (comme réaliser une datavisualisation), la réalisation d'applications mobiles ou web (telles que des applications iPhone), la réutilisation spécialisée (par exemple quand une entreprise ou un particulier utilise une donnée pour faire un calcul ou améliorer un processus)."</p>
 
 <h5>Pensez-vous que cela puisse intéresser les citoyens ?</h5>
 
-"Bien sûr, selon les thématiques qui sont traitées par les données. Par exemple, les données concernant les prénoms les plus populaires sont très consultées sur les portails Data. 
-Il faut cependant mettre en place des dispositifs qui permettent aux citoyens de découvrir les données et de ses les approprier. Les lieux de type 'Infolab' peuvent être dédiés à cela, vous pouvez vous référer à mon article de blog sur ce sujet : <a href="http://donneesouvertes.info/2012/10/11/lopen-data-et-le-grand-public-on-nattrape-pas-les-mouches-avec-du-vinaigre/">"L'Open Data et le grand public, on n’attrape pas les mouches avec du vinaigre".</a>"<br>
+<p>"Bien sûr, selon les thématiques qui sont traitées par les données. Par exemple, les données concernant les prénoms les plus populaires sont très consultées sur les portails Data. 
+Il faut cependant mettre en place des dispositifs qui permettent aux citoyens de découvrir les données et de ses les approprier. Les lieux de type 'Infolab' peuvent être dédiés à cela, vous pouvez vous référer à mon article de blog sur ce sujet : <a href="http://donneesouvertes.info/2012/10/11/lopen-data-et-le-grand-public-on-nattrape-pas-les-mouches-avec-du-vinaigre/">"L'Open Data et le grand public, on n’attrape pas les mouches avec du vinaigre".</a>"</p>
 
 <h5>Quelles sont les données, les thématiques qui intéressent le plus ?</h5>
 
-"Cela dépend du type de réutilisateurs. Les développeurs et les profils techniques sont très intéressés par les données liées aux transports et aux déplacements (horaires de bus, disponibilité en temps réel des vélos en libre-service, etc.). Les datajournalistes s'intéressent plutôt aux données statistiques ou budgétaires, par exemple <a href="https://www.google.com/fusiontables/DataSource?docid=1xvJwLapFYwAzTMAfGyVrHgNXWukY5VI7UUwUfn4#map:id=3">le classement des 100 premières polices municipales de France</a>, <a href="http://www.data-projet.com/carte-accident-29">la localisation des accidents de la route</a>, ou encore <a href="http://www.liberation.fr/economie/2014/01/29/budget-de-l-etat-ou-economiser-des-milliards_976108">la représentation du budget de l'État</a>. Tout cela peut être réalisé à partir des données ouvertes publiées par les collectivités et l'Etat.
-Enfin, le citoyen s'intéresse davantage aux données liées à sa commune ou à sa vie quotidienne : par exemple les prénoms les plus populaires, la liste des associations subventionnées, et tout ce qui concerne le patrimoine (bâtiments historiques, etc...)."<br>
+<p>"Cela dépend du type de réutilisateurs. Les développeurs et les profils techniques sont très intéressés par les données liées aux transports et aux déplacements (horaires de bus, disponibilité en temps réel des vélos en libre-service, etc.). Les datajournalistes s'intéressent plutôt aux données statistiques ou budgétaires, par exemple <a href="https://www.google.com/fusiontables/DataSource?docid=1xvJwLapFYwAzTMAfGyVrHgNXWukY5VI7UUwUfn4#map:id=3">le classement des 100 premières polices municipales de France</a>, <a href="http://www.data-projet.com/carte-accident-29">la localisation des accidents de la route</a>, ou encore <a href="http://www.liberation.fr/economie/2014/01/29/budget-de-l-etat-ou-economiser-des-milliards_976108">la représentation du budget de l'État</a>. Tout cela peut être réalisé à partir des données ouvertes publiées par les collectivités et l'Etat.
+Enfin, le citoyen s'intéresse davantage aux données liées à sa commune ou à sa vie quotidienne : par exemple les prénoms les plus populaires, la liste des associations subventionnées, et tout ce qui concerne le patrimoine (bâtiments historiques, etc...)."</p>
 
 <h5>Que faudrait-il faire pour améliorer la démarche Open Data ?</h5>
 
-"Il faudrait encourager l'interaction entre les producteurs (ceux qui produisent de la donnée, acteurs publics et privés) et les réutilisateurs de données.
-De plus, mettre en place des lieux et des parcours dédiés à la donnée, des Infolabs sur le modèle des Fablabs, ainsi que mieux faire connaître l'offre de données qui existe déjà en ligne."<br>
+<p>"Il faudrait encourager l'interaction entre les producteurs (ceux qui produisent de la donnée, acteurs publics et privés) et les réutilisateurs de données.
+De plus, mettre en place des lieux et des parcours dédiés à la donnée, des Infolabs sur le modèle des Fablabs, ainsi que mieux faire connaître l'offre de données qui existe déjà en ligne."
 </p>
                </div>
             </dd>
             <dd>
                <a href="#panel3">La démarche Open Data à Nantes</a>
                <div id="panel3" class="content vide">
-<p>       
-Interview d'Alexandre Cherré, community manager à Nantes Métropole.<br>
+<p>Interview d'Alexandre Cherré, community manager à Nantes Métropole.</p>
 
 <h5>Est-ce que l'Open Data a été difficile à mettre en place dans votre collectivité ?</h5>
 
+<p>
 "L’Open Data nantais a démarré sous l’impulsion de Jean-Marc Ayrault en 2011 en lien avec l’association Libertic. L'objectif était d’améliorer les services aux habitants et de faciliter le développement d’applications innovantes. Une organisation dédiée a été mise en place afin de permettre l’ouverture d’une première version de la plateforme en quelques mois.
 Si Nantes n’était pas la première collectivité à ouvrir ses données, le sujet demeurait neuf et plusieurs questions, dont certaines exigeaient une réelle expertise, devaient être débattues : le choix de la licence sous laquelle les données seraient ouvertes, la question de la facturation ou de la gratuité des données libérées, le contrôle éventuel de la fiabilité des réutilisations, le choix ou non d’orienter les données ouvertes vers des services dont l’intérêt était préalablement identifié par la collectivité et les choix d’animation de la communauté de réutilisateurs (travail en coproduction avec l’association LiberTIC).
-À cela s’ajoutait la mise en œuvre d’un mode de pilotage adéquat permettant d’associer la Direction Générale et les directions compétentes sur les divers sujets concernés (informatique, communication, innovation, promotion, thématiques)."
+À cela s’ajoutait la mise en œuvre d’un mode de pilotage adéquat permettant d’associer la Direction Générale et les directions compétentes sur les divers sujets concernés (informatique, communication, innovation, promotion, thématiques)."</p>
 
 <h5>Quels sont les usages des données libérées ?</h5>
 
-"Les données libérées par Nantes l’ont été selon 3 thématiques prioritaires : la mobilité en liaison avec l’optimisation de la politique de déplacements sur l’agglomération, l’environnement avec Nantes Capitale Verte 2013, la culture et le tourisme en association avec les événements Voyage à Nantes.
+<p>"Les données libérées par Nantes l’ont été selon 3 thématiques prioritaires : la mobilité en liaison avec l’optimisation de la politique de déplacements sur l’agglomération, l’environnement avec Nantes Capitale Verte 2013, la culture et le tourisme en association avec les événements Voyage à Nantes.
 À ces trois thématiques prioritaires initialement définies est venue s’ajouter celle du budget que Nantes a ouvert dès 2012.
 L’appel à projets « Rendez-moi la ville plus facile » organisé en 2012 par Nantes a permis de se rendre compte de la diversité des réutilisations possibles puisque 121 dossiers de candidatures avaient été déposés à cette occasion (dont 52 % en provenance des particuliers et des associations, 26 % d’entreprises et 22 % d’étudiants).
-Les principales réutilisations connues par nos services concernent principalement les données de mobilité, notamment grâce à des développements d’applications mobiles (Statiophone, Naoned Bus, Open Nantes). Elles s’appuient en général sur les flux de données mis à jour en temps réel sur la plateforme Open Data qui donnent le nombre de places disponibles dans les parkings publics, des temps de parcours sur des tronçons de l’agglomération ou encore des informations de fluidité du trafic routier."<br>
+Les principales réutilisations connues par nos services concernent principalement les données de mobilité, notamment grâce à des développements d’applications mobiles (Statiophone, Naoned Bus, Open Nantes). Elles s’appuient en général sur les flux de données mis à jour en temps réel sur la plateforme Open Data qui donnent le nombre de places disponibles dans les parkings publics, des temps de parcours sur des tronçons de l’agglomération ou encore des informations de fluidité du trafic routier."</p>
 
 <h5>Pensez-vous que cela puisse intéresser les citoyens ?</h5>
 
-"L’ouverture des données permet de développer le tissu économique local et d’améliorer les services rendus aux usagers et entreprises du territoire. L’objectif de la démarche Open Data est un choix politique et répond à un enjeu de transparence et une certaine conception de coconstruction de la ville : la transmission, le partage et la réutilisation de ces données dématérialisées favorisent, à terme, l’innovation et l’activité tout en améliorant la vie quotidienne des habitants. Il est vrai que le <a href="http://data.nantes.fr">portail Open Data</a> ne connaît pas l’affluence d’un site grand public. Toutefois, le forum mis à disposition, les événements organisés autour de la démarche et le nombre de services développés laisse à penser que cette démarche intéresse de plus en plus les citoyens. Les récentes ouvertures de données sur les résultats des précédents scrutins électoraux à Nantes ou sur les bureaux de vote alimentent par exemple les travaux d’associations, de collectifs et de citoyens dans la perspective du prochain scrutin municipal."<br>
+<p>"L’ouverture des données permet de développer le tissu économique local et d’améliorer les services rendus aux usagers et entreprises du territoire. L’objectif de la démarche Open Data est un choix politique et répond à un enjeu de transparence et une certaine conception de coconstruction de la ville : la transmission, le partage et la réutilisation de ces données dématérialisées favorisent, à terme, l’innovation et l’activité tout en améliorant la vie quotidienne des habitants. Il est vrai que le <a href="http://data.nantes.fr">portail Open Data</a> ne connaît pas l’affluence d’un site grand public. Toutefois, le forum mis à disposition, les événements organisés autour de la démarche et le nombre de services développés laisse à penser que cette démarche intéresse de plus en plus les citoyens. Les récentes ouvertures de données sur les résultats des précédents scrutins électoraux à Nantes ou sur les bureaux de vote alimentent par exemple les travaux d’associations, de collectifs et de citoyens dans la perspective du prochain scrutin municipal."</p>
 
 <h5>Quelles sont les données, les thématiques qui intéressent le plus ?</h5>
 
-"Les données les plus téléchargées sont celles de la thématique ‘Mobilité’ (localisation des équipements publics, services – horaires - tarifs, données TAN), et plus particulièrement les flux de données temps réel qui se prêtent bien au développement de services mobiles innovants. Mais les données ouvertes dans la thématique ‘Environnement’ suscitent également de nombreux accès (déchetteries, jours de collecte des déchets, tri’sac)."<br>
+<p>"Les données les plus téléchargées sont celles de la thématique ‘Mobilité’ (localisation des équipements publics, services – horaires - tarifs, données TAN), et plus particulièrement les flux de données temps réel qui se prêtent bien au développement de services mobiles innovants. Mais les données ouvertes dans la thématique ‘Environnement’ suscitent également de nombreux accès (déchetteries, jours de collecte des déchets, tri’sac)."</p>
 
 <h5>Qu'est-ce qu'il faudrait faire pour améliorer la démarche Open Data ?</h5>
 
-"Les pistes d’amélioration de la démarche Open Data sont les suivantes : développer d’avantage l’ouverture des données auprès du plus grand nombre de villes, métropole et collectivités locales, améliorer l’interopérabilité des données ouvertes par différents acteurs du territoire afin que les services développés aient une portée qui ne soit pas uniquement locale, renforcer les animations autour des données libérées sur le territoire et les relations avec les réutilisateurs de nos données, répondre plus efficacement aux demandes des citoyens et optimiser les circuits de production et de mise à jour des données, pérenniser les applications et les services développés autour des données ouvertes (modèle économique à trouver)."<br>
+<p>"Les pistes d’amélioration de la démarche Open Data sont les suivantes : développer d’avantage l’ouverture des données auprès du plus grand nombre de villes, métropole et collectivités locales, améliorer l’interopérabilité des données ouvertes par différents acteurs du territoire afin que les services développés aient une portée qui ne soit pas uniquement locale, renforcer les animations autour des données libérées sur le territoire et les relations avec les réutilisateurs de nos données, répondre plus efficacement aux demandes des citoyens et optimiser les circuits de production et de mise à jour des données, pérenniser les applications et les services développés autour des données ouvertes (modèle économique à trouver)."</p>
 
 <h5>Et concrètement quelles est votre mission aujourd'hui ?</h5>
 
-"C’est dans ce contexte que Nantes Métropole et la Ville de Nantes font partie des membres fondateurs de la récente association Open Data France (http://opendatafrance.net) dont la mission est de regrouper et soutenir les collectivités engagées activement dans une démarche d’ouverture des données publiques et de favoriser toutes les démarches entreprises par ces collectivités dans le but de la promotion de l’open data en France."<br>
+<p>"C’est dans ce contexte que Nantes Métropole et la Ville de Nantes font partie des membres fondateurs de la récente association Open Data France (http://opendatafrance.net) dont la mission est de regrouper et soutenir les collectivités engagées activement dans une démarche d’ouverture des données publiques et de favoriser toutes les démarches entreprises par ces collectivités dans le but de la promotion de l’open data en France."</p>
 
-A noter que le portail Open data a valu aux collectivités le prix Gazette des Communes, remis en novembre dernier.﻿</p>
+<p>A noter que le portail Open data a valu aux collectivités le prix Gazette des Communes, remis en novembre dernier.﻿</p>
                </div>
             </dd>
          </dl>
@@ -309,7 +304,7 @@ A noter que le portail Open data a valu aux collectivités le prix Gazette des C
             application mobile gratuite qui indique en temps réel les horaires et disponibilités de nombreux services de transports rennais (trains, bus, vélos, parkings, etc.). Cette application est également disponible pour les villes de Nantes, Bordeaux, Strasbourg...
          </p>
          
-         <a href="https://play.google.com/store/apps/details?id=net.naonedbus&hl=fr">
+         <a href="https://play.google.com/store/apps/details?id=net.naonedbus&amp;hl=fr">
             <img src="img/logo_naonedbus.png" alt="naoned bus logo"/>
          </a>
          <p>
