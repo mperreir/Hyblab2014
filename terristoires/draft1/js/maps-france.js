@@ -24,7 +24,6 @@ var MapsFrance = function(el) {
                      popu= " "+popu;
                   }
                   popu = tabPop[tabPop.length-1-j]+ popu;
-                  console.log(popu);
                }
                $('#picto-nb-hab').html(popu);
                $('#picto-nb-jeux-donnees').html(data[i].jeuxDeDonnees);
