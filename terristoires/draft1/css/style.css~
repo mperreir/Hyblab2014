@@ -124,10 +124,14 @@ p:first-letter {
 
 #page3 img {
    border:none;
+   width:100%;
 }
 
 #side-page3 {
    margin-top:10%;
+}
+#side-page3 img {
+   width:50%;
 }
 
 #carteDeFrance {
