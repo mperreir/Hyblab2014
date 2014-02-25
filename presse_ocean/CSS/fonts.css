@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'League Gothic';
+  font-weight: normal;
+  src: url('leaguegothic-regular-webfont.ttf');
+}
+
+.menu{
+  font-family: 'Trebuchet MS';
+  font-size: 11pt;
+}
+
+#page1 h1 #abs{
+  font-family: 'League Gothic';
+  font-size: 80pt;
+  color:white;
+}
+
+#page1 h1{
+  font-family: 'League Gothic';
+  font-size: 35pt;
+  color:white;
+}
+
+#page1 h2{
+  font-family: 'Trebuchet MS';
+  font-style: italic;
+  font-size: 15pt;
+  color:#2E2E2E;
+}
+
+#page2 h1{
+  white-space: nowrap;
+  color:white;
+  font-family: 'League Gothic';
+  font-size: 35pt;
+}
+
+#boutonCartelec, #boutonCartelecIsoloir {
+  font-family: 'Trebuchet MS';
+  font-style: italic;
+  font-size: 9pt;
+  color:black;
+}
+
+#page3 h1{
+  font-family: "League Gothic";
+  font-size: 55pt;
+  color:#606665;
+  margin: 1%;
+}
+
+#page3 h2{
+  font-family: "League Gothic";
+  font-size: 30pt;
+  color:#A8B2B1;
+  margin: 1%;
+}
+
+#page3 label{
+  font-family: "League Gothic";
+  font-size: 15pt;
+  color:#474747;
+}
+
+#page3 #tabGtxAbst{
+  font-family: "Trebuchet MS";
+  color:#D14D43;
+  font-size: 11pt;
+}
+
+#page3 #tabDtxAbst{
+  font-family: "Trebuchet MS";
+  color:#D14D43;
+  font-size: 11pt;
+}
+
+#page3 #tabGtxChom{
+  font-family: "Trebuchet MS";
+  color:#619190;
+  font-size: 11pt;
+}
+
+#page3 #tabDtxChom{
+  font-family: "Trebuchet MS";
+  color:#619190;
+  font-size: 11pt;
+}
+
+#page3 #tabGssDipl{
+  font-family: "Trebuchet MS";
+  color:#333333;
+  font-size: 11pt;
+}
+
+#page3 #tabDssDipl{
+  font-family: "Trebuchet MS";
+  color:#333333;
+  font-size: 11pt;
+}
+
+#page3 #tabGtxProp{
+  font-family: "Trebuchet MS";
+  color:#802531;
+  font-size: 11pt;
+}
+
+#page3 #tabDtxProp{
+  font-family: "Trebuchet MS";
+  color:#802531;
+  font-size: 11pt;
+}
+
+#page4 h1{
+  font-family: "League Gothic";
+  font-size: 40pt;
+  color:#DCEAE9;
+}
+
+#page5 h1{
+  font-family: "League Gothic";
+  font-size: 40pt;
+  color:#A8B2B1;
+}
+
+#page5 h1 span{
+  color:#606665;
+}
+
+#page6 p{
+  font-family: 'Trebuchet MS';
+  font-size: 16px;
+  color:black;
+}
+
+#page6 h1{
+  font-family: 'League Gothic';
+  font-size: 36px;
+  color:#721A15;
+}
+
+#page6 h2{
+  font-family: 'League Gothic';
+  font-size: 20pt;
+  color:#996763;
+}
+
+#page6 li{
+  font-family: 'Trebuchet MS';
+  font-size: 13pt;
+  color: #000;
+}
+
+#page6 #footer2 p {
+  font-family: 'Trebuchet MS';
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+}
+
+#page2 #legende p{
+  font-family: 'League Gothic';
+  font-size: 15pt;
+  color: #474747;
+}
