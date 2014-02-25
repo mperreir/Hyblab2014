@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="Equipe Destination SantÃ©" />
+	<meta name="description" content="Dataviz Rougeole" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="style/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="style/css.css" />
+	<link rel="stylesheet" type="text/css" href="style/jqvmap.css" />
+	<link rel="stylesheet" type="text/css" href="style/colorbox.css" />
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/jqueryui.js"></script>	
+	
+	<script src="DATA/Fr/FR2008.js" type="text/javascript"></script>
+	<script src="DATA/Fr/FR2009.js" type="text/javascript"></script>
+	<script src="DATA/Fr/FR2010.js" type="text/javascript"></script>
+	<script src="DATA/Fr/FR2011.js" type="text/javascript"></script>
+	
+	<script src="js/jquery.vmap.js"></script>
+	<script src="js/jquery.vmap.france.js"></script>
+	<script src="js/franceMap.js" type="text/javascript"></script>
+
+	<script src="js/jquery.vmap.europe.js"></script>
+	
+	<script src="js/varMapEurope.js"></script>
+	
+	<script src="js/highcharts.js"></script>
+	<script src="js/exporting.js"></script>
+	<script src="js/camemberts.js"></script>
+	<script src="js/graphFrAll.js"></script>
+	<script src="js/changeImage.js"></script>
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var pepe = $.fn.fullpage({
+				slidesColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff','#ffffff'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage','7thPage'],
+				menu: '#menu',
+				navigation: true,
+				slidesNavigation: true,
+				navigationTooltips: ['Rougeole, l\'explosion française', 'Une flambée exceptionnelle', 'Une couverture vaccinale insuffisante', 
+									'La France patraque', 'On meurt encore de la rougeole', 'La rougeole, s\'en protéger','Crédits'],
+				loopHorizontal: false,
+				scrollOverflow: true,
+			});
+			
+		});
+	</script>
+	<script>
+			$("section1").ready(function(){
+			$(".video1").colorbox({iframe:true, innerWidth:800, innerHeight:640, fixed:true});
+		});
+	</script>
+	<script>
+			$("section2").ready(function(){
+			$(".video2").colorbox({iframe:true, innerWidth:800, innerHeight:640, fixed:true});
+		});
+	</script>
+	<script>
+		$("section6").ready(function(){
+		$(".video3").colorbox({iframe:true, innerWidth:800, innerHeight:640, fixed:true});
+	});
+	</script>
+	
+	
+	
+	<title>L'explosion de la rougeole en France</title>
+</head>
+
+
+<body>
+	
+	<div class="section" id="section0">
+		<div id="couverture"></div>
+	</div>
+	
+	<div class="section" id="section1">
+		<div class="slide"> 
+			<div id="camemberts">
+				<div id="cam1"></div>
+				<div id="cam2"></div>
+				<div id="cam3"></div>
+				<div id="cam4"></div>
+				<a class='video1' href="//www.youtube.com/embed/6tB-XYmMA7c" >
+					<img src="./style/images/pastilleV2.png"  style="border:0; outline:0; width: 70px; height: 110px; position:absolute; left:800px; top:45px" alt="Experte"/>
+				</a>
+			</div>
+		</div>
+		<div class="slide">
+			<div id="vmapeur">
+				<div id="europe-map"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section" id="section2">
+		<div id="graphe">
+			<div id="grapheFrAll"></div>
+			
+		</div>
+		
+	</div>
+	
+	
+	<div class="section" id="section3">
+		
+			<div id="vmap">
+				<a href="javascript:carto(data2008js);" id="bouton2008" onclick="changeImage(2008)"></a>
+				<a href="javascript:carto(data2009js);" id="bouton2009" onclick="changeImage(2009)"></a>
+				<a href="javascript:carto(data2010js);" id="bouton2010" onclick="changeImage(2010)"></a>
+				<a href="javascript:carto(data2011js);" id="bouton2011" onclick="changeImage(2011)"></a>
+					
+				<div id="mapfr"></div>
+			</div>
+	</div>
+	
+	<div class="section" id="section4">
+		<div id="rougeole2">
+			<a class ='video3' href="//www.youtube.com/embed/OoDP8LEDTrc">
+				<img src="./style/images/pastilleV2.png" style="border:0; outline:0; width: 70px; height: 110px; position:absolute; left:800px; top:10px;" alt="Experte"/>
+			</a>
+		</div>
+	</div>
+
+	<div class="section" id="section5">	
+		<div class="slide"> 
+			<div id="rougeole1">
+				
+			</div>
+		</div>
+		<div class="slide">
+			<div id="rougeoleBIS">
+				<a href="http://destinationsante.com/wp-content/uploads/2014/02/Calendrier_vaccinal_detaille_2013_ministere_Affaires_sociales_et_Sante-_pdf.pdf" target="_bank">
+					<img src="./style/images/cliquezIci.png" style="border:0; outline:0; position:absolute; right:196px; top:177px;"/>
+				</a>
+				<a class ='video2' href="//www.youtube.com/embed/2ZWSgPoVPuE">
+					<img src="./style/images/pastille.png" style=" border:0; outline:0;width: 170px; height: 180px; position:absolute; left:50px; bottom:30px" alt="Experte"/>
+				</a>
+				<a>
+					<img src="./style/images/texteExpert.png" style="position:absolute; left:208px; bottom:75px" alt="Experte"/>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="section6">
+		<div id="credits">
+			<a href="http://www.facebook.com/sharer.php?u=http://www.hyblab.fr/la-rougeole-en-france/" target="_bank" title="Partage fb">
+				<img src="./style/images/facebook.png" style="border:0; outline:0;position:absolute; right:25px; top:25px;" alt="Fb"/>
+			</a>
+			<a href="http://twitter.com/home?status=Super%20dataviz%20sur%20la%20rougeole:%20http://www.hyblab.fr/la-rougeole-en-france/" target="_bank" title="Partage twitter">
+				<img src="./style/images/twitter.png" style="border:0; outline:0;position:absolute; right:125px; top:25px;" alt="Twitter"/>
+			</a>
+		
+			<a href="http://destinationsante.com" target="_bank" title="Destination sante">
+				<img src="./style/images/destination-sante.jpg" style="border:0; outline:0;position:absolute; left:25px; top:390px;" alt="Destination sante"/>
+			</a>
+			<a href="http://www.ouestmedialab.fr" target="_bank" title="Ouest medialab">
+				<img src="./style/images/ouest-media.jpg" style="border:0; outline:0;position:absolute; left:160px; top:400px;" alt="Ouest medialab"/>
+			</a>
+			<a href="http://www.agrnantes.fr" target="_bank" title="agr">
+				<img src="./style/images/agr.jpg" style="border:0; outline:0;position:absolute; left:270px; top:400px;" alt="agr"/>
+			</a>
+			<a href="http://web.polytech.univ-nantes.fr" target="_bank" title="polytech">
+				<img src="./style/images/polytech.jpg" style="border:0; outline:0;position:absolute; left:420px; top:400px;" alt="polytech"/>
+			</a>
+			<a href="http://www.sciencescom.org" target="_bank" title="sccom">
+				<img src="./style/images/sccom.jpg" style="border:0; outline:0;position:absolute; left:540px; top:390px;" alt="sccom"/>
+			</a>
+			<a href="http://www.orange.fr" target="_bank" title="orange">
+				<img src="./style/images/orange.jpg" style="border:0; outline:0;position:absolute; left:640px; top:390px;" alt="Orange"/>
+			</a>
+			<a href="http://www.paysdelaloire.fr" target="_bank" title="Pays Loire">
+				<img src="./style/images/paysloire.jpg" style="border:0; outline:0;position:absolute; left:700px; top:400px" alt="Pays Loire"/>
+			</a>
+			<a href="http://www.univ-nantes.fr" target="_bank" title="Univ Nantes">
+				<img src="./style/images/univnantes.jpg" style="border:0; outline:0;position:absolute; right:25px; top:390px;" alt="Univ Nantes"/>
+			</a>
+
+			</a>
+			<a href="http://creativecommons.org" target="_bank" title="Creative commons">
+				<img src="./style/images/creacommons.jpg" style="border:0; outline:0;position:absolute; left:50px; top:497px;" alt="Creative commons"/>
+			</a>
+			<a href="http://opensource.org" target="_bank" title="Open source">
+				<img src="./style/images/opensource.jpg" style="border:0; outline:0;position:absolute; left:130px; top:497px;" alt="Open source"/>
+			</a>
+			<a href="http://www.etalab.gouv.fr" target="_bank" title="Etalab">
+				<img src="./style/images/etalabgouv.jpg" style="border:0; outline:0;position:absolute; left:170px; top:497px;" alt="Etalab"/>
+			</a>
+			
+			<a href="http://www.hyblab.fr" target="_bank" title="Hyblab">
+				<img src="./style/images/hyblab.jpg" style="border:0; outline:0;position:absolute; right:35px; top:497px;" alt="Hyblab"/>
+			</a>
+			
+			
+		</div>
+	</div>
+	
+	<script>carto(data2011js); changeImage(2011);</script>
+	<script src="js/mapEurope.js"></script>
+	
+</body>
+
+</html>

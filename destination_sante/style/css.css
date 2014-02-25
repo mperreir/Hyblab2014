@@ -1,0 +1,220 @@
+#couverture{
+height: 684px;
+width: 960px;
+background-image: url(./images/slide1.png);
+background-repeat: no-repeat;
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+#camemberts{
+position:relative;
+height: 684px;
+width: 960px;
+background-image: url(./images/camemberts.png);
+background-repeat: no-repeat;
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+#cam1{
+width: 350px;
+height:230px;
+position:absolute;
+top:22%;
+left:31.5%;
+}
+#cam2{
+width: 350px;
+height:230px;
+position:absolute;
+top:22%;
+left:54%;
+}	
+#cam3{
+width: 350px;
+height:230px;
+position:absolute;
+top:58%;
+left:31.5%;
+}
+#cam4{
+width: 350px;
+height:230px;
+position:absolute;
+top:55%;
+left:51%;
+}
+
+
+
+#graphe{
+position:relative;
+height: 684px;
+width: 960px;
+background-image: url(./images/corrFrAll.png);
+background-repeat: no-repeat;
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+#grapheFrAll{
+width: 500px;
+height:400px;
+position:absolute;
+top:16%;
+left:34%;
+}
+
+/* map europe */
+
+#vmapeur{
+position:relative;
+width: 960px;
+height: 684px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(./images/mapEurope.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#europe-map{
+width: 650px;
+height: 470px;
+top: 153px;
+left: 5px;
+}
+
+/* slide France */
+
+#vmap{
+/*position: relative;
+left: 9%;
+top: 8%;*/
+position:relative;
+width: 960px;
+height: 684px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(./images/mapFr.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+#mapfr{
+width: 750px;
+height: 550px;
+margin-left: auto;
+margin-right: auto;
+top:90px;
+left:250px;
+}
+
+#bouton2008{
+position:absolute;
+height:44px;
+width:110px;
+top:50px;
+left:60px;
+display : block; /*Très important, sinon les dimensions ne sont pas prises en compte*/
+background : url("./images/2008hover.png") no-repeat;
+}
+#bouton2008:hover
+{
+background-image : url("./images/2008.png") !important;
+}
+
+#bouton2009{
+position:absolute;
+height:44px;
+width:110px;
+top:100px;
+left:60px;
+display : block; /*Très important, sinon les dimensions ne sont pas prises en compte*/
+background : url("./images/2009hover.png") no-repeat;
+}
+#bouton2009:hover
+{
+background-image : url("./images/2009.png") !important;
+}
+
+#bouton2010{
+position:absolute;
+height:44px;
+width:110px;
+top:150px;
+left:60px;
+display : block; /*Très important, sinon les dimensions ne sont pas prises en compte*/
+background : url("./images/2010hover.png") no-repeat;
+}
+#bouton2010:hover
+{
+background-image : url("./images/2010.png") !important;
+}
+
+#bouton2011{
+position:absolute;
+height:50px;
+width:110px;
+top:200px;
+left:60px;
+display : block; /*Très important, sinon les dimensions ne sont pas prises en compte*/
+background : url("./images/2011hover.png") no-repeat;
+}
+#bouton2011:hover
+{
+background-image : url("./images/2011.png") !important;
+}
+
+/*slide 5*/
+
+#rougeole2{
+position:relative;
+width: 960px;
+height: 684px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(./images/complications.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+/*slide 6*/
+
+#rougeole1{
+position:relative;
+width: 960px;
+height: 684px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(./images/rougeole.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#rougeoleBIS{
+position: relative;
+width: 960px;
+height: 684px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(./images/rougeoleBis.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+/* crédits */
+#credits{
+position:relative;
+height: 684px;
+width: 960px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(./images/credits.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+
