@@ -29,9 +29,15 @@ var MapsFrance = function(el) {
                $('#picto-nb-jeux-donnees').html(data[i].jeuxDeDonnees);
                var ratio = (Math.round(data[i].jeuxDeDonnees/data[i].population*100000*100))/100;
                $('#picto-ratio-hab').html(ratio);
+               $('#nb-thematique').html(data[i].nbTheme);
                // gestion des pluriels
                $('#add-s-habitant').html('s');
                $('.add-x-jeu').html('x');
+               if(data[i].nbTheme > 1) {
+                  $('#nb-thematique-s').html('s');
+               } else {
+                  $('#nb-thematique-s').html('');
+               }
             }
          }
       });

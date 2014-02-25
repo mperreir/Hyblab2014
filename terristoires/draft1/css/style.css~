@@ -280,14 +280,13 @@ Footer
 }
 
 .logo-car-footer {
-   display:block;
    margin:10%;
 }
 
 
 /* color of background */
 .bg-green {
-   background-color:#B6D8B6;
+   background-color:#97b397;
 }
 .bg-blue {
    background-color:#5FA8A5;
