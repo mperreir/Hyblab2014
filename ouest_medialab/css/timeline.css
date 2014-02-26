@@ -1,0 +1,117 @@
+/* 
+    Document   : timeline
+    Author     : Rémy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#papier {
+    background: url('../images/pictogrammes/Presse.png') no-repeat center center;
+    background-size: 60%;
+}
+
+#tv {
+    background: url('../images/pictogrammes/Téloche.png') no-repeat center center;
+    background-size: 60%;
+}
+
+#web {
+    background: url('../images/pictogrammes/Internet-Multi.png') no-repeat center center;
+    background-size: 60%;
+}
+
+#radio {
+    background: url('../images/pictogrammes/Radio.png') no-repeat center center;
+    background-size: 60%;
+}
+
+.pictogrammes {
+    min-width: 100px;
+    height: 90px;
+    float: left;
+}
+
+#pictogrammes {
+    position: absolute; 
+    top: 118px; 
+    left: 0px;
+    width: 150px;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+}
+
+#div_lignes {
+    position: absolute; 
+    top: 85px; 
+    left: 0px;
+}
+.lignes {
+    background-image: url('../images/timeline/Ligne-timeline.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 90px;
+    min-width: 1000px;
+}
+
+#legende {
+    background: url('../images/timeline/legende.jpg') no-repeat right center;
+    position: absolute; 
+    top: 55%; 
+    left: 80%;
+    width: 182px;
+    height: 145px;
+}
+
+#slide2tl {
+    background-color: rgb(253,244,227);
+}
+
+#timeline {
+    position: relative;
+    margin-top: 10%;
+    padding-top: 7%;
+    padding-bottom: 1%;
+    background: url('../images/timeline/FONDTIMELINE.jpg') no-repeat center center;
+}
+
+#tl {
+    overflow: hidden;
+    width: 65%; 
+    height: 360px; 
+    border-radius: 7px;
+    margin: 0 auto; 
+    margin-bottom: 5%; 
+    margin-top: 5%;
+    margin-left: 15%;
+    background: url('../images/années/2004.png') no-repeat center center;
+}
+
+
+
+
+/* From Simile-timeine library CSS files */
+.t-highlight1{background-color:#ccf;}
+.p-highlight1{background-color:#fcc;}
+
+.timeline-highlight-label-start .label_t-highlight1{color:#f00;}
+.timeline-highlight-label-end .label_t-highlight1{color:#aaf;}
+
+
+.timeline-band-events .important{color:#f00;}		
+.timeline-band-events .small-important{background:#c00;}
+
+/*---------------------------------*/
+
+.dark-theme {
+}
+
+.dark-theme .t-highlight1{background-color:#003;}
+.dark-theme .p-highlight1{background-color:#300;}
+
+.dark-theme .timeline-highlight-label-start .label_t-highlight1{color:#f00;}
+.dark-theme .timeline-highlight-label-end .label_t-highlight1{color:#115;}
+
+.dark-theme .timeline-date-label-em{visibility: hidden;}
+.dark-theme .timeline-ether-lines{border-color:#fff;}
+.dark-theme .timeline-ether-highlight{background:transparent;}

@@ -1,0 +1,297 @@
+/* 
+    Document   : slides
+    Author     : Rémy
+    Description:
+        The CSS file for slides of the "one page" site
+*/
+
+.slide {
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 0 0 0 0;
+    margin: 0 auto;
+}
+
+#slide0 {
+    background-color: rgb(53,55,67);
+    background: url('../images/PREMIEREPAGEAVECBRUIT.jpg') no-repeat center center;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    padding: 0 0 0 0;
+    margin: 0 auto;
+}
+
+#header-slide1 {
+    padding: 0 0 0 0;
+    margin: 0 auto;
+    background: url('../images/header_slide1.png') no-repeat left center;
+    background-color: rgb(53,55,67);
+    height: 64px;
+}
+
+/* Slide 1 */
+#slide1 {
+    padding: 0 0 0 0;
+    margin: 0 auto;
+    display: block;
+    background: url('../images/textures/TextureFond.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url('../fonts/FuturaLight.ttf');
+}
+
+@font-face {
+    font-family: "BebasNeue";
+    src: url('../fonts/BebasNeue.otf');
+}
+
+#slide1 h1 {
+    font-family: "BebasNeue";
+    font-size: 2.8em;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: rgb(236,113,98);
+}
+
+#slide1 h2 {
+    font-family: "Futura";
+    font-size: 125%;
+    vertical-align: middle;
+    text-align: center;
+    color: #000;
+}
+
+/* Slide 2 */
+#slide2 {
+    display: block;
+    height:auto;
+    background-color: rgb(253,244,227);
+    /*padding-bottom: 5%;*/
+}
+
+#slide2 h1 {
+    font-family: "BebasNeue";
+    font-size: 250%;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 10px;
+    color: rgb(53,55,67);
+}
+
+#slide2 h4 {
+    font-family: "Futura";
+    font-size: 125%;
+    vertical-align: middle;
+    text-align: center;
+    color: #000;
+    padding-top: 8px;
+}
+
+#slide2 h3 {
+    font-family: "Futura";
+    font-size: 150%;
+    vertical-align: middle;
+    text-align: center;
+    color: rgb(53,55,67);
+}
+
+/* Slide 3 */
+#slide3 {
+    display: block;
+    height:auto;
+    background-color: rgb(53,55,67);
+}
+
+#slide3 h1 {
+    font-family: "BebasNeue";
+    font-size: 180%;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 10px;
+    color: rgb(53,55,67);
+}
+
+#slide3 h2 {
+    font-size: 2em;
+    color: #8a8683;
+    line-height: 0px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Slide 4 */
+#slide4 {
+    display: block;
+    height:auto;
+    background-color: rgb(91,167,183);
+}
+
+#slide4 h1 {
+    font-family: "BebasNeue";
+    font-style: normal;
+    font-size: 180%;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 80px;
+    padding-right: 50px;
+    color: rgb(236,113,98);
+}
+
+#slide4 h2 {
+    font-size: 2em;
+    color: #ffffff;
+    line-height: 0px;
+    padding-bottom:20px;
+    font-weight: 400;
+}
+
+#slide4 h3 {
+    font-size: 180%;
+    color: #ffffff;
+    font-family: "BebasNeue";
+    text-align: center;
+    line-height: 0px;
+    padding-top: 45px;
+    font-weight: 400;
+}
+
+/* Slide  */
+#slide5 {
+    display: block; 
+    width: 100%;
+    height: 597px;
+    background-color: transparent;
+ /*   background: url('../images/slide5.png') no-repeat center center;*/
+    
+}
+
+#slide5 h1 {
+    font-family: "BebasNeue";
+    font-style: normal;
+    font-size: 180%;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 80px;
+    padding-right: 50px;
+    color: rgb(236,113,98);
+}
+
+#bande {
+    background: url('../images/slide5_bandec2.png') repeat; 
+    width: auto;
+    height: 596px;
+}
+
+
+#credit-bg {
+    background: url('../images/slide5.png') no-repeat center center;
+    height: 596px;
+    width: auto;
+}
+
+#credits-text h1 {
+    font-family: "BebasNeue";
+    font-style: normal;
+    font-size: 180%;
+    text-align: center;
+    padding-left: 48%;
+    float: left;
+    padding-top: 9px;
+    color: rgb(53,55,67);
+   
+}
+
+#slide5 h2 {
+    font-family: "BebasNeue";
+    font-style: normal;
+    font-size: 180%;
+    text-align: center;
+    padding-top: 145px;
+    color: #000;
+}
+
+#slide5 h3 {
+    font-family: "Futura";
+    font-style: normal;
+    text-align: center;
+    font-size: 115%;
+    padding-left: 6%;
+    color: #fff;
+}
+
+#credits-content {
+    padding-top: 40px;
+    padding-right: 100px;
+}
+
+
+/*@import url(http://fonts.googleapis.com/css?family=Russo+One);*/
+#lets_partenaires {
+    clear:both;
+    width: 790px;
+    min-width: 100%;
+    margin-top: 3em;
+}
+
+#lets_partenaires_hyb:after {
+    clear: both;
+}
+#lets_partenaires_hyb:before, #lets_partenaires_hyb:after {
+    content: "";
+    display: table;
+}
+#lets_partenaires_hyb:before, #lets_partenaires_hyb:after {
+    content: "";
+    display: table;
+}
+#lets_partenaires_hyb {
+    width: 790px;
+    min-width: 790px;
+    margin: auto;
+    text-align: center;
+}
+
+#lets_partenaires_hyb .lets_first_row div {
+    float: left;
+    width: 790px;
+    min-width: 100%;
+    margin: auto;
+
+}
+
+#lets_partenaires_hyb .lets_second_row div {
+    float: left;
+    margin: 20px 0 0 0;
+}
+
+#lets_partenaires_hyb div.lets_text {
+    float: right;
+}
+
+#lets_partenaires_hyb div.lets_text  p{
+    float:left;
+    font-family: "Futura";
+}
+
+#lets_partenaires_hyb div.lets_text a{
+}
+
+#lets_partenaires_hyb a {
+}
+
+#lets_partenaires_hyb img {
+}
