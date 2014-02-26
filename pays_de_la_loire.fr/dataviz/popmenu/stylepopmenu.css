@@ -1,0 +1,29 @@
+#popupenu{
+    max-width: 50px;
+    width: 100%;
+    color: #000000;
+}
+#demo_box{
+    width: 90%;
+    position: absolute; 
+    z-index: 2;
+    color: #000000;
+}
+
+.pop_ctrl img {
+    width: 70px;
+}
+
+#imgCategorie:hover {
+    opacity: 0.5;
+}
+
+.pop_ctrl {
+    width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#demo_ul {
+    left: 5%;
+}
