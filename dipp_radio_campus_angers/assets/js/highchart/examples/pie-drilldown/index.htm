@@ -1,0 +1,175 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+
+    Highcharts.data({
+        csv: document.getElementById('tsv').innerHTML,
+        itemDelimiter: '\t',
+        parsed: function (columns) {
+
+            var brands = {},
+                brandsData = [],
+                versions = {},
+                drilldownSeries = [];
+            
+            // Parse percentage strings
+            columns[1] = $.map(columns[1], function (value) {
+                if (value.indexOf('%') === value.length - 1) {
+                    value = parseFloat(value);
+                }
+                return value;
+            });
+
+            $.each(columns[0], function (i, name) {
+                var brand,
+                    version;
+
+                if (i > 0) {
+
+                    // Remove special edition notes
+                    name = name.split(' -')[0];
+
+                    // Split into brand and version
+                    version = name.match(/([0-9]+[\.0-9x]*)/);
+                    if (version) {
+                        version = version[0];
+                    }
+                    brand = name.replace(version, '');
+
+                    // Create the main data
+                    if (!brands[brand]) {
+                        brands[brand] = columns[1][i];
+                    } else {
+                        brands[brand] += columns[1][i];
+                    }
+
+                    // Create the version data
+                    if (version !== null) {
+                        if (!versions[brand]) {
+                            versions[brand] = [];
+                        }
+                        versions[brand].push([version + " ans", columns[1][i]]);
+                    }
+                }
+                
+            });
+
+            $.each(brands, function (name, y) {
+                brandsData.push({ 
+                    name: name, 
+                    y: y,
+                    drilldown: versions[name] ? name : null
+                });
+            });
+            $.each(versions, function (key, value) {
+                drilldownSeries.push({
+                    name: key,
+                    id: key,
+                    data: value
+                });
+            });
+
+            // Create the chart
+            $('#container').highcharts({
+            colors:[
+                   'rgb(164,218,208)',
+                   'rgb(236,238,226)', 
+                   'rgb(245,89,83)', 
+                   'rgb(216,48,61)',  
+                   'rgb(40,52,77)', 
+                   'rgb(14,20,30)'
+                ],
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: ''
+                },
+                plotOptions: {
+                    series: {
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.name}'
+                        },
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span> <br/>'
+                }, 
+
+                series: [{
+                    name: 'Groupes',
+                    colorByPoint: true,
+                    data: brandsData,
+                    size :'80%',
+                    innerSize: '40%'
+                }],
+                drilldown: {
+                    series: drilldownSeries
+                }
+            })
+
+        }
+    });
+});
+    
+
+		</script>
+	</head>
+	<body>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/modules/data.js"></script>
+<script src="../../js/modules/drilldown.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<!-- Data from www.netmarketshare.com. Select Browsers => Desktop share by version. Download as tsv. -->
+<pre id="tsv" style="display:none">Browser Version	Total Market Share
+Entretenir les liens avec ses proches 12.17	93%
+Entretenir les liens avec ses proches 18.24	92%
+Entretenir les liens avec ses proches 25.39	92%
+Entretenir les liens avec ses proches 40.59	89%
+Entretenir les liens avec ses proches 60.69	91%
+Entretenir les liens avec ses proches 70	89%
+Se divertir 12.17	86%
+Se divertir 18.24	87%
+Se divertir 25.39	81%
+Se divertir 40.59	64%
+Se divertir 60.69	47%
+Se divertir 70	54%
+Nouvelles rencontres 12.17	33%
+Nouvelles rencontres 18.24	29%
+Nouvelles rencontres 25.39	20%
+Nouvelles rencontres 40.59	25%
+Nouvelles rencontres 60.69	7%
+Nouvelles rencontres 70	17%
+Partager photos/vidéos 12.17	79%
+Partager photos/vidéos 18.24	79%
+Partager photos/vidéos 25.39	73%
+Partager photos/vidéos 40.59	69%
+Partager photos/vidéos 60.69	74%
+Partager photos/vidéos 70	72%
+S'informer sur l'actu 12.17	56%
+S'informer sur l'actu 18.24	64%
+S'informer sur l'actu 25.39	47%
+S'informer sur l'actu 40.59	54%
+S'informer sur l'actu 60.69	53%
+S'informer sur l'actu 70	36%
+Activité professionnelle 12.17	6%
+Activité professionnelle 18.24	12%
+Activité professionnelle 25.39	18%
+Activité professionnelle 40.59	22%
+Activité professionnelle 60.69	9%
+Activité professionnelle 70	0%
+</pre>
+
+	</body>
+</html>

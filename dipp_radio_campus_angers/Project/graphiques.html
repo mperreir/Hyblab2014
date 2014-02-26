@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:./graphique_suivre.html# -->
+<html>
+	<head>
+		<script src="../assets/js/DATA/data_suivre_lactu.json"></script>
+		<script src="../assets/js/DATA/data_comprendre_lactu.json"></script>
+		<script type="text/javascript" src="../assets/js/jquery.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  		<meta charset="utf-8">
+		<style type="text/css">
+
+			@font-face{
+				font-family: cool_font;
+				src: url("../assets/font/FuturaStd-Medium.otf");
+				font-family: cool_font2;
+				src: url("../assets/font/OratorStd.otf");
+			}
+
+			table{
+				border-spacing: 0px;
+				border-color: white;
+				border-collapse: collapse;
+			}
+			div{
+		        display: inline-block;
+		        overflow: visible;
+		      }
+		    span{
+		    	font-family: cool_font, trebuchet ms;
+		    }
+		    .valeur{
+		    	position: relative;
+		    	text-align: right;
+		     	z-index = 5;
+		     }
+
+		    #proportion{
+		        position: absolute;
+		        display: relative;
+		      }
+
+			.centre{
+				  position: absolute;
+				  margin-left: 35%;
+				  z-index: 2;
+				  top: 4em;
+				}
+			.gauche {
+					  text-align: right;
+					  position: absolute;
+				  	  right: 58%;
+					  top: 8em;
+					  z-index: -1;
+					}
+			.droite {
+					  position: absolute;
+				  	  left: 68%;
+					  top: 10em;
+					  z-index: -1;
+					}
+			.tableau{
+				position: absolute;
+				margin-left: 39%;
+				z-index: 5;
+				top: 0.5em;
+			}
+			.boutongeneraux{
+				cursor: pointer;
+				position: relative;
+				height: 30px;
+				left: 80%;
+				padding-right: 50px;
+			}
+
+			.bouton{
+				cursor: pointer;
+			}
+
+			#tableauleg{
+				  text-align: left;
+				  position: absolute;
+			  	  right: 45%;
+				  top: 23em;
+				  z-index: 1;
+			}
+
+			#tableauleg2{
+
+				  position: absolute;
+			  	  left: 75%;
+				  top: 23em;
+				  z-index: 1;
+
+			}
+		</style>
+		<script type="text/javascript">
+			var comprendre = false;
+		function changer_suivre(){
+			comprendre=false;
+			$("#pourcentage11g").animate({width: 0}, 300);
+	        $("#pourcentage12g").animate({width: 0}, 300);
+	        $("#pourcentage13g").animate({width: 0}, 300);
+	        $("#pourcentage14g").animate({width: 0}, 300);
+	        $("#pourcentage11d").animate({width: 0}, 300);
+	        $("#pourcentage12d").animate({width: 0}, 300);
+	        taille_ordinateur();
+		}
+
+		function changer_comprendre(){
+			comprendre=true;
+			$("#pourcentage1g").animate({width: 0}, 300);
+	        $("#pourcentage2g").animate({width: 0}, 300);
+	        $("#pourcentage3g").animate({width: 0}, 300);
+	        $("#pourcentage4g").animate({width: 0}, 300);
+	        $("#pourcentage1d").animate({width: 0}, 300);
+	        $("#pourcentage2d").animate({width: 0}, 300);
+	        taille_ordinateur();
+
+		}
+
+	var tailleMaxBarre = 200;
+	var tailleMinBarre = 100;
+		function taille_ordinateur(){
+
+			document.getElementById("boutonordi").src = "../assets/img/graphique_suivre/ORDINATEUR_selected.png";
+			document.getElementById("boutontele").src = "../assets/img/graphique_suivre/TV.png";
+			document.getElementById("boutonlivre").src = "../assets/img/graphique_suivre/LIVRE.png";
+			document.getElementById("boutonradio").src = "../assets/img/graphique_suivre/RADIO.png";
+
+			if (comprendre==false){
+				document.getElementById('bouton1').src = '../assets/img/graphique_suivre/bouton_suivre_selected.png';
+				document.getElementById('bouton2').src = '../assets/img/graphique_suivre/bouton_comprendre.png';
+
+		        var tailleBarre1g = tailleMinBarre + (data_internet[0]/100)*tailleMaxBarre;
+		        var tailleBarre2g = tailleMinBarre + (data_internet[1]/100)*tailleMaxBarre;
+		        var tailleBarre3g = tailleMinBarre + (data_internet[2]/100)*tailleMaxBarre;
+		        var tailleBarre4g = tailleMinBarre + (data_internet[3]/100)*tailleMaxBarre;
+		        var tailleBarre1d = tailleMinBarre + (data_internet[4]/100)*tailleMaxBarre;
+		        var tailleBarre2d = tailleMinBarre + (data_internet[5]/100)*tailleMaxBarre;
+		        
+		        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+		        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+		        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+		        $("#pourcentage4g").animate({width: tailleBarre4g}, 300);
+		        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+		        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+
+		        document.getElementById("valeur1g").innerHTML = data_internet[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_internet[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_internet[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_internet[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_internet[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_internet[5]+"%";
+		        $("#legende11").animate({width: 0}, 300);
+		        $("#legende12").animate({width: 0}, 300);
+		        $("#legende13").animate({width: 0}, 300);
+		        $("#legende14").animate({width: 0}, 300);
+		        $("#legende15").animate({width: 0}, 300);
+		        $("#legende16").animate({width: 0}, 300);
+
+		        $("#legende1").animate({width: 50}, 300);
+		        $("#legende2").animate({width: 50}, 300);
+		        $("#legende3").animate({width: 50}, 300);
+		        $("#legende4").animate({width: 50}, 300);
+		        $("#legende5").animate({width: 50}, 300);
+		        $("#legende6").animate({width: 50}, 300);
+	    	}
+	    	else if (comprendre==true) {
+	    		document.getElementById('bouton1').src = '../assets/img/graphique_suivre/bouton_suivre.png';
+				document.getElementById('bouton2').src = '../assets/img/graphique_suivre/bouton_comprendre_selected.png';
+
+		    	var tailleBarre11g = tailleMinBarre + (data_internet2[0]/100)*tailleMaxBarre;
+		        var tailleBarre12g = tailleMinBarre + (data_internet2[1]/100)*tailleMaxBarre;
+		        var tailleBarre13g = tailleMinBarre + (data_internet2[2]/100)*tailleMaxBarre;
+		        var tailleBarre14g = tailleMinBarre + (data_internet2[3]/100)*tailleMaxBarre;
+		        var tailleBarre11d = tailleMinBarre + (data_internet2[4]/100)*tailleMaxBarre;
+		        var tailleBarre12d = tailleMinBarre + (data_internet2[5]/100)*tailleMaxBarre;
+		        
+		        $("#pourcentage11g").animate({width: tailleBarre11g}, 300);
+		        $("#pourcentage12g").animate({width: tailleBarre12g}, 300);
+		        $("#pourcentage13g").animate({width: tailleBarre13g}, 300);
+		        $("#pourcentage14g").animate({width: tailleBarre14g}, 300);
+		        $("#pourcentage11d").animate({width: tailleBarre11d}, 300);
+		        $("#pourcentage12d").animate({width: tailleBarre12d}, 300);
+
+		        $("#legende1").animate({width: 0}, 300);
+		        $("#legende2").animate({width: 0}, 300);
+		        $("#legende3").animate({width: 0}, 300);
+		        $("#legende4").animate({width: 0}, 300);
+		        $("#legende5").animate({width: 0}, 300);
+		        $("#legende6").animate({width: 0}, 300);
+
+		        $("#legende11").animate({width: 50}, 300);
+		        $("#legende12").animate({width: 50}, 300);
+		        $("#legende13").animate({width: 50}, 300);
+		        $("#legende14").animate({width: 50}, 300);
+		        $("#legende15").animate({width: 50}, 300);
+		        $("#legende16").animate({width: 50}, 300);
+
+		        document.getElementById("valeur1g").innerHTML = data_internet2[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_internet2[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_internet2[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_internet2[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_internet2[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_internet2[5]+"%";
+
+
+	    	}
+
+	      }
+
+	      function taille_tele(){
+
+			document.getElementById("boutonordi").src = "../assets/img/graphique_suivre/ORDINATEUR.png";
+			document.getElementById("boutontele").src = "../assets/img/graphique_suivre/TV_selected.png";
+			document.getElementById("boutonlivre").src = "../assets/img/graphique_suivre/LIVRE.png";
+			document.getElementById("boutonradio").src = "../assets/img/graphique_suivre/RADIO.png";
+			
+	      	if (comprendre==false){
+		        var tailleBarre1g = tailleMinBarre + (data_tele[0]/100)*tailleMaxBarre;
+		        var tailleBarre2g = tailleMinBarre + (data_tele[1]/100)*tailleMaxBarre;
+		        var tailleBarre3g = tailleMinBarre + (data_tele[2]/100)*tailleMaxBarre;
+		        var tailleBarre4g = tailleMinBarre + (data_tele[3]/100)*tailleMaxBarre;
+		        var tailleBarre1d = tailleMinBarre + (data_tele[4]/100)*tailleMaxBarre;
+		        var tailleBarre2d = tailleMinBarre + (data_tele[5]/100)*tailleMaxBarre;
+
+		        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+		        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+		        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+		        $("#pourcentage4g").animate({width: tailleBarre4g}, 300);
+		        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+		        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+
+		        document.getElementById("valeur1g").innerHTML = data_tele[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_tele[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_tele[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_tele[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_tele[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_tele[5]+"%";	
+		    }
+		    else{
+		        var tailleBarre11g = tailleMinBarre + (data_tele2[0]/100)*tailleMaxBarre;
+		        var tailleBarre12g = tailleMinBarre + (data_tele2[1]/100)*tailleMaxBarre;
+		        var tailleBarre13g = tailleMinBarre + (data_tele2[2]/100)*tailleMaxBarre;
+		        var tailleBarre14g = tailleMinBarre + (data_tele2[3]/100)*tailleMaxBarre;
+		        var tailleBarre11d = tailleMinBarre + (data_tele2[4]/100)*tailleMaxBarre;
+		        var tailleBarre12d = tailleMinBarre + (data_tele2[5]/100)*tailleMaxBarre;
+
+		        $("#pourcentage11g").animate({width: tailleBarre11g}, 300);
+		        $("#pourcentage12g").animate({width: tailleBarre12g}, 300);
+		        $("#pourcentage13g").animate({width: tailleBarre13g}, 300);
+		        $("#pourcentage14g").animate({width: tailleBarre14g}, 300);
+		        $("#pourcentage11d").animate({width: tailleBarre11d}, 300);
+		        $("#pourcentage12d").animate({width: tailleBarre12d}, 300);
+
+			    document.getElementById("valeur1g").innerHTML = data_tele2[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_tele2[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_tele2[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_tele2[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_tele2[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_tele2[5]+"%";
+	        }      	
+	      }
+
+	      	function taille_radio(){
+
+			document.getElementById("boutonordi").src = "../assets/img/graphique_suivre/ORDINATEUR.png";
+			document.getElementById("boutontele").src = "../assets/img/graphique_suivre/TV.png";
+			document.getElementById("boutonlivre").src = "../assets/img/graphique_suivre/LIVRE.png";
+			document.getElementById("boutonradio").src = "../assets/img/graphique_suivre/RADIO_selected.png";
+			
+	      	if (comprendre==false){
+		        var tailleBarre1g = tailleMinBarre + (data_radio[0]/100)*tailleMaxBarre;
+		        var tailleBarre2g = tailleMinBarre + (data_radio[1]/100)*tailleMaxBarre;
+		        var tailleBarre3g = tailleMinBarre + (data_radio[2]/100)*tailleMaxBarre;
+		        var tailleBarre4g = tailleMinBarre + (data_radio[3]/100)*tailleMaxBarre;
+		        var tailleBarre1d = tailleMinBarre + (data_radio[4]/100)*tailleMaxBarre;
+		        var tailleBarre2d = tailleMinBarre + (data_radio[5]/100)*tailleMaxBarre;
+		        
+		        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+		        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+		        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+		        $("#pourcentage4g").animate({width: tailleBarre4g}, 300);
+		        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+		        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+
+		        document.getElementById("valeur1g").innerHTML = data_radio[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_radio[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_radio[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_radio[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_radio[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_radio[5]+"%";	
+		    }
+		    else{
+		        var tailleBarre11g = tailleMinBarre + (data_radio2[0]/100)*tailleMaxBarre;
+		        var tailleBarre12g = tailleMinBarre + (data_radio2[1]/100)*tailleMaxBarre;
+		        var tailleBarre13g = tailleMinBarre + (data_radio2[2]/100)*tailleMaxBarre;
+		        var tailleBarre14g = tailleMinBarre + (data_radio2[3]/100)*tailleMaxBarre;
+		        var tailleBarre11d = tailleMinBarre + (data_radio2[4]/100)*tailleMaxBarre;
+		        var tailleBarre12d = tailleMinBarre + (data_radio2[5]/100)*tailleMaxBarre;
+		        
+		        $("#pourcentage11g").animate({width: tailleBarre11g}, 300);
+		        $("#pourcentage12g").animate({width: tailleBarre12g}, 300);
+		        $("#pourcentage13g").animate({width: tailleBarre13g}, 300);
+		        $("#pourcentage14g").animate({width: tailleBarre14g}, 300);
+		        $("#pourcentage11d").animate({width: tailleBarre11d}, 300);
+		        $("#pourcentage12d").animate({width: tailleBarre12d}, 300);
+
+			    document.getElementById("valeur1g").innerHTML = data_radio2[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_radio2[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_radio2[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_radio2[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_radio2[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_radio2[5]+"%";	
+		    }     	
+	      }
+
+	      	function taille_presse(){
+
+			document.getElementById("boutonordi").src = "../assets/img/graphique_suivre/ORDINATEUR.png";
+			document.getElementById("boutontele").src = "../assets/img/graphique_suivre/TV.png";
+			document.getElementById("boutonlivre").src = "../assets/img/graphique_suivre/LIVRE_selected.png";
+			document.getElementById("boutonradio").src = "../assets/img/graphique_suivre/RADIO.png";
+			
+	      	if (comprendre==false){     	      		
+		        var tailleBarre1g = tailleMinBarre + (data_presse[0]/100)*tailleMaxBarre;
+		        var tailleBarre2g = tailleMinBarre + (data_presse[1]/100)*tailleMaxBarre;
+		        var tailleBarre3g = tailleMinBarre + (data_presse[2]/100)*tailleMaxBarre;
+		        var tailleBarre4g = tailleMinBarre + (data_presse[3]/100)*tailleMaxBarre;
+		        var tailleBarre1d = tailleMinBarre + (data_presse[4]/100)*tailleMaxBarre;
+		        var tailleBarre2d = tailleMinBarre + (data_presse[5]/100)*tailleMaxBarre;
+
+		        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+		        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+		        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+		        $("#pourcentage4g").animate({width: tailleBarre4g}, 300);
+		        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+		        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+
+		        document.getElementById("valeur1g").innerHTML = data_presse[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_presse[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_presse[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_presse[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_presse[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_presse[5]+"%";	
+		    }
+		    else{
+			    var tailleBarre11g = tailleMinBarre + (data_presse2[0]/100)*tailleMaxBarre;
+		        var tailleBarre12g = tailleMinBarre + (data_presse2[1]/100)*tailleMaxBarre;
+		        var tailleBarre13g = tailleMinBarre + (data_presse2[2]/100)*tailleMaxBarre;
+		        var tailleBarre14g = tailleMinBarre + (data_presse2[3]/100)*tailleMaxBarre;
+		        var tailleBarre11d = tailleMinBarre + (data_presse2[4]/100)*tailleMaxBarre;
+		        var tailleBarre12d = tailleMinBarre + (data_presse2[5]/100)*tailleMaxBarre;
+
+		        $("#pourcentage11g").animate({width: tailleBarre11g}, 300);
+		        $("#pourcentage12g").animate({width: tailleBarre12g}, 300);
+		        $("#pourcentage13g").animate({width: tailleBarre13g}, 300);
+		        $("#pourcentage14g").animate({width: tailleBarre14g}, 300);
+		        $("#pourcentage11d").animate({width: tailleBarre11d}, 300);
+		        $("#pourcentage12d").animate({width: tailleBarre12d}, 300);
+
+			    document.getElementById("valeur1g").innerHTML = data_presse2[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_presse2[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_presse2[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_presse2[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_presse2[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_presse2[5]+"%";	   
+		    
+
+	         }    	
+	      }
+
+
+		</script>
+	</head>
+
+		<div>
+		            <table class ="gauche" cellpadding="10px">
+		            	<tbody>
+		            		<tr>
+		            			<td colspan="2">
+		            			<div>
+                                	<span class="valeur" id="valeur1g"></span>
+	                            </div>
+	                            <img src="../assets/img/graphique_suivre/barre1.png" class="pourcentage" id="pourcentage1g" alt="pourcentage" style="width: 0px;height:30px;">
+	                            <img src="../assets/img/graphique_comprendre/barre1.png" class="pourcentage1" id="pourcentage11g" alt="pourcentage1" style="width: 0px;height:30px;">
+	                        </td>
+		            		</tr>
+		            		<tr>
+		            			<td>
+		            			<div>
+                                	<span class="valeur" id="valeur2g"></span>
+	                            </div>
+	                            <img src="../assets/img/graphique_suivre/barre2.png" class="pourcentage" id="pourcentage2g" alt="pourcentage" style="width: 0px;height:30px;">
+	                            <img src="../assets/img/graphique_comprendre/barre2.png" class="pourcentage1" id="pourcentage12g" alt="pourcentage1" style="width: 0px;height:30px;">
+	                            </td>
+		            		</tr>
+		            		<tr>
+		            			<td >
+		            			<div>
+                                	<span class="valeur" id="valeur3g"></span>
+	                            </div>
+	                            <img src="../assets/img/graphique_suivre/barre3.png" class="pourcentage" id="pourcentage3g" alt="pourcentage" style="width: 0px;height:30px;">
+	                            <img src="../assets/img/graphique_comprendre/barre3.png" class="pourcentage1" id="pourcentage13g" alt="pourcentage1" style="width: 0px;height:30px;">	                            
+	                            </td>
+		            		</tr>
+		            		<tr>
+		            			<td >
+		            			<div>
+                                	<span class="valeur" id="valeur4g"></span>
+	                            </div>
+	                            <img src="../assets/img/graphique_suivre/barre4.png" class="pourcentage" id="pourcentage4g" alt="pourcentage" style="width: 0px;height:30px;">
+	                            <img src="../assets/img/graphique_comprendre/barre4.png" class="pourcentage1" id="pourcentage14g" alt="pourcentage1" style="width: 0px;height:30px;">
+	                            </td>
+		            		</tr>		            		
+		            	</tbody>
+		            </table>
+                    <div class ="centre"> 
+                    	<img src="../assets/img/graphique_suivre/ROND.png" id = "rond" width="350px" id = "cercle"> 
+                    	<table class = "tableau">
+                    		<tbody>
+                    			<tr>
+                    				<td>
+                    				<img src="../assets/img/graphique_suivre/ORDINATEUR_selected.png" id = "boutonordi" class = "bouton" width="75px" onclick = "taille_ordinateur();">
+                    				</td>
+                    			</tr>
+                    			<tr>
+                    				<td>
+                    				<img src="../assets/img/graphique_suivre/TV.png" id = "boutontele" class = "bouton" width="75px" onclick = "taille_tele();">
+                    				</td>
+                    			</tr>
+                    			<tr>
+                    				<td>
+                    				<img src="../assets/img/graphique_suivre/LIVRE.png" id = "boutonlivre" class = "bouton"  width="75px" onclick = "taille_presse();">
+                    				</td>
+                    			</tr>
+                    			<tr>
+                    				<td>
+                    				<img src="../assets/img/graphique_suivre/RADIO.png" id = "boutonradio" class = "bouton"  width="75px" onclick = "taille_radio();">
+                    				</td>
+                    			</tr>
+                    		</tbody>
+                    	</table>
+                    </div>
+		            <table class ="droite" cellpadding="15px">
+		            	<tbody>
+			                <tr>
+			                	<td colspan="2">		                		
+	                             <img src="../assets/img/graphique_suivre/barre5.png" class="pourcentage" id="pourcentage1d" alt="pourcentage" style="width:0px;height:30px;">
+	                             <img src="../assets/img/graphique_comprendre/barre11.png" class="pourcentage1" id="pourcentage11d" alt="pourcentage1" style="width:0px;height:30px;">
+	                             <div>
+                                	<span class="valeur" id="valeur1d"></span>
+	                            </div>	
+	                             </td>
+			                </tr>
+			                <tr > 
+			                	<td>		                		
+		                        <img src="../assets/img/graphique_suivre/barre6.png" class="pourcentage" id="pourcentage2d" alt="pourcentage" style="width: 0px;height:30px;">
+		                        <img src="../assets/img/graphique_comprendre/barre12.png" class="pourcentage1" id="pourcentage12d" alt="pourcentage1" style="width: 0px;height:30px;">		                        
+		                        <div>
+                                	<span class="valeur" id="valeur2d"></span>
+	                            </div>	
+		                        </td>
+			                </tr>
+				        	</tbody>
+			    	</table>
+			    	<div>
+			    		<img src="../assets/img/graphique_suivre/bouton_suivre_selected.png" id="bouton1" class = "boutongeneraux" alt="bouton"onclick="changer_suivre();">
+			    		<img src="../assets/img/graphique_suivre/bouton_comprendre.png" id="bouton2" class = "boutongeneraux" alt="bouton" onclick="changer_comprendre();" >
+			    	</div>
+			</div>
+			<div>
+				<table id="tableauleg">
+					<tbody>
+						<tr>
+							<td align="center">
+								<span>DIPLÔMES</span>
+							</td>
+							<td>
+						</tr>
+						<tr>
+							<td align="right">
+								<div>
+                                	<span class="diplome" id="diplome1"></span>
+	                            </div>	
+								<img src="../assets/img/graphique_suivre/legende1.png" class="legende" id="legende1" alt="legende" style="width: 50px;height:20px;">
+								<img src="../assets/img/graphique_comprendre/legende1.png" class="legende" id="legende11" alt="legende" style="width: 0px;height:20px;">	
+		                        
+							</td>
+							<td>
+								<img src="../assets/img/graphique_suivre/legende3.png" class="legende" id="legende3" alt="legende" style="width: 50px;height:20px;">		             
+								<img src="../assets/img/graphique_comprendre/legende3.png" class="legende" id="legende13" alt="legende" style="width: 0px;height:20px;">
+								<div>
+                                	<span class="diplome" id="diplome3"></span>
+                                </div>
+
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<div>
+                                	<span class="diplome" id="diplome2"></span>
+                                </div>	
+								<img src="../assets/img/graphique_suivre/legende2.png" class="legende" id="legende2" alt="legende" style="width: 50px;height:20px;">
+								<img src="../assets/img/graphique_comprendre/legende2.png" class="legende" id="legende12" alt="legende" style="width: 0px;height:20px;">			                        
+		                        						
+							</td>
+							<td>
+								<img src="../assets/img/graphique_suivre/legende4.png" class="legende" id="legende4" alt="legende" style="width: 50px;height:20px;">
+								<img src="../assets/img/graphique_comprendre/legende4.png" class="legende" id="legende14" alt="legende" style="width: 0px;height:20px;">																		                        
+		                        <div>
+                                	<span class="diplome" id="diplome4"></span>		
+                                </div>					
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div>
+				<table id="tableauleg2">
+					<tbody>
+						<tr>
+							<td>
+								<img src="../assets/img/graphique_suivre/legende5.png" class="legende" id="legende5" alt="legende" style="width: 50px;height:30px;">
+								<img src="../assets/img/graphique_comprendre/legende5.png" class="legende" id="legende15" alt="legende" style="width: 0px;height:30px;">										                        
+		                        <div>
+                                	<span class="population" id="populationj"></span>
+                                </div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="../assets/img/graphique_suivre/legende6.png" class="legende" id="legende6" alt="legende" style="width: 50px;height:30px;">
+								<img src="../assets/img/graphique_comprendre/legende6.png" class="legende" id="legende16" alt="legende" style="width: 0px;height:30px;">										                        
+		                        <div>
+                                	<span class="population" id="populationt"></span>
+                                </div>							
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<script type="text/javascript">
+				var tailleBarre1g = tailleMinBarre + (data_internet[0]/100)*tailleMaxBarre;
+		        var tailleBarre2g = tailleMinBarre + (data_internet[1]/100)*tailleMaxBarre;
+		        var tailleBarre3g = tailleMinBarre + (data_internet[2]/100)*tailleMaxBarre;
+		        var tailleBarre4g = tailleMinBarre + (data_internet[3]/100)*tailleMaxBarre;
+		        var tailleBarre1d = tailleMinBarre + (data_internet[4]/100)*tailleMaxBarre;
+		        var tailleBarre2d = tailleMinBarre + (data_internet[5]/100)*tailleMaxBarre;
+		        
+		        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+		        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+		        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+		        $("#pourcentage4g").animate({width: tailleBarre4g}, 300);
+		        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+		        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+
+		        document.getElementById("valeur1g").innerHTML = data_internet[0]+"%";
+		        document.getElementById("valeur2g").innerHTML = data_internet[1]+"%";
+		        document.getElementById("valeur3g").innerHTML = data_internet[2]+"%";
+		        document.getElementById("valeur4g").innerHTML = data_internet[3]+"%";
+		        document.getElementById("valeur1d").innerHTML = data_internet[4]+"%";
+		        document.getElementById("valeur2d").innerHTML = data_internet[5]+"%";
+
+
+				document.getElementById("diplome1").innerHTML = data_groupe[0];
+				document.getElementById("diplome2").innerHTML = data_groupe[1];
+				document.getElementById("diplome3").innerHTML = data_groupe[2];
+				document.getElementById("diplome4").innerHTML = data_groupe[3];
+				document.getElementById("populationj").innerHTML = data_groupe[4];
+				document.getElementById("populationt").innerHTML = data_groupe[5];
+		    </script>
+	</body>
+</html>
+
+	

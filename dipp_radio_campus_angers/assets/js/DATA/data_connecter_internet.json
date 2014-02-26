@@ -1,0 +1,11 @@
+var data_groupe=[
+	"12-17 ans",
+	"18-24 ans",
+	"25-39 ans",
+	"40-59 ans",
+	"60-69 ans",
+	"70 ans et plus"
+],
+
+data_tv=[9,21,13,7,3,1];
+data_net=[56,61,45,26,8,4];

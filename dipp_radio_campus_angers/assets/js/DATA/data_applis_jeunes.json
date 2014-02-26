@@ -1,0 +1,10 @@
+var data_groupe=[
+    "Jeux",
+    "Photos",
+    "Reseaux Sociaux",
+    "Videos",
+    "Musique",
+    "Livres"
+],
+
+data_proportion=[39.9,94.3,56.9,56.9,43.1,33.3];

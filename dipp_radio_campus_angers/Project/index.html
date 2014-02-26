@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Hyblab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="../assets/css/colorbox.css" rel="stylesheet">
+
+
+  <style>
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  color: #5a5a5a;
+}
+
+.source{
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  z-index: 15;
+}
+@font-face{
+  font-family: russ;
+  src: url("../assets/font/Russo.ttf");
+}
+
+#lets_partenaires {
+  clear:both;
+  margin-top: 9em;
+}
+
+#lets_partenaires_hyb:after {
+  clear: both;
+}
+#lets_partenaires_hyb:before, #lets_partenaires_hyb:after {
+  content: "";
+  display: table;
+}
+
+#lets_partenaires_hyb {
+  width: 100%;
+  left: 10px;
+  text-align: center;
+}
+
+#lets_partenaires_hyb .lets_first_row div {
+  float: left;
+  width: 90px;
+}
+
+#lets_partenaires2 {
+  clear:both;
+  margin-top: 19em;
+}
+
+
+#lets_partenaires_hyb2 {
+  width: 100%;
+  left: 10px;
+}
+
+
+#lets_partenaires_hyb2  .lets_second_row div {
+  float: left;
+  margin-right: 4px;
+  margin-left: 4px;  
+}
+
+
+#lets_partenaires_hyb2 div.lets_text {
+  float: right;
+}
+#lets_partenaires_hyb2 div.lets_text  p{
+  float:left;
+  color: #000000;
+  font-family: russ;
+
+}
+#lets_partenaires_hyb2 div.lets_text a{
+}
+#lets_partenaires_hyb2 a {
+}
+#lets_partenaires_hyb2 img {
+  position: inherit;
+}
+
+#lets_partenaires_hyb img {
+  position: inherit;
+}
+
+
+#lets_partenaires_hyb div.lets_text {
+  float: right;
+}
+#lets_partenaires_hyb div.lets_text  p{
+  float:left;
+  font-family: 'Russo One', sans-serif;
+}
+#lets_partenaires_hyb div.lets_text a{
+}
+#lets_partenaires_hyb a {
+}
+
+#lets_partenaires_hyb img {
+  position: inherit;
+}
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 20px;
+  margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+}
+.navbar-wrapper .navbar {
+
+}
+
+/* Remove border and change up box shadow for more contrast */
+.navbar .navbar-inner {
+  border: 0;
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+/* Downsize the brand/project name a bit */
+.navbar .brand {
+  padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+}
+
+/* Navbar links: increase padding for taller navbar */
+.navbar .nav > li > a {
+  padding: 15px 20px;
+}
+
+/* Offset the responsive button for proper vertical alignment */
+.navbar .btn-navbar {
+  margin-top: 10px;
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 0px;
+}
+
+.carousel .container {
+  position: relative;
+  z-index: 9;
+}
+
+.carousel-control {
+  color: #756E6E;
+  height: 80px;
+  margin-top: 0;
+  font-size: 120px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  background-color: transparent;
+  border: 0;
+  z-index: 10;
+}
+
+.carousel-indicators {
+  display:inline;
+  position: absolute;
+  top: inherit;
+  bottom: 15px;
+  left: 25%;
+  z-index: 10;
+  margin: 0;
+  list-style: none;
+  cursor:pointer;
+  background: transparent;
+
+
+}
+
+.carousel-indicators li {
+  margin-right: 3%;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  transition: background 0.5s;
+}
+
+.carousel-indicators .active {
+  margin-right: 3%;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  color: red;
+}
+
+.carousel-indicator-li1{
+  background: url(../assets/img/icon/home.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li1:hover,.carousel-indicator-li1.active {
+  background: url(../assets/img/icon/home_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel-indicator-li2{
+  background: url(../assets/img/icon/informer.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li2:hover,.carousel-indicator-li2.active{
+  background: url(../assets/img/icon/informer_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel-indicator-li3{
+  background: url(../assets/img/icon/connecter.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li3:hover,.carousel-indicator-li3.active{
+  background: url(../assets/img/icon/connecter_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel-indicator-li4{
+  background: url(../assets/img/icon/partager.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li4:hover,.carousel-indicator-li4.active{
+  background: url(../assets/img/icon/partager_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel-indicator-li5{
+  background: url(../assets/img/icon/cultiver.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li5:hover,.carousel-indicator-li5.active{
+  background: url(../assets/img/icon/cultiver_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel-indicator-li6{
+  background: url(../assets/img/icon/interview.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li6:hover,.carousel-indicator-li6.active{
+  background: url(../assets/img/icon/interview_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel-indicator-li7{
+  background: url(../assets/img/icon/lsv.png) no-repeat;
+  background-size: 100%;
+}
+.carousel-indicator-li7:hover,.carousel-indicator-li7.active{
+  background: url(../assets/img/icon/lsv_selected.png) no-repeat;
+  background-size: 100%;
+}
+
+.carousel .item {
+  background-position: center;
+  background-color: rgb(30,30,30);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+#home{
+  background-image: url(../assets/img/people/home.jpg);
+}
+
+#item1{
+  background-image: url(../assets/img/people/informer.jpg);
+}
+
+#item2{
+  background-image: url(../assets/img/people/connecter.jpg);
+}
+
+#item3{
+  background-image: url(../assets/img/people/partager.jpg);
+}
+
+#item4{
+  background-image: url(../assets/img/people/cultiver.jpg);
+}
+
+#interview{
+  background-image: url(../assets/img/people/interview.jpg);
+}
+
+#end{
+  background-image: url(../assets/img/people/remerciements.jpg);
+}
+
+.carousel img {
+  position: absolute;
+}
+
+.carousel-caption {
+  background-color: transparent;
+  position: static;
+  padding-left: 300px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+  margin: 0;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+  margin-top: 10px;
+}
+
+/* CUSTOM IFRAME
+-------------------------------------------------- */
+iframe{
+  border:0;
+  z-index:15;
+
+
+}
+
+/* CUSTOM IMG
+-------------------------------------------------- */
+.bouton_play{
+  position: bottom;
+  width: 120px;
+  top: 30px;
+  right: 5px;
+  z-index:10;
+  cursor:pointer;
+
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 780px) {
+
+  .container.navbar-wrapper {
+    margin-bottom: 0;
+    width: auto;
+  }
+  .navbar-inner {
+    border-radius: 0;
+    margin: -20px 0;
+  }
+
+  .carousel-indicators{
+    left:8%;
+  }
+
+  .carousel-indicators .active{
+    width: 50px;
+    height: 50px;
+    margin-right: 1%;
+  }
+
+  .carousel-indicators li{
+    width: 50px;
+    height: 50px;
+    margin-right: 1%;
+  }
+  .carousel .item {
+    height: 500px;
+  }
+  .carousel img {
+    width: auto;
+    height: 500px;
+  }
+
+  .featurette {
+    height: auto;
+    padding: 0;
+  }
+  .featurette-image.pull-left,
+  .featurette-image.pull-right {
+    display: block;
+    float: none;
+    max-width: 40%;
+    margin: 0 auto 20px;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .navbar-inner {
+    margin: -20px;
+  }
+
+  .carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .carousel .container {
+
+  }
+  .carousel .item {
+    height: 500px;
+
+  }
+
+  #item1{
+    background-image: url(../assets/img/people-min-780/informer.jpg);
+  }
+
+  #item2{
+    background-image: url(../assets/img/people-min-780/connecter.jpg);
+  }
+
+  #item3{
+    background-image: url(../assets/img/people-min-780/partager.jpg);
+  }
+
+  #item4{
+    background-image: url(../assets/img/people-min-780/cultiver.jpg);
+  }
+  .carousel img {
+    height: 300px;
+  }
+  .carousel-caption {
+    width: 65%;
+    padding: 0 70px;
+    margin-top: 100px;
+  }
+  .carousel-caption h1 {
+    font-size: 30px;
+  }
+  .carousel-caption .lead,
+  .carousel-caption .btn {
+    font-size: 18px;
+  }
+
+  .marketing .span4 + .span4 {
+    margin-top: 40px;
+  }
+
+  .featurette-heading {
+    font-size: 30px;
+  }
+  .featurette .lead {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+}
+
+@media (max-width: 400px){
+  .carousel-inner{
+    height: 450px;
+  }
+
+  #item1{
+    background-image: url(../assets/img/people-min-425/informer.jpg);
+  }
+
+  #item2{
+    background-image: url(../assets/img/people-min-425/connecter.jpg);
+  }
+
+  #item3{
+    background-image: url(../assets/img/people-min-425/partager.jpg);
+  }
+
+  #item4{
+    background-image: url(../assets/img/people-min-425/cultiver.jpg);
+  }
+  .carousel-indicators{
+    left : 10%;
+    margin: 0;
+    right: 1px;
+  }
+
+  .carousel-indicators .active{
+    left : 10%;
+    margin: 0;
+    right: 1px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel-indicators li{
+    margin-right: 1%;
+    width: 30px;
+    height: 30px;
+  }
+
+
+}
+</style>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="../assets/ico/favicon.png">
+<style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+
+
+
+<body >
+
+
+<!-- Carousel
+  ================================================== -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li class="carousel-indicator-li1 active" data-target="#myCarousel" data-slide-to="0">
+        Accueil
+      </li>
+      <li class="carousel-indicator-li2" data-target="#myCarousel" data-slide-to="1">
+        S'informer
+      </li>
+      <li class="carousel-indicator-li3" data-target="#myCarousel" data-slide-to="2">
+
+      </li>
+      <li class="carousel-indicator-li4" data-target="#myCarousel" data-slide-to="3">
+      </li>
+      <li class="carousel-indicator-li5" data-target="#myCarousel" data-slide-to="4">
+      </li>
+      <li class="carousel-indicator-li6" data-target="#myCarousel" data-slide-to="5">
+      </li>
+      <li class="carousel-indicator-li7" data-target="#myCarousel" data-slide-to="6">
+      </li>
+
+    </ol>
+
+
+
+    <!-- Wrappers for Slides !-->
+    <div class="carousel-inner">
+      <div id="home" class="item active">
+        <div height="50px" display="inline-block">
+        </div>
+        <div class="container">
+          <div class="carousel-caption" style="inline" size="auto">
+          </div>
+        </div>
+      </div>
+      <div id="item1" class="item">
+        <div class="container">
+          <div class="carousel-caption">
+            <a class="colorbox-load" href="javascript:void jQuery.colorbox({
+            html:'<iframe width=600 height=400 src=http:////www.youtube.com/embed/fOI1nQ53aGQ frameborder=10 allowfullscreen></iframe>'
+          })">
+          <img class="bouton_play" src="../assets/img/icon/play.png">
+        </a>
+
+        <iframe src="./graphiques.html" style= "height:500px; width:100%; z-index:-10" scrolling="no" frameborder="0" allowtransparency="true">
+          <p>Votre navigateur ne supporte pas l'élément iframe</p>
+        </iframe>
+        <div style="text-align:right" class="source">
+          <a href="http://www.cemea.asso.fr/multimedia/enfants-medias/spip.php?article1077" target="_blank">Source: CREDOC 2012</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="item2" class="item">
+    <div class="container">
+      <div class="carousel-caption">
+        <a class="colorbox-load" href="javascript:void jQuery.colorbox({
+        html:'<iframe width=600 height=400 src=http:////www.youtube.com/embed/bbIzr6upFoU frameborder=10 allowfullscreen></iframe>'
+      })">
+      <img class="bouton_play" src="../assets/img/icon/play.png">
+    </a>
+    <div>        
+      <iframe src="./smartphone.html" style= "height:460px; width:100%; z-index:-10" scrolling="no" frameborder="0" allowtransparency="true" >
+        <p>Votre navigateur ne supporte pas l'élément iframe</p>
+      </iframe>
+
+
+      <div style="text-align:right" class="source">
+        <a href="http://www.forum-avignon.org/sites/default/files/editeur/Atelier_Bnpparibas_Nouvelles_generations_et_culture_numerique_def_FR.pdf" target="_blank">Source: L'atelier BNP Paribas pour le Forum d'Avignon 2012</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="item3" class="item">
+  <div class="container">
+    <div class="carousel-caption">
+      <a class="colorbox-load" href="javascript:void jQuery.colorbox({
+      html:'<iframe width=600 height=400 src=http:////www.youtube.com/embed/zwEFBFmcm08 frameborder=10 allowfullscreen></iframe>'
+    })">
+    <img class="bouton_play" src="../assets/img/icon/play.png">
+  </a>
+  <iframe src="../pie_chart_highchart.htm" style= "height:420px; width:100%; padding-top:85px; z-index:-10" scrolling="no" frameborder="0" allowtransparency="true">
+    <p>Votre navigateur ne supporte pas l'élément iframe</p>
+  </iframe>
+  <div style="text-align:right" class="source">
+    <a href="http://www.cemea.asso.fr/multimedia/enfants-medias/spip.php?article1077" target="_blank">Source: CREDOC 2012</a>
+  </div>
+</div>
+</div>
+</div>
+<div id="item4" class="item">
+  <div class="container">
+    <div class="carousel-caption">  
+      <a class="colorbox-load" href="javascript:void jQuery.colorbox({
+      html:'<iframe width=600 height=400 src=http:////www.youtube.com/embed/hnIaQhcizpQ frameborder=10 allowfullscreen></iframe>'
+    })">
+    <img class="bouton_play" src="../assets/img/icon/play.png">
+  </a>
+  <iframe src="../miel_pops_v2.html" height="500px" width="100%" scrolling="no" frameborder="0" allowtransparency="true">
+    <p>Votre navigateur ne supporte pas l'élément iframe</p>
+  </iframe>
+  <div style="text-align:right" class="source">
+    <a href="http://www.cemea.asso.fr/multimedia/enfants-medias/spip.php?article1077" target="_blank">Source: CREDOC 2012</a>
+  </div>
+</div>
+</div>
+</div>
+<div id="interview" class="item">
+  <div class="container">
+    <div class="carousel-caption">
+
+    </div>
+  </div>
+</div>
+<div id="end" class="item">
+  <div class="container">
+    <div class="carousel-caption" style="padding-left:200px">
+      <div id="lets_partenaires">
+        <div id="lets_partenaires_hyb">
+          <div class="lets_first_row">
+            <div>
+              <a href="http://www.radiocampusangers.com" title="Radio Campus Angers" target="_blank">
+                <img width="50px" src="../assets/img/logos/radio_campus.jpg" alt="Radio Campus Angers">
+              </a>
+            </div>
+            <div>
+              <a href=" http://vlipp.fr" title="Vlipp" target="_blank">
+                <img src="../assets/img/logos/vlipp.jpg" alt="Vlipp">
+              </a>
+            </div>
+            <div>
+              <a href="http://www.ouestmedialab.fr" title="MediaLab" target="_blank">
+                <img src="../assets/img/logos/medialab.jpg" alt="MediaLab">
+              </a>
+            </div>
+            <div>
+              <a href="http://www.agrnantes.fr" title="A.G.R." target="_blank">
+                <img src="../assets/img/logos/agr.jpg" alt="A.G.R.">
+              </a>
+            </div>
+            <div>
+              <a href="http://web.polytech.univ-nantes.fr" title="Polytech" target="_blank">
+                <img src="../assets/img/logos/polytech.jpg" alt="Polytech">
+              </a>
+            </div>
+            <div>
+              <a href="http://www.sciencescom.org" title="Science Com" target="_blank">
+                <img src="../assets/img/logos/sciences_com.jpg" alt="Science Com">
+              </a>
+            </div>
+            <div>
+              <a href="http://www.orange.fr" title="Orange" target="_blank">
+                <img src="../assets/img/logos/orange.jpg" alt="Orange">
+              </a>
+            </div>
+            <div>
+              <a href="http://www.paysdelaloire.fr" title="Pays de la Loire" target="_blank">
+                <img src="../assets/img/logos/pdl.jpg" alt="Pays de la Loire">
+              </a>
+            </div>
+            <div>
+              <a href="http://www.univ-nantes.fr" title="Université de Nantes" target="_blank">
+                <img src="../assets/img/logos/universite_nantes.jpg" alt="Université de Nantes">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="lets_partenaires2">
+          <div id="lets_partenaires_hyb2">
+            <div class="lets_second_row">
+              <div>
+                <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/" title="Creative Commons" target="_blank">
+                  <img src="../assets/img/logos/cc.jpg" alt="Creative Commons">
+                </a>
+              </div>
+              <div>
+                <a href="http://opensource.org" title="Open Source Initiative" target="_blank">
+                  <img src="../assets/img/logos/osi.jpg" alt="Open Source Initiative">
+                </a>
+              </div>
+              <div>
+                <a href="http://www.etalab.gouv.fr" title="Etalab Gouv" target="_blank">
+                  <img src="../assets/img/logos/etalab_gouv.jpg" alt="Etalab Gouv">
+                </a>
+              </div>
+              <div class="lets_text">
+                <p>un projet issu des ateliers du </p>
+                <a href="http://www.hyblab.fr" target="_blank">
+                  <img src="../assets/img/logos/hyblab.jpg" alt="Hyblab - Data Journalisme">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- Controls !-->
+<a class="left carousel-control" href="../Project/demo.html#myCarousel" data-slide="prev">‹</a>
+<a class="right carousel-control" href="../Project/demo.html#myCarousel" data-slide="next">›</a>
+</div><!-- /.carousel -->
+
+
+
+
+<!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/bootstrap-transition.js"></script>
+  <script src="../assets/js/bootstrap-alert.js"></script>
+  <script src="../assets/js/bootstrap-modal.js"></script>
+  <script src="../assets/js/bootstrap-dropdown.js"></script>
+  <script src="../assets/js/bootstrap-scrollspy.js"></script>
+  <script src="../assets/js/bootstrap-tab.js"></script>
+  <script src="../assets/js/bootstrap-tooltip.js"></script>
+  <script src="../assets/js/bootstrap-popover.js"></script>
+  <script src="../assets/js/bootstrap-button.js"></script>
+  <script src="../assets/js/bootstrap-collapse.js"></script>
+  <script src="../assets/js/bootstrap-carousel.js"></script>
+  <script src="../assets/js/bootstrap-typeahead.js"></script>
+  <script src="../assets/js/jquery.colorbox.js"></script>
+
+
+  <script src="../assets/js/holder/holder.js"></script>
+
+  <script>
+  !function ($) {
+    $(function(){
+
+      $('#myCarousel').carousel()
+    })
+  }(window.jQuery)
+  </script>
+
+</script>
+
+</body></html>

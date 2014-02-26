@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Carte de France</title>
+	<link rel="stylesheet" href="js/jquery-jvectormap-1.2.2.css" type="text/css" media="screen"/>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-jvectormap-fr-mill-en.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/classement.js"></script>
+    <script type="text/javascript" src="js/graphique.js"></script>
+	<script type="text/javascript" src="js/donnees.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	<script type="text/javascript" src="js/exporting.js"></script>
+    <script type="text/javascript" src="js/timeline.js"></script>
+    
+    <script type="text/javascript" src="js/fullPage.js-master/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/fullPage.js-master/examples/examples.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="js/fullPage.js-master/jquery.fullPage.css" />
+	
+	<!--<link rel="stylesheet" type="text/css" href="fullPage.js-master/examples/demoPage.css" />-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
+		
+	<script src="js/jquery-ui.min.js"></script>	
+</head>
+<body>
+<div id="content">
+    <div id="intro">
+             <div class="section" id="section0">
+
+        <div id="texte">
+                
+                <img src="JDEhyblabMAQUETTEpreparationdedonnee/LOGO_JDE.jpg" class="logoJDE"/>
+                
+                <h1>L'ÉVOLUTION DE LA FISCALITÉ LOCALE DES ENTREPRISES</h1>
+                <h1>33 VILLES PASSÉES AU CRIBLE<h1>
+            </div>
+                    
+            <div id="description">
+                <p>
+				Où la pression fiscale sur les entreprises est-elle la plus forte en France ? La
+				couleur politique des équipes en place a-t-elle une influence sur le niveau des
+				taux que l’on trouve sur le territoire ?</p>
+                
+				<p>C’est à ces deux questions que le Journal des entreprises s’emploie à répondre
+				via ce classement interactif et évolutif (Lire notre méthodologie) qui compare
+				les taux de 33 villes en France.</p>
+                
+				<p>Les deux principales taxes locales payées par les entreprises ont été analysées :
+				La Contribution foncière des entreprises (CFE) et la Taxe foncière sur les propriétés bâties. 
+                Pour avoir une meilleure vue de la politique fiscale d’une ville
+				dans la durée, nous avons ajouté les taux de l’ancienne taxe professionnelle,
+				remplacée en 2010, par la CFE et la CVAE (Contribution sur la valeur
+				ajoutée des entreprises).
+                </p>
+            </div>
+         <div class="bottom">
+                <div id="radio">
+                    <p>Ecoutez notre émission spéciale</p>
+                    <a href="http://laradiodesentreprises.com/channel/1_rde"  target="_blank" class="nounderline">
+                        <img src="JDEhyblabMAQUETTEpreparationdedonnee/podcast.png" title="Podcast JDE" /> 
+                    </a>
+                </div>
+				
+    
+                <div id="foot">
+                    <a href="http://www.linkedin.com/company/le-journal-des-entreprises"  target="_blank" class="nounderline">
+                    <img src="JDEhyblabMAQUETTEpreparationdedonnee/logolinkedin.png" title="Twitter" /> 
+                    </a>
+                    <a href="http://fr.viadeo.com/fr/company/le-journal-des-entreprises"  target="_blank" class="nounderline">
+                    <img src="JDEhyblabMAQUETTEpreparationdedonnee/logoviadeo.png" title="Twitter" /> 
+                    </a>
+                    <a href="https://twitter.com/JEntreprises"  target="_blank" class="nounderline">
+                    <img src="JDEhyblabMAQUETTEpreparationdedonnee/logotwitter.png" title="Twitter" /> 
+                    </a>
+                    <a href="https://www.facebook.com/lejournaldesentreprises"  target="_blank" class="nounderline">
+                    <img src="JDEhyblabMAQUETTEpreparationdedonnee/logofacebook.png" title="Facebook" /> 
+                    </a>
+                </div>
+            </div>
+    </div>
+</div>
+                   
+        
+    </div>
+    <div class="section " id="section1">
+        <div class="bloc-carte">
+            <div class="table">
+                <div class="cell">
+                    <div id="map0">
+                    </div>
+                    <div class="statistics" id="statistics0">
+                    </div>
+                    <div class="timeline" id="timeline0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="evolution" style="color:#b4a59d"> ÉVOLUTION DE</div>
+        <div class="ranking" id = "ranking0">
+            <div class="evolution-suite" style="color:#f5f6f6">LA COTISATION FONCIÈRE <br>DES ENTREPRISES (CFE)<br> ENTRE <span style="color:#cf1315">2011</span> ET <span style="color:#cf1315">2012</span></div>
+            <div class="clear">
+                <img class= "fleche" onclick="scrollUp(0);" src="JDEhyblabMAQUETTEpreparationdedonnee/fleche-haut-2.png"/>
+                <div class="tableau">
+                    <table id="tableau0">
+                    </table>
+                </div>
+                <img class= "fleche" onclick="scrollDown(0);" src="JDEhyblabMAQUETTEpreparationdedonnee/fleche-bas-2.png"/>
+            </div>
+        </div>
+</div>
+<div class="section" id="section2">
+
+    <div class="bloc-carte">
+        <div class="table">
+                <div class="cell">
+                    <div id="map1">
+                    </div>
+                    <div class="statistics" id="statistics1">
+                    </div>
+                    <div class="timeline" id="timeline1">
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="evolution" style="color:#f5f6f6"> ÉVOLUTION DE</div>
+        <div class="ranking" id = "ranking1">
+            <div class="evolution-suite" style="color:#b4a59d">LA TAXE PROFESSIONNELLE <br>ENTRE <span style="color:#cf1315">2002</span> ET <span style="color:#cf1315">2010</div>
+            <div class="clear">
+                <img class= "fleche" onclick="scrollUp(1);" src="JDEhyblabMAQUETTEpreparationdedonnee/fleche-haut-1.png"/>
+                <div class="tableau">
+                    <table id="tableau1">
+                    </table>
+                </div>
+                <img class= "fleche" onclick="scrollDown(1);" src="JDEhyblabMAQUETTEpreparationdedonnee/fleche-bas-1.png"/>
+            </div>
+        </div>
+</div>
+<div class="section" id="section3">
+
+    <div class="bloc-carte">
+        <div class="table">
+                <div class="cell">
+                    <div id="map2">
+                    </div>
+                    <div class="statistics" id="statistics2">
+                    </div>
+                    <div class="timeline" id="timeline2">
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="evolution" style="color:#b4a59d"> ÉVOLUTION DE</div>
+        <div class="ranking" id = "ranking2">
+            <div class="evolution-suite" style="color:#f5f6f6">LA TAXE FONCIÈRE SUR LES <br>PROPRIÉTÉS BÂTIES <br> ENTRE <span style="color:#cf1315">2002</span> ET <span style="color:#cf1315">2012</div>
+            <div class="clear">
+                <img class= "fleche" onclick="scrollUp(2);" src="JDEhyblabMAQUETTEpreparationdedonnee/fleche-haut-2.png"/>
+                <div class="tableau">
+                    <table id="tableau2">
+                    </table>
+                </div>
+                <img class= "fleche" onclick="scrollDown(2);" src="JDEhyblabMAQUETTEpreparationdedonnee/fleche-bas-2.png" onClick=/>
+            </div>
+        </div>
+</div>
+<div class="section" id="section4">
+    <div id="scCom">
+        <div id="article">    
+        <h1>Comment les agglomérations taxent les entreprises</h1>
+            
+		<p>C'est la première taxe locale payée par les entreprises. Et l'une des principales ressources financières des collectivités. Réformer la Contribution Foncière des entreprises (CFE) est donc un exercice de haute voltige. Surtout en ces temps de restriction budgétaire des collectivités et de diminution des marges des entreprises.</p> 
+            
+        <h2>De nombreuses inégalités fiscales</h2>
+            
+        <p>En 2016, une réforme interviendra avec l’actualisation des valeurs locatives cadastrales, la base permettant de calculer l’impôt. Car la CFE comme la taxe foncière sur les propriétés bâties sont assises sur des valeurs locatives datant de 1970... Et les élus s'accordent à dire que la situation génère de nombreuses inégalités fiscales.</p>
+
+<p>D'une ville à l’autre, d'une rue à l’autre, d'un immeuble à l'autre, le traitement fiscal diffère. Et la structure du tissu économique a un impact sur le montant global perçu par la collectivité. Par exemple, la présence, dans une ville, de nombreux entrepôts industriels a une influence directe sur la recette finale.</p>
+
+        <h2>Un indicateur de la fiscalité locale des entreprises</h2>
+<p>Face à des situations locales aussi disparates que mouvantes, nous avons donc choisi de mesurer la pression fiscale des agglomérations et donc d'établir un palmarès des taux votés par les intercommunalités. Un indicateur qui complète notre précédent classement élaboré à partir du montant moyen de CFE payé par habitant et par ville (<a href="http://www.lejournaldesentreprises.com/national/actualite/dossiers/taxe-cfe-les-villes-ou-on-paye-le-plus-en-france-05-12-2013-210734.php">lejournaldesentreprises.com</a>).</p>
+
+<p>Avec l’évolution du taux de l’ancienne taxe professionnelle entre 2002 et 2008 et celui de la taxe sur le foncier bâti, il permet de se faire une meilleure idée de la politique fiscale d'une collectivité à l’adresse des entreprises. En cette période d’élections municipales, espérons que ce classement nourrira le débat entre élus et dirigeants d'entreprises.</p>
+            
+            <h1>EN SAVOIR +</h1>
+        <p>Retrouvez plus d'informations, des articles et des interviews sur le site du
+		Journal des Entreprises, et des podcasts sur La Radio des Entreprises.
+		<a href="" title="Dossier complet" class="nounderline">
+			<img src="JDEhyblabMAQUETTEpreparationdedonnee/dossier.png"/>
+		</a></p>
+
+		</div>
+    </div>
+</div>
+    
+    <div class="section" id="section5">
+			<section class="page10">
+                <div class="titre">Crédits</div>
+                <div class="bandeauCredits">
+                <br>Réalisation (<a href="http://www.polytech-nantes.fr">Polytech Nantes</a>) : Kévin BENARD, Tanguy VOURCH 
+                <br>Design (<a href="http://www.agrnantes.fr">AGR L'école de l’image</a>) : Marion LE COQ, Pierrick DUPAQUIER
+                <br>Editorial (<a href="http://www.sciencescom.org">SciencesCom</a>) : Sophie CHATEL, Camille GOUY, Rym DJABALI
+                <br>Avec la participation et l'aide d'Armelle GEGADEN (<a href="http://www.lejournaldesentreprises.com/national/index.php">Le Journal des entreprises</a>)
+                <p>Sources : <a href="http://www.impots.gouv.fr/portal/dgi/public/professionnels?espId=2&pageId=professionnels&sfid=20">Direction générale des Finances Publiques</a> </p>
+                <div class="logos">
+                    <table id="tableauLogos">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="http://www.lejournaldesentreprises.com/national/index.php"><img class="imagePartenaires" src="logos/Le JDE.jpg" ></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.ouestmedialab.fr/"><img class="imagePartenaires" src="logos/ouestmedialab.jpg" ></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.agrnantes.fr/"><img class="imagePartenaires" src="logos/agr.jpg" ></a>
+                                </td>
+                                <td>
+                                    <a href="http://web.polytech.univ-nantes.fr/"><img class="imagePartenaires" src="logos/polytech.jpg" ></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.sciencescom.org/"><img class="imagePartenaires" src="logos/sciencescom.jpg"></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.orange.fr/"><img class="imagePartenaires" src="logos/orange.jpg" ></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.univ-nantes.fr/"><img class="imagePartenaires" src="logos/univ.jpg" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr"><img class="imagePartenaires" alt="Licence Creative Commons" style="border-width:0" class="imgCC"  src="logos/cc.jpg"/>
+                                </td>
+                                <td>
+                                    <a href="http://opensource.org/"><img class="imagePartenaires" src="logos/opensourceinitiative.jpg"></a>
+                                </td>
+                                <td>
+                                    <a href="http://www.etalab.gouv.fr/"><img class="imagePartenaires" src="logos/openlicence.jpg"></a>
+                                </td>
+                                <td colspan="3" id="texteTableauPartenaires" >
+                                    Un projet issu des ateliers du
+                                </td>
+                                <td>
+                                    <a href="http://www.hyblab.fr/"><img class="imagePartenaires" src="logos/hyblab.jpg"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+				</div>
+            </section>
+			
+		</div>
+</body>
+</html>

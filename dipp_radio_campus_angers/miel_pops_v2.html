@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://bl.ocks.org/mbostock/raw/7881887/ -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <style>
+      @font-face {
+        font-family: cool_font;
+        src: url('./assets/font/FuturaStd-Book.otf');
+      }
+      circle{
+        cursor: pointer;
+        overflow: visible;
+      }
+      div{
+        display: inline-block;
+        overflow: visible;
+      }
+      #proportion-text{
+        position: absolute;
+        display: relative;
+        font-size: 50px;
+      }
+      svg,symbol, image, marker, pattern, foreignObject{
+        overflow: visible;
+      }
+      body{
+        overflow: visible;
+      }
+      .selector{
+        margin-top: 30%;
+        padding-left: 50px;
+        vertical-align: top;
+        font-family: cool_font, trebuchet ms;
+
+        cursor:pointer;
+      }
+
+  </style>
+</head>
+<body>
+  <div id="div-main">
+  <div id="bubbleGraph" display:"inline-block">
+    <script src="./assets/js/d3js/d3.min.js"></script>
+    <script src="./assets/js/DATA/data_se_cultiver2.json"></script>
+    <script>
+
+    var width = 500,
+    height = 450,
+    padding = 1.5, // separation between same-color nodes
+    clusterPadding = 6, // separation between different-color nodes
+    maxRadius = 12;
+
+    var n = 200, // total number of nodes
+    m = 2, // number of distinct clusters
+
+    tab_color = new Array("#9B999A","rgb(237,85,98)","rgb(247,171,8)","rgb(26,158,179)","rgb(162,215,31)","rgb(239,217,9)"),
+    max_data= Math.max(data_proportion[0],data_proportion[1],data_proportion[2],data_proportion[3],data_proportion[4],data_proportion[5]);
+
+
+
+// The largest node for each cluster.
+var clusters = new Array(m);
+
+function chargeBubble(number){
+  //initialization
+  i=-1;
+  ind=0;
+  d3.select("svg").remove();
+
+  var data = data_proportion[number-1],
+      nc = (data/100)*n; // number of colored nodes
+
+  //nodes creation
+  var nodes = d3.range(n).map(function() {
+  i = i+1;
+  if (i<=nc){
+    ind=number; 
+  }else {
+    ind=0;
+  };
+  var 
+  r = Math.sqrt(max_data / (2*m) * -Math.log((max_data*2)/n)*Math.random()) * maxRadius,
+  d = {
+    cluster: ind,
+    radius: r,
+    x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
+    y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
+  };
+  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
+  return d;
+});
+
+var force = d3.layout.force()
+.nodes(nodes)
+.size([width, height])
+.gravity(0.03)
+.charge(-6)
+.on("tick", tick)
+.start();
+
+var svg = d3.select("#bubbleGraph").append("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .attr("overflow","visible");
+
+var node = svg.selectAll("circle")
+.data(nodes)
+.enter().append("circle")
+.style("fill", function(d) { return tab_color[d.cluster]; })
+.call(force.drag);
+
+
+var div = document.getElementById("proportion-text");
+if (number>0) {
+  div.textContent = data+ "%";
+}
+
+
+/*    $('#proportion-text').hover(function() {
+       $(this).css('color','#ffffff');
+    }, function() {
+       $(this).css('color', '#97A59E');
+    });
+*/
+
+node.transition()
+.duration(750)
+.delay(function(d, i) { return i * 5; })
+.attrTween("r", function(d) {
+  var i = d3.interpolate(0, d.radius);
+  return function(t) { return d.radius = i(t); };
+});
+
+function tick(e) {
+  node
+  .each(cluster(10 * e.alpha * e.alpha))
+  .each(collide(.5))
+  .attr("cx", function(d) { return d.x; })
+  .attr("cy", function(d) { return d.y; });
+}
+
+// Move d to be adjacent to the cluster node.
+function cluster(alpha) {
+  return function(d) {
+/*var cluster = clusters[d.cluster];
+if (cluster === d) return;
+var x = d.x - cluster.x,
+y = d.y - cluster.y,
+l = Math.sqrt(x * x + y * y),
+r = d.radius + cluster.radius;
+if (l != r) {
+l = (l - r) / l * alpha;
+d.x -= x *= l;
+d.y -= y *= l;
+cluster.x += x;
+cluster.y += y;
+}*/
+};
+}
+
+// Resolves collisions between d and all other circles.
+function collide(alpha) {
+  var quadtree = d3.geom.quadtree(nodes);
+  return function(d) {
+    var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
+    nx1 = d.x - r,
+    nx2 = d.x + r,
+    ny1 = d.y - r,
+    ny2 = d.y + r;
+    quadtree.visit(function(quad, x1, y1, x2, y2) {
+      if (quad.point && (quad.point !== d)) {
+        var x = d.x - quad.point.x,
+        y = d.y - quad.point.y,
+        l = Math.sqrt(x * x + y * y),
+        r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
+        if (l < r) {
+          l = (l - r) / l * alpha;
+          d.x -= x *= l;
+          d.y -= y *= l;
+          quad.point.x += x;
+          quad.point.y += y;
+        }
+      }
+      return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+    });
+  };
+}
+}
+
+
+
+
+</script>
+<script>chargeBubble(0);</script>
+</div>
+
+  <div id="s1" class="selector" display="inline-block">
+    <a onClick="chargeBubble(1);"> <img src="./assets/img/legende/cube-rose.png" style="width:15px"> Famille/Amis<br></a>
+    <a onClick="chargeBubble(2);"><img src="./assets/img/legende/cube-orange.png" style="width:15px"> Services internet<br></a>
+    <a onClick="chargeBubble(3);"><img src="./assets/img/legende/cube-bleu.png" style="width:15px"> Télévision/Radio<br></a>
+    <a onClick="chargeBubble(4);"><img src="./assets/img/legende/cube-vert.png" style="width:15px"> Réseaux sociaux<br></a>
+    <a onClick="chargeBubble(5);"><img src="./assets/img/legende/cube-jaune.png" style="width:15px"> Presse magazine<br></a>
+    <br>
+    <div id="proportion-text"></div>
+  </div>
+
+</div>
+</body></html>

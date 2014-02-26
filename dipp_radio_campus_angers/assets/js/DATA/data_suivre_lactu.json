@@ -1,0 +1,13 @@
+var data_groupe=[
+	"Aucun",
+	"Brevet des collèges",
+	"Baccalauréat",
+	"Diplôme du supérieur",
+	"18-24 ans",
+	"Population totale"
+],
+
+data_tele = [79,66,53,39,56,58];
+data_internet = [4,13,18,23,26,16];
+data_radio=[9,10,15,21,8,13]; 
+data_presse = [7,10,15,16,10,12];

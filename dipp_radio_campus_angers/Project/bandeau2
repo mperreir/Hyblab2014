@@ -1,0 +1,67 @@
+<html><head><style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Russo+One);
+#lets_partenaires2 {
+    clear:both;
+    margin-top: 9em;
+}
+
+
+#lets_partenaires_hyb2 {
+    width: 100%;
+    left: 10px;
+    text-align: center;
+}
+
+#lets_partenaires_hyb2 .lets_first_row div {
+    float: left;
+    width: 90px;
+}
+
+#lets_second_row div {
+    float: left;
+    width: 90px;    
+}
+
+
+#lets_partenaires_hyb div.lets_text {
+    float: right;
+}
+#lets_partenaires_hyb div.lets_text  p{
+    float:left;
+    font-family: 'Russo One', sans-serif;
+}
+#lets_partenaires_hyb div.lets_text a{
+}
+#lets_partenaires_hyb a {
+}
+#lets_partenaires_hyb2 img {
+  position: inherit;
+}
+</style>
+
+<style type="text/css"></style>
+</head>
+<body>
+    <div id="lets_partenaires2">
+    <div id="lets_partenaires_hyb2">
+        <div class="lets_second_row">
+            <div>
+                <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/" title="Creative Commons">
+                    <img src="../assets/img/logos/cc.jpg" alt="Creative Commons">
+                </a>
+            </div>
+            <div>
+                <a href="http://opensource.org" title="Open Source Initiative">
+                    <img src="../assets/img/logos/osi.jpg" alt="Open Source Initiative">
+                </a>
+            </div>
+            <div>
+                <a href="http://www.etalab.gouv.fr" title="Etalab Gouv">
+                    <img src="../assets/img/logos/etalab_gouv.jpg" alt="Etalab Gouv">
+                </a>
+            </div>
+            <div class="lets_text"><p>un projet issu des ateliers du </p><a href="http://www.hyblab.fr"><img src="../assets/img/logos/hyblab.jpg" alt="Hyblab - Data Journalisme"></a></div>
+        </div>
+    </div>
+</div>
+</body></html>

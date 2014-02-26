@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:./demo3.html# -->
+<html>
+	<head>
+		<script src="../assets/js/DATA/data_applis_jeunes.json"></script>
+		<script src="../assets/js/DATA/data_connecter_internet.json"></script>
+		<script type="text/javascript" src="../assets/js/jquery.js"></script>
+		<script type="text/javascript" src="../assets/js/jquery.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+		@font-face{
+				font-family: cool_font;
+				src: url("../assets/font/FuturaStd-Medium.otf");
+				font-family: cool_font2;
+				src: url("../assets/font/OratorStd.otf");
+			}
+
+			table{
+				border-spacing: 0px;
+				border-color: white;
+				border-collapse: collapse;
+			}
+			div{
+		        display: inline-block;
+		        overflow: visible;
+		      }
+
+		    span{
+		    	font-family: cool_font2, trebuchet ms;
+		    	z-index: 5;
+		    }
+
+		    #proportion{
+		        position: absolute;
+		        display: relative;
+		      }
+		      
+		     .pourcentage{
+		     	width: 0px;
+		     	height: 30px;
+		      }
+			.centre{
+				  position: absolute;
+				  margin-left: 28%;
+				  z-index: 2;
+				  top: 3em;
+				}
+			#tableaubarregauche {
+					  text-align: right;
+					  position: absolute;
+				  	  right: 66%;
+					  top: 6em;
+					  z-index: -1;
+					}
+			#tableaurondgauche{
+				text-align: right;
+				position: absolute;
+				right: 71%;
+				top: 6em;
+				z-index: -1;
+			}
+			#tableaubarredroite {
+					  position: absolute;
+				  	  left: 40%;
+					  top: 6em;
+					  z-index: -1;
+					}
+			#tableauronddroite {
+					  position: absolute;
+				  	  left: 52%;
+					  top: 4.5em;
+					  z-index: -1;
+					}
+
+			.bouton{
+				cursor: pointer;
+				position: relative;
+				height: 40px;
+				top: 25em;
+				left: 55%;
+			}
+
+
+		    .valeurd{
+		    	position: relative;
+		    	text-align: right;
+		     	left: 100%;
+		     }
+
+		     .valeurg{
+		     	position: relative;
+		    	text-align: right;
+		     	right: 100%;
+		     }
+
+		     #rond1g{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond1.png");
+				background-size: cover;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond2g{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond2.png");
+				background-size: contain;
+				background-repeat: repeat-x;
+				min-height: 20px;								
+		     }
+
+		     #rond3g{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond3.png");
+				background-size: contain;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond4g{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond4.png");
+				background-size: cover;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond5g{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond5.png");
+				background-size: cover;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond6g{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond6.png");
+				background-size: cover;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }	
+
+		     #rond1d{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond1.png");
+				background-size: contain;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond2d{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond2.png");
+				background-size: contain;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond3d{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond3.png");
+				background-size: contain;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond4d{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond4.png");
+				background-size: contain;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond5d{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond5.png");
+				background-size: cover;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }
+
+		     #rond6d{
+		     	display: inline-block;
+				background: url("../assets/img/telephone4/rond6.png");
+				background-size: cover;
+				background-repeat: repeat-x;
+				min-height: 20px;
+		     }	
+
+		     .rond{
+				display: none;
+				width: 0px;
+				min-height: 20px;
+				top : ;
+			}
+
+			.ordinateur{
+				display: none;
+				position: absolute;
+				left: 56%;
+				width: 100px;
+				top : 0em;
+			}
+
+			.television{
+				display: none;
+				position: absolute;
+				left: 18%;
+				width: 100px;
+				top: 0em;
+			}
+	     
+
+
+
+		</style>
+		<script type="text/javascript">
+	var tailleMaxBarre = 200;
+	var tailleMinBarre = 100;
+	var dossier1 = "../assets/img/telephone2/"
+	var dossier2 = "../assets/img/telephone4/"
+
+		function taille(){
+			document.getElementById('bouton1').src = '../assets/img/telephone4/bouton1_selected.png';
+			document.getElementById('bouton2').src = '../assets/img/telephone4/bouton2.png';
+
+	        $(".rond").fadeOut();
+	        $(".ordinateur").fadeOut();
+	        $(".television").fadeOut();
+
+			$("#rond1g").animate({width: 0}, tailleMaxBarre);
+	        $("#rond2g").animate({width: 0}, tailleMaxBarre);
+	        $("#rond3g").animate({width: 0}, tailleMaxBarre);
+	        $("#rond4g").animate({width: 0}, tailleMaxBarre);
+	        $("#rond5g").animate({width: 0}, tailleMaxBarre);      
+	        $("#rond6g").animate({width: 0}, tailleMaxBarre);
+
+	        $("#rond1d").animate({width: 0}, tailleMaxBarre);
+	        $("#rond2d").animate({width: 0}, tailleMaxBarre);
+	        $("#rond3d").animate({width: 0}, tailleMaxBarre);
+	        $("#rond4d").animate({width: 0}, tailleMaxBarre);
+	        $("#rond5d").animate({width: 0}, tailleMaxBarre);
+	        $("#rond6d").animate({width: 0}, tailleMaxBarre);
+			document.getElementById("telephone").src = dossier1+"smartphone.png";
+	        var tailleBarre1g = tailleMinBarre + (data_proportion[0]/100)*tailleMaxBarre;
+	        var tailleBarre2g = tailleMinBarre + (data_proportion[2]/100)*tailleMaxBarre;
+	        var tailleBarre3g = tailleMinBarre + (data_proportion[4]/100)*tailleMaxBarre;
+	        var tailleBarre1d = tailleMinBarre + (data_proportion[1]/100)*tailleMaxBarre;
+	        var tailleBarre2d = tailleMinBarre + (data_proportion[3]/100)*tailleMaxBarre;
+	        var tailleBarre3d = tailleMinBarre + (data_proportion[5]/100)*tailleMaxBarre;
+	        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+	        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+	        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+	        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+	        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+	        $("#pourcentage3d").animate({width: tailleBarre3d}, 300);
+
+	        $("valeur1g").show();
+	        $("valeur2g").show();
+	        $("valeur3g").show();
+	        $("valeur1d").show();
+	        $("valeur2d").show();
+	        $("valeur3d").show();
+	        document.getElementById("valeur1g").innerHTML = data_proportion[0]+"%";
+	        document.getElementById("valeur2g").innerHTML = data_proportion[2]+"%";
+	        document.getElementById("valeur3g").innerHTML = data_proportion[4]+"%";
+	        document.getElementById("valeur1d").innerHTML = data_proportion[1]+"%";
+	        document.getElementById("valeur2d").innerHTML = data_proportion[3]+"%";
+	        document.getElementById("valeur3d").innerHTML = data_proportion[5]+"%";
+	     }
+
+
+		function cache(){
+			document.getElementById('bouton2').src = '../assets/img/telephone4/bouton2_selected.png';
+			document.getElementById('bouton1').src = '../assets/img/telephone4/bouton1.png';
+
+			$("#pourcentage1g").animate({width: 0}, 300);
+	        $("#pourcentage2g").animate({width: 0}, 300);
+	        $("#pourcentage3g").animate({width: 0}, 300);
+	        $("#pourcentage1d").animate({width: 0}, 300);
+	        $("#pourcentage2d").animate({width: 0}, 300);
+	        $("#pourcentage3d").animate({width: 0}, 300);
+
+			document.getElementById("telephone").src = dossier2+"smartphone.png"
+			var tailleMaxBarre = 310;
+			var tailleBarre1g = (data_tv[0]/100)*tailleMaxBarre;
+	        var tailleBarre2g = (data_tv[1]/100)*tailleMaxBarre;
+	        var tailleBarre3g = (data_tv[2]/100)*tailleMaxBarre;
+	        var tailleBarre4g = (data_tv[3]/100)*tailleMaxBarre;
+	        var tailleBarre5g = (data_tv[4]/100)*tailleMaxBarre;
+	        var tailleBarre6g = (data_tv[5]/100)*tailleMaxBarre;
+	        
+	        var tailleBarre1d = (data_net[0]/100)*tailleMaxBarre;
+	        var tailleBarre2d = (data_net[1]/100)*tailleMaxBarre;
+	        var tailleBarre3d = (data_net[2]/100)*tailleMaxBarre;
+	        var tailleBarre4d = (data_net[3]/100)*tailleMaxBarre;
+	        var tailleBarre5d = (data_net[4]/100)*tailleMaxBarre;
+	        var tailleBarre6d = (data_net[5]/100)*tailleMaxBarre;
+	        $(".rond").fadeIn();
+	        $(".ordinateur").fadeIn();
+	        $(".television").fadeIn();
+
+	        $("valeur1g").hide();
+	        $("valeur2g").hide();
+	        $("valeur3g").hide();
+	        $("valeur1d").hide();
+	        $("valeur2d").hide();
+	        $("valeur3d").hide();
+
+	        $("#rond1g").animate({width: tailleBarre1g}, tailleMaxBarre);
+	        $("#rond2g").animate({width: tailleBarre2g}, tailleMaxBarre);
+	        $("#rond3g").animate({width: tailleBarre3g}, tailleMaxBarre);
+	        $("#rond4g").animate({width: tailleBarre4g}, tailleMaxBarre);
+	        $("#rond5g").animate({width: tailleBarre5g}, tailleMaxBarre);      
+	        $("#rond6g").animate({width: tailleBarre6g}, tailleMaxBarre);
+
+	        $("#rond1d").animate({width: tailleBarre1d}, tailleMaxBarre);
+	        $("#rond2d").animate({width: tailleBarre2d}, tailleMaxBarre);
+	        $("#rond3d").animate({width: tailleBarre3d}, tailleMaxBarre);
+	        $("#rond4d").animate({width: tailleBarre4d}, tailleMaxBarre);
+	        $("#rond5d").animate({width: tailleBarre5d}, tailleMaxBarre);
+	        $("#rond6d").animate({width: tailleBarre6d}, tailleMaxBarre);
+
+	        document.getElementById("valeur1g").innerHTML = "";
+	        document.getElementById("valeur2g").innerHTML = "";
+	        document.getElementById("valeur3g").innerHTML = "";
+	        document.getElementById("valeur1d").innerHTML = "";
+	        document.getElementById("valeur2d").innerHTML = "";
+	        document.getElementById("valeur3d").innerHTML = "";
+
+	        document.getElementById("valeur11g").innerHTML = data_tv[0]+"%";
+	        document.getElementById("valeur12g").innerHTML = data_tv[1]+"%";
+	        document.getElementById("valeur13g").innerHTML = data_tv[2]+"%";
+	        document.getElementById("valeur14g").innerHTML = data_tv[3]+"%";
+	        document.getElementById("valeur15g").innerHTML = data_tv[4]+"%";
+	        document.getElementById("valeur16g").innerHTML = data_tv[5]+"%";
+
+	        document.getElementById("valeur11d").innerHTML = data_net[0]+"%";
+	        document.getElementById("valeur12d").innerHTML = data_net[1]+"%";
+	        document.getElementById("valeur13d").innerHTML = data_net[2]+"%";
+	        document.getElementById("valeur14d").innerHTML = data_net[3]+"%";
+	        document.getElementById("valeur15d").innerHTML = data_net[4]+"%";
+	        document.getElementById("valeur16d").innerHTML = data_net[5]+"%";
+
+
+
+	     }
+
+		</script>
+	</head>
+	<body>
+		<div>
+			<table class ="gauche" cellpadding="20px" id="tableaubarregauche">
+				<tbody>
+					<tr>
+						<td>							
+							<div>
+								<span id="valeur1g"> </span>
+							</div>
+							<img src="../assets/img/telephone2/pourcentage1g.png" class="pourcentage" id="pourcentage1g" alt="pourcentage">
+
+						</td>
+					</tr>
+					<tr>
+						<td>							
+							<div>
+								<span id="valeur2g"> </span>
+							</div>
+							<img src="../assets/img/telephone2/pourcentage2g.png" class="pourcentage" id="pourcentage2g" alt="pourcentage">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div>
+								<span id="valeur3g"> </span>
+							</div>
+	                        <img src="../assets/img/telephone2/pourcentage3g.png" class="pourcentage" id="pourcentage3g" alt="pourcentage">
+
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+		            <table class ="gauche" cellpadding="10px" id="tableaurondgauche">
+		            	<tbody>
+		            		<tr>
+		            			<td colspan="2">
+		            			<div class="rond" id="rond1g" alt="rond">
+                                	<span class="valeurg" id="valeur11g"></span>
+	                            </div>
+	                        </td>
+		            		</tr>
+		            		<tr>
+		            			<td>
+		            			<div class="rond" id="rond2g" alt="rond"> 
+                                	<span class="valeurg" id="valeur12g"></span>
+	                            </div>
+	                            </td>
+		            		</tr>
+		            		<tr>
+		            			<td >
+		            			<div class="rond" id="rond3g" alt="rond">
+                                	<span class="valeurg" id="valeur13g"></span>
+	                            </div>
+	                            </td>
+		            			<tr>
+		            			<td >
+		            			<div class="rond" id="rond4g" alt="rond">
+                                	<span class="valeurg" id="valeur14g"></span>
+	                            </div>                         
+	                        </td>
+		            		</tr>
+		            		<tr>
+		            			<td>
+		            			<div class="rond" id="rond5g" alt="rond">
+                                	<span class="valeurg" id="valeur15g"></span>
+	                            </div>                       
+	                            </td>
+		            		</tr>
+		            		<tr>
+		            			<td >
+		            			<div class="rond" id="rond6g" alt="rond">
+                                	<span class="valeurg" id="valeur16g"></span>
+	                            </div>
+	                            </td>
+		            		</tr>	                            
+		            		</tr>
+		            	</tbody>
+		            </table>
+
+                    <div class ="centre"> <img src="../assets/img/telephone2/smartphone.png" id = "telephone" width="200px"> </div>
+
+			<table class ="droite" cellpadding="20px" id="tableaubarredroite">
+				<tbody>
+					<tr>
+						<td>
+							<img src="../assets/img/telephone2/pourcentage1d.png" class="pourcentage" id="pourcentage1d" alt="pourcentage">
+							<div>
+								<span id="valeur1d"> </span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="../assets/img/telephone2/pourcentage2d.png" class="pourcentage" id="pourcentage2d" alt="pourcentage">
+							<div>
+								<span id="valeur2d"> </span>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+	                        <img src="../assets/img/telephone2/pourcentage3d.png" class="pourcentage" id="pourcentage3d" alt="pourcentage">
+	                        <div>
+								<span id="valeur3d"> </span>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+		            <table class ="droite" cellpadding="8px" id="tableauronddroite">
+		            	<tbody>
+			                <tr>
+			                	<td colspan="2">		                		
+	                             <img src="../assets/img/telephone2/pourcentage1d.png" class="pourcentage" id="pourcentage1d" alt="pourcentage">
+	                            <div class="rond" id="rond1d" alt="rond">
+                                	<span class="valeurd" id="valeur11d"></span>
+	                            </div>	
+	                             </td>
+			                </tr>
+			                <tr > 
+			                	<td>		                		
+		                        <img src="../assets/img/telephone2/pourcentage2d.png" class="pourcentage" id="pourcentage2d" alt="pourcentage" > 
+		                        <div class="rond" id="rond2d" alt="rond">
+                                	<span class="valeurd" id="valeur12d"></span>
+	                            </div>	
+		                        </td>
+			                </tr>
+			                <tr>
+			                	<td>
+		                        <img src="../assets/img/telephone2/pourcentage3d.png" class="pourcentage" id="pourcentage3d" alt="pourcentage" >
+								<div class="rond" id="rond3d" alt="rond">
+                                	<span class="valeurd" id="valeur13d"></span>
+	                            </div>			                        
+		                        </td>
+			                </tr>
+			                <tr>
+			                	<td>		                		
+								<div class="rond" id="rond4d" alt="rond">
+                                	<span class="valeurd" id="valeur14d"></span>
+	                            </div>	
+	                             </td>
+			                </tr>
+			                <tr > 
+			                	<td>		                		
+								<div class="rond" id="rond5d" alt="rond">
+                                	<span class="valeurd" id="valeur15d"></span>
+	                            </div>	
+		                        </td>
+			                </tr>
+			                <tr>
+			                	<td>
+								<div class="rond" id="rond6d" alt="rond">
+                                	<span class="valeurd" id="valeur16d"></span>
+	                            </div>			                        
+		                        </td>
+			                </tr>			                
+				        	</tbody>
+			    	</table>
+			    	<div>
+			    		<img src="../assets/img/telephone4/bouton1_selected.png" id="bouton1" class = "bouton" alt="bouton" onclick="taille();">
+			    		<img src="../assets/img/telephone4/bouton2.png" id="bouton2" class = "bouton" alt="bouton" onclick="cache();" >
+			    	</div>
+
+			    	<div>
+			    		<img src="../assets/img/telephone4/ordi.png" id="ordi" class = "ordinateur" alt="ordinateur">
+			    		<img src="../assets/img/telephone4/titre_internet.png" id="titreordi" class = "ordinateur" alt = "titreordi">
+			    	</div>
+
+			    	<div>
+			    		<img src="../assets/img/telephone4/tele.png" id="tele" class = "television" alt="television">
+			    		<img src="../assets/img/telephone4/titre_television.png" id="titretele" class = "television" alt = "titretele">			    			    	
+			    	</div>
+			</div>
+			<script type="text/javascript">
+			var tailleMinBarre=100;
+			var tailleMaxBarre=300;
+			var tailleBarre1g = tailleMinBarre + (data_proportion[0]/100)*tailleMaxBarre;
+	        var tailleBarre2g = tailleMinBarre + (data_proportion[2]/100)*tailleMaxBarre;
+	        var tailleBarre3g = tailleMinBarre + (data_proportion[4]/100)*tailleMaxBarre;
+	        var tailleBarre1d = tailleMinBarre + (data_proportion[1]/100)*tailleMaxBarre;
+	        var tailleBarre2d = tailleMinBarre + (data_proportion[3]/100)*tailleMaxBarre;
+	        var tailleBarre3d = tailleMinBarre + (data_proportion[5]/100)*tailleMaxBarre;
+	        $("#pourcentage1g").animate({width: tailleBarre1g}, 300);
+	        $("#pourcentage2g").animate({width: tailleBarre2g}, 300);
+	        $("#pourcentage3g").animate({width: tailleBarre3g}, 300);
+	        $("#pourcentage1d").animate({width: tailleBarre1d}, 300);
+	        $("#pourcentage2d").animate({width: tailleBarre2d}, 300);
+	        $("#pourcentage3d").animate({width: tailleBarre3d}, 300);
+	        document.getElementById("valeur1g").innerHTML = data_proportion[0]+"%";
+	        document.getElementById("valeur2g").innerHTML = data_proportion[2]+"%";
+	        document.getElementById("valeur3g").innerHTML = data_proportion[4]+"%";
+	        document.getElementById("valeur1d").innerHTML = data_proportion[1]+"%";
+	        document.getElementById("valeur2d").innerHTML = data_proportion[3]+"%";
+	        document.getElementById("valeur3d").innerHTML = data_proportion[5]+"%";
+			</script>
+	</body>
+</html>
+
+	

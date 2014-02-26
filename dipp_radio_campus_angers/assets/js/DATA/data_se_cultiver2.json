@@ -1,0 +1,10 @@
+var data_groupe=[
+    "Famille, amis ou collègues",
+    "Services Internet (site web, blog, etc)",
+    "Television / Radio",
+    "Réseaux Sociaux",
+    "Presse et magazine",
+    "Autres"
+],
+
+data_proportion=[94,75,86,76,73,37];

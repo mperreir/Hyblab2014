@@ -1,0 +1,781 @@
+/* fonts */
+@font-face {
+    font-family: "Oswald";
+    src: url('../fonts/Oswald.ttf');
+}
+@font-face {
+    font-family: "Tw";
+    src: url('../fonts/TwCenMT.ttf');
+}
+@font-face {
+    font-family: "TwBI";
+    src: url('../fonts/TwCenMTBoldItalic');
+}
+
+/*
+        RESET & BASIC SETUP
+*/
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-weight: 100;
+    font-family: Oswald;
+    text-align: center;
+    background: #10262b;
+    color: white;
+}
+
+section p img {
+    width: 500px;
+}
+
+/* pour zoomcomic*/
+.csstransforms #container {
+    position: static;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* pour horiz articles*/
+tr { 
+    vertical-align: middle;
+}
+
+/* pied-de-page */
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #142125;
+    left: 0;
+    right: 0;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+footer div{
+    display: inline-block;
+}
+footer #bleft {
+    float: left;
+}
+footer #bright {
+    float: right;
+}
+footer a {
+    vertical-align: middle;
+    color: #C9C197;
+    text-decoration: none;
+    font-family: Tw;
+    font-size: 13pt;
+}
+footer .barre {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #C9C197;
+    width: 2px;
+    height: 20px;
+}
+footer #partagesur {
+    font-style: italic;
+}
+footer .image {
+    vertical-align: middle;
+    height: 30px;
+}
+
+footer .point-navigation{
+    height:15px;
+    width: 15px;
+    cursor: pointer;
+    background-image: url(../img/pointplein.png);
+}
+
+footer .point-navigation.selected{
+    background-image: url(../img/pointvide.png);
+}
+
+/*
+        STRUCTURE
+*/
+
+.intro-outro{
+    z-index: 2;
+    overflow-y: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #07181F;
+}
+
+#titre #titre-post {
+    vertical-align: top;
+}
+#titre #factureenergetique {
+    display: block;
+    height: 150px;
+    margin-top: 100px;
+}
+#titre #liencliquez {
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#navigation-help, #navigation-help-out{
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    -webkit-transition: all 500ms ease;  
+    -moz-transition: all 500ms ease;  
+    -o-transition: all 500ms ease;  
+    transition: all 500ms ease;
+}
+
+#navigation-help.opened, #navigation-help-out.opened{
+    bottom: 75px;
+}
+
+#navigation-help *, #navigation-help-out *{
+    display: inline-block;
+}
+
+.infobulle{
+    position: fixed;
+    bottom: 50%;
+    -webkit-transition: all 1s ease;  
+    -moz-transition: all 1s ease;  
+    -o-transition: all 1s ease;  
+    transition: all 1s ease; 
+}
+
+
+.infobulle.left{
+    left: -500px;
+}
+
+.infobulle.left.opened {
+    left:50px;
+}
+
+.infobulle.right{
+    right: -500px; 
+}
+
+#conclu3{
+    right: -520px; 
+}
+
+#conclu3.right.opened{
+    right: 50px; 
+}
+
+.infobulle.right.opened {
+    right:50px;
+}
+
+.revenir-continuer{
+    color: #CAC09C;
+    font-size: 1.5em;
+    font-family: Tw;
+}
+
+#bouton-continuer, #bouton-retour{
+    position: fixed;
+    top: 50%;
+    display: none;
+}
+
+#bouton-continuer{
+    right: 10px;
+}
+
+#bouton-retour{
+    left: 10px;
+}
+
+#spirale-div{
+    vertical-align: middle;
+    height: 100%;
+    text-align: center;
+}
+
+#spirale-img {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+/*PARTIE HORIZONTALE*/
+ul, li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover 
+{
+    text-decoration:none; 
+    cursor:pointer;
+}
+
+li.image.left, li.website.left, a.website.left{
+    float: left;
+}
+
+li.image.right, li.website.right, a.website.right{
+    float: right;
+}
+
+.websiteUlNoTooltip li.website, span.website, a.website{
+    background-color: #071B1F;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+
+.websiteUlNoTooltip li.website.selected.site0, span.website.selected.site0, a.website.selected.site0{
+    background-color: #A93721;
+}
+.websiteUlNoTooltip li.website.selected.site1, span.website.selected.site1, a.website.selected.site1{
+    background-color: #CF8F0B;
+}
+.websiteUlNoTooltip li.website.selected.site2, span.website.selected.site2, a.website.selected.site2{
+    background-color: #FCCE19;
+}
+
+#page-wrap{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+.strut{
+    height: 100%;
+}
+
+.post, .strut, .arrow{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#horizontal{
+    width: 7650px;
+    height: 100%;
+    overflow-y: hidden;
+    font-size: 0.8em;
+}
+
+.section, .transition, .arrow { 
+    display: inline-block;
+    float: left;
+    height: 100%;
+}
+
+.section{
+    min-width: 900px;
+    background-color: #122A30;
+}
+
+h2.section-title{
+    font-family: Oswald;
+    font-weight: 100;
+    color: #CAC09C;
+    position: absolute;
+    top: 50px;
+    min-width: 700px;
+    z-index: 2;
+}
+
+h3.section-sub-title{
+    font-family: helvetica;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    top: 100px;
+    min-width: 700px;
+    z-index: 2;
+}
+
+.transition{
+    min-width: 250px;
+    background-color: #16353A;
+}
+
+.arrow-container{
+    display: inline-block;
+    float: left;
+    height: 100%;
+    background-color: #122A30;
+}
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid #16353A;
+}
+
+.post.no-left-margin{
+    margin-left: -6px;
+}
+
+.horizontal-limit{
+    min-width: 100px;
+}
+
+#post-last-section{
+    min-width: 200px;
+    background-color: #122A30;
+}
+
+.chart, .limit{
+    display: inline-block;
+}
+
+.petitcarretitre {
+    height: 10px;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.chevron-slector{
+    visibility: hidden;
+}
+
+/*PRESENTATION*/
+#presentation {
+    width: auto;
+    text-align: center;
+    float: left;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+#presentation .post{
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#presentation #pres {
+    height: 30px;
+}
+
+h2, h3, h4, h5 {
+    color: white;
+    font-weight: 100;
+    font-family: Oswald;
+}
+#presentation #ptqd {
+    font-size: 18px;
+    color: #FFD34E;
+    letter-spacing: 1px;
+    line-height: 25pt;
+    margin-top: 50px;
+}
+#presentation #ptctn {
+    font-size: 14px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+#presentation #ptpm {
+    height: 4px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+#presentation #logos img{
+    height: 80px;
+}
+#presentation .ptlogos {
+    display: inline-block;
+}
+#presentation .ptnoms {
+    font-size: 15px;
+}
+#presentation #dm{
+    margin-left: 40px;
+    margin-right: 40px;	
+}
+#presentation #ptzoom {
+    color: #FFD34E;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+#presentation #ptdon {
+    margin-top: 50px;
+    font-size: 10pt;
+    font-family: helvetica;
+}
+#presentation a {
+    color: white;
+    text-decoration: none;
+}
+
+/*SECTION 1*/
+#section1 h2.section-title, #section1 h3.section-sub-title{
+    min-width: 500px;
+}
+
+#section1 h4 {
+    font-weight: 100;
+}
+
+#section1{
+    background-color: transparent;
+}
+
+#section1 svg path{
+    cursor:pointer;
+}
+
+#section1-categoryList img{
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
+.arrow-container.dark{
+    background-color: transparent;
+}
+
+.arrow.bright{
+    border-left: 30px solid #10262B;
+}
+
+#section1 h5 {
+    font-family: Oswald;
+    font-weight: 100;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#section1 #section1-categoryList {
+    margin-top: 50px;
+}
+
+#section1-categoryList .selected{
+    background-color: #FCCE19;
+}
+
+#section1-chartConsommation path.selected{
+    fill: #FCCE19;
+}
+
+#section1-chartConsommation .client{
+    fill:grey;
+}
+#section1-chartConsommation .trajet{
+    fill:lightgoldenrodyellow;
+}
+#section1-chartConsommation .serveur{
+    fill:darkgrey;
+}
+
+.section1-percentage{
+    font-size: 4em;
+    fill: white;
+}
+
+
+/*SECTION 2*/
+
+#section2-charts, #section2-data{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#section2-data{
+    min-width: 320px;
+    font-size: 0.8em;
+}
+
+#section2-webisteUl, #section2bis-webisteUl{
+    width: 700px;
+    margin-top: 70px;
+}
+
+#section2-webisteUl li, #section2bis-webisteUl li{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.section2-data-container div{
+    display: inline-block;
+}
+
+.section2-data-container span{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#section2-data-container-lower{
+    margin-top: 65px;
+}
+
+#section2-dataAmpoules-lower{
+    float: right;
+    line-height: 5px;
+}
+
+#section2-chartQuantiteDonnees{
+    text-align: center;
+    margin-left: 0px;
+}
+
+#section2-bar-chart-container{
+    display: inline-block;
+    text-align: center;
+    min-width: 230px;
+}
+#section2-sunburst-chart{
+    margin-top: 40px;
+}
+
+/*SECTION 3*/
+#section3 .post{
+    min-width: 400px;
+}
+
+#section3{
+    min-width: 800px;
+    margin-left: -100px;
+}
+
+#section3 .section-title{
+    min-width: 360px;
+}
+
+#section3-websiteList, #section3-chartConsommation{
+    display: inline-block;
+}
+
+#section3-chartConsommation{
+    min-width: 350px;
+}
+
+#section3-websiteList{
+    float: left;
+    margin-top: 10px;
+}
+
+#section3-dataAmpoules div, #section3-dataConsommation div{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px; 
+}
+#section3-dataAmpoules-lower{
+    float: right;
+    margin-right: 40px;
+}
+
+#section3-chartConsommation div{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#section3-webisteUl li{
+    margin-bottom: 10px;
+    color: #CAC09C;
+    background-color: transparent;
+}
+
+#section3-webisteUl li.selected{
+    color: white;
+}
+
+#section3-webisteUl{
+    text-align: left;
+}
+
+/*SECTION 4*/
+.hoverinfo{
+    color:black;
+}
+
+#section4-data-distance{
+    margin-top: 40px;
+}
+
+#section4-data-terre-lune{
+    margin-top: 10px;
+}
+
+#section4-websiteUl li{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*SECTION 4 et 5*/
+#section5-place-Ul li{
+    color: #CAC09C;
+}
+
+#section5-place-Ul li.selected{
+    color: white;
+}
+
+#section4-websiteUl li, #section5-place-Ul li, #section5-image-list li{
+    display: inline-block;
+}
+
+#section4-websiteUl, #section5-place-Ul, #section5-image-list{
+    width: 700px;
+}
+
+
+
+/*SECTION 5*/
+#section5-place-list{
+    margin-top: 30px;
+}
+
+#section5-data-left{
+    margin-top: 60px;
+}
+
+#section5-data-right-container{
+    float: right;
+    display: inline-block;
+}
+
+#section5-data-right-lower{
+    float: right;
+}
+
+#pourunan, #section5-data-values{
+    display: inline-block;
+}
+
+#section5-data-values{
+    min-width: 500px;
+}
+
+.section5-websiteLi span{
+    margin-left: 8px;
+}
+
+#section5-image-Ul li{
+    cursor: auto;
+}
+
+/*CREDITS*/
+#conclusion .post{
+    height: 100%;
+}
+
+.credit-title{
+    color:#CAC09C;
+    margin-bottom: 10px;
+}
+
+#conclu-partage img{
+    height: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#credits div{
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 40px;
+    color: white;
+}
+
+#credits{
+    position: absolute;
+    bottom: 170px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#conclusion div{
+    margin-top: 50px;
+}
+
+#conclusion #bandeau {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+}
+#conclusion #bandeau div {
+    margin-top: 20px;
+}
+
+#conclusion #donnees-wea{
+    color: black;
+}
+
+#conclusion #donnees-wea-div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#conclusion li {
+	cursor: default;
+}
+#conclusion a {
+	color: white;
+}
+#conclusion .partenaires {
+	height: 50px;
+}
+#conclusion #bandeau-partenaires {
+	letter-spacing: 10px;
+}
+#conclusion .commons {
+	height: 40px;
+        display: inline-block;
+        vertical-align: middle;
+}
+#conclusion #bandeau-commons {
+	float: left;
+	margin-left: 60px;
+}
+#conclusion #hyblab {
+	height: 50px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#conclusion #bandeau-hyblab {
+	float: right;
+	margin-right: 60px;
+}
+#conclusion #projet {
+	font-family: Oswald;
+	font-weight: 100;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: black;
+	display: inline-block;
+	vertical-align: middle;
+}

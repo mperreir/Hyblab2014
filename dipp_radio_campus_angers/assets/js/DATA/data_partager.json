@@ -1,0 +1,76 @@
+{
+  "name" : "Partager",
+  "children": [
+    {
+      "name": "Entretenir les liens avec ses proches",
+      "children":[
+        {"name":"12-17 ans","size":93,"id":"1"},
+        {"name":"18-24 ans","size":92,"id":"2"},
+        {"name":"25-39 ans","size":92,"id":"3"},
+        {"name":"40-59 ans","size":89,"id":"4"},
+        {"name":"60-69 ans","size":91,"id":"5"},
+        {"name":"70 ans et plus","size":89,"id":"6"}
+      ],
+      "id":"6"
+    },
+    {
+      "name": "Se divertir",
+      "children":[
+        {"name":"12-17 ans","size":56,"id":"7"},
+        {"name":"18-24 ans","size":87,"id":"8"},
+        {"name":"25-39 ans","size":81,"id":"9"},
+        {"name":"40-59 ans","size":64,"id":"10"},
+        {"name":"60-69 ans","size":47,"id":"11"},
+        {"name":"70 ans et plus","size":54,"id":"12"}
+      ],"id":"12"
+    },
+    {
+      "name": "Partager photos/vidéos",
+      "children":[
+        {"name":"12-17 ans","size":79,"id":"13"},
+        {"name":"18-24 ans","size":79,"id":"14"},
+        {"name":"25-39 ans","size":73,"id":"15"},
+        {"name":"40-59 ans","size":69,"id":"16"},
+        {"name":"60-69 ans","size":74,"id":"17"},
+        {"name":"70 ans et plus","size":72,"id":"18"}
+      ],
+      "id":"13"
+    },
+    {
+      "name": "S'informer sur l'actu",
+      "children":[
+        {"name":"12-17 ans","size":56,"id":"19"},
+        {"name":"18-24 ans","size":64,"id":"20"},
+        {"name":"25-39 ans","size":47,"id":"21"},
+        {"name":"40-59 ans","size":54,"id":"22"},
+        {"name":"60-69 ans","size":53,"id":"23"},
+        {"name":"70 ans et plus","size":36,"id":"24"}
+      ],
+      "id":"19"
+    },
+    {
+      "name": "Nouvelles rencontres",
+      "children":[
+        {"name":"12-17 ans","size":33,"id":"25"},
+        {"name":"18-24 ans","size":29,"id":"26"},
+        {"name":"25-39 ans","size":20,"id":"27"},
+        {"name":"40-59 ans","size":25,"id":"28"},
+        {"name":"60-69 ans","size":7,"id":"29"},
+        {"name":"70 ans et plus","size":17,"id":"30"}
+      ],
+      "id":"25"
+    },
+    {
+      "name": "Activité pro",
+      "children":[
+        {"name":"12-17 ans","size":6,"id":"31"},
+        {"name":"18-24 ans","size":12,"id":"32"},
+        {"name":"25-39 ans","size":18,"id":"33"},
+        {"name":"40-59 ans","size":22,"id":"34"},
+        {"name":"60-69 ans","size":9,"id":"35"},
+        {"name":"70 ans et plus","size":1,"id":"36"}
+      ],
+      "id":"31"
+    }
+    ]
+}
