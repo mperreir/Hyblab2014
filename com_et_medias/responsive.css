@@ -1,0 +1,204 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+#body{
+-webkit-transform: rotate(90deg);
+}
+
+#carte{
+	width:273.6;
+
+	 left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:206.4px;
+	left:273.6;
+	/*min-width:137.6px;*/
+	}
+
+}
+
+/* Smartphones (landscape) ----------- */
+/*
+@media only screen 
+and (min-width : 321px) {
+
+#carte{
+	width:182.97px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+/*
+#legende{
+	width:132.03px;
+	left:182.97px;
+	/*min-width:137.6px;*/
+	}
+
+
+/* Styles */
+/*}*/
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+#body{
+-webkit-transform: rotate(90deg);
+}
+
+#carte{
+	width:182.4px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:137.6px;
+	left:182.4px;
+	/*min-width:137.6px;*/
+	}
+}
+
+/* Smartphones samsung S3 ----------- */
+@media only screen 
+and (max-width : 533px) {
+/* Styles */
+#body{
+-webkit-transform: rotate(90deg);
+}
+
+#carte{
+	width:303.81px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:229.19px;
+	left:303.81px;
+	/*min-width:137.6px;*/
+	}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation:portrait){
+#body{
+-webkit-transform: rotate(90deg);
+}
+/* Styles */
+#carte{
+	width:437.76px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:330.24px;
+	left:437.76px;
+	/*min-width:137.6px;*/
+	}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (orientation:portrait) {
+/* Styles */
+#body{
+-webkit-transform: rotate(90deg);
+}
+#carte{
+	width:182.97px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:132.03px;
+	left:182.97px;
+	/*min-width:137.6px;*/
+	}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) 
+and (orientation:portrait){
+#body{
+-webkit-transform: rotate(90deg);
+}
+/* Styles */
+#carte{
+	width:182.97px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:132.03px;
+	left:182.97px;
+	/*min-width:137.6px;*/
+	}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) 
+and (orientation:portrait){
+#body{
+-webkit-transform: rotate(90deg);
+}
+/* Styles */
+#legende{
+	width:43%;
+	height:80%;
+		top:10%;
+	left:57%;
+	}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px)
+and (orientation:portrait) {
+#legende{
+	width:43%;
+	height:80%;
+		top:10%;
+	left:57%;
+	}
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) 
+and (orientation:portrait){
+/* Styles */
+#body{
+-webkit-transform: rotate(90deg);
+}
+#carte{
+	width:182.97px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:132.03px;
+	left:182.97px;
+	/*min-width:137.6px;*/
+	}
+}

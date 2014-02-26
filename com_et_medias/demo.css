@@ -1,0 +1,66 @@
+body {
+    background: #474749;/*#343434;*/
+    font: 300 100.1% "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+	width:100%; height:100%;
+	overflow:hidden;
+}
+#holder {
+    height: 480px;
+    left: 50%;
+    margin: -240px 0 0 -320px;
+    position: absolute;
+    top: 50%;
+    width: 640px;
+}
+#copy {
+    bottom: 0;
+    font: 300 .7em "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+}
+#copy a {
+    color: #fff;
+}
+
+#paper {
+                left: 0px;
+                position: relative;
+                top: 0px;
+				z-index:0;
+				width:100%;
+				height:100%;
+            }
+            .departement_nom{
+                display: none;
+                height: 15%;
+                overflow: hidden;
+                position: relative;
+				left:62%;
+				top:-95%;
+                width: 25%;
+				z-index:1;
+            }
+            .departement_nom h2 {
+                text-align: center;
+				/*font-size:1.5em;*/
+				font-size: 1.5vw;
+            }
+			
+			 .phrase-alerte{
+                display: none;
+                height: 15%;
+                /*overflow: hidden;*/
+                position: relative;
+				left:5%;
+				top:80%;
+                width: 25%;
+				z-index:1;
+            }
+			.phrase-alerte h2{
+                text-align: center;
+				/*font-size:1.5em;*/
+				font-size: 0.5vw;
+            }
+			
+            

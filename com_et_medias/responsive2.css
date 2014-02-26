@@ -1,0 +1,122 @@
+@media (max-width: 799px) {
+    /* votre code ici, pour les écrans de taille < 799 px */
+	#body{
+-webkit-transform: rotate(90deg);
+}
+
+#carte{
+	width:50%;
+
+	/*min-width:182.4px;*/
+	}
+
+#phrase-alerte{
+	left:2%;
+	bottom:0% ;
+	position:absolute;
+	z-index:50;
+}
+#phrase-alerte h2{
+	z-index: auto ;
+	font-size: 0.9vw;
+}
+
+#legende{
+	width:50%;
+	left:50%;
+	/*min-width:137.6px;*/
+	}
+
+
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+    /* votre code ici, pour les écrans de taille comprise entre 700 et 999 px */
+		#body{
+-webkit-transform: rotate(90deg);
+}
+	#carte{
+	width:57%;
+
+	
+	 /*min-width:182.4px;*/
+}
+
+#phrase-alerte{
+	left:2%;
+	bottom:0% ;
+	position:absolute;
+	z-index:50;
+}
+#phrase-alerte h2{
+	z-index: auto ;
+	font-size: 0.9vw;
+}
+
+#legende{
+	width:43%;
+	left:57%;
+	/*min-width:137.6px;*/
+	}
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+    /* votre code ici, pour les écrans de taille comprise entre 1000 et 1299 px */
+		#body{
+-webkit-transform: rotate(90deg);
+}
+	#carte{
+	width:57%;
+
+	
+	 /*min-width:182.4px;*/
+}
+
+#phrase-alerte{
+	left:2%;
+	bottom:0% ;
+	position:absolute;
+	z-index:50;
+}
+
+#phrase-alerte h2{
+	z-index: auto ;
+	font-size: 0.9vw;
+}
+#legende{
+	width:43%;
+	left:57%;
+	/*min-width:137.6px;*/
+	}
+}
+
+@media (min-width: 1300px) {
+    /* votre code ici, pour les écrans de taille supérieure à 1300 px */
+		#body{
+-webkit-transform: rotate(90deg);
+}
+	#carte{
+	width:57%;
+
+	
+	 /*min-width:182.4px;*/
+}
+
+#phrase-alerte{
+	left:2%;
+	bottom:0% ;
+	position:absolute;
+	z-index:50;
+}
+#phrase-alerte h2{
+	z-index: auto ;
+	font-size: 0.9vw;
+}
+
+
+#legende{
+	width:43%;
+	left:57%;
+	/*min-width:137.6px;*/
+	}
+}

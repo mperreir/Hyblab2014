@@ -1,0 +1,232 @@
+/* General layer */
+body {
+	/*text-align: justify;
+	margin: 2%;*/
+	/*width: 8000px;*/
+	margin: 0;
+}
+/*.clear {
+	clear: both;
+}*/
+/* SVG layer */
+
+/* Carto gmap */
+/* Customize OpenLayers Popup */
+.olControlAttribution {
+	left: 2px;
+	right: inherit;
+	bottom: 3px;
+	line-height: 11px;
+}
+.olFramedCloudPopupContent {
+	font-family: Verdana;
+	text-align: center;
+	font-size: 115%;
+	padding: 0;
+	margin: 0;
+}
+.olPopupCloseBox {
+}
+#agency-name {
+	width: 100%;
+	background-color: #49494B;
+	color: white;
+	font-weight: bold;
+	font-size: 150%;
+	-moz-border-radius:10px 0;
+	-webkit-border-radius:10px 0;
+	border-radius:10px 0;
+	margin: 0;
+	margin-bottom: 5%;
+}
+#agency-phone {
+	font-weight: bold;
+}
+#agency-website {
+	margin-top: 5%;
+}
+#agency-website a {
+	font-style: italic;
+	color: black;
+	text-decoration: none;
+}
+#agency-website a:hover {
+	font-style: italic;
+	color: gray;
+	text-decoration: underline;
+}
+/* Set positions & dimensions for map and map-legend */
+#map {
+	float: left;
+	width:80%;
+	height: 100%;
+}
+#map-legend {
+	width: 40%;
+	margin-left: 80%;
+	height: 100%;
+	padding: auto;
+	/*float: left;*/
+	background-image: url(images/legende/Barre-outil.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: #F4F3F0;
+}
+.legend-item {
+	position: relative;
+	height: 8%;
+}
+.legend-item img {
+	height: 100%;
+}
+#map-legend input[type='checkbox'] {
+	display: none;
+}
+
+/* Interviews */
+#micro-intro {
+	margin-top: 5%;
+	margin-bottom: 5%;
+
+	}
+#micro {
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+#micro img {
+	width: 40%;
+}
+#intro-interview {
+	/*margin-left: 33%;*/
+	width: 80%;
+	text-align: center;
+	color: #fff;
+	font-size: 1.5vw;
+}
+#interview-bloc1 {
+	display: inline;
+	text-align: center;
+	left: 20%;
+	width: 100%;
+}
+#interview-bloc2 {
+	display: inline;
+	margin-left: 30%;
+	left: 0%;
+	top:65%;
+	width: 100%;
+}
+.tete {
+	
+}
+.tete  img {
+	width: 20%;
+}
+.ui-dialog {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-moz-border-radius:40px 40px 40px 40px;
+	-webkit-border-radius:40px 40px 40px 40px;
+	border-radius:40px 40px 40px 40px;
+}
+.ui-dialog-content {
+	color: #fff;
+ }
+.phrase-choc {
+	display: none;
+}
+.details-interview {
+	opacity: 0.6;
+}
+.details-interview:hover {
+	opacity: 1;
+}
+.details-interview img {
+	width: 15%;
+	height: 15%;
+}
+.interview {
+	display: none;
+}
+.interview-profil {
+	font-size: 1vw;
+}
+.super-photo {
+	float: left;
+	width: 20%;
+	color: #fff;
+}
+.super-photo img {
+	width: 70%;
+}
+.super-photo.interview-profil {
+	width: 70%;
+	text-align: center;
+}
+#super-photo3 {
+	/*margin-right: 50%;*/
+}
+#super-photo4 {
+	text-align: center;
+	/*margin-left: 32%;*/
+	margin-top: 1%;
+}
+#super-photo5 {
+	text-align: center;
+	margin-top: 1%;
+}
+#super-photo5 img {
+	text-align: center;
+}
+.photo {
+	float: left;
+	width: 20%;
+}
+.photo img {
+	width: 60%;
+}
+.titre-interview {
+	text-align: center;
+}
+.text-interview {
+	color: #fff;
+	float: left;
+	display: inline;
+	width: 70%;
+}
+.interview-logo {
+	width: 10%;
+}
+.interview1-dialog, .phrase-choc1-dialog {
+	background-image: url(images/interview/fond-popup-vert.png);
+}
+.interview2-dialog, .phrase-choc2-dialog {
+	background-image: url(images/interview/fond-popup-vert.png);
+}
+.interview3-dialog, .phrase-choc3-dialog {
+	background-image: url(images/interview/fond-popup-rose.png);
+}
+.interview4-dialog, .phrase-choc4-dialog {
+	background-image: url(images/interview/fond-popup-jaune.png);	
+}
+.interview5-dialog, .phrase-choc5-dialog {
+	background-image: url(images/interview/fond-popup-jaune-pale.png);
+}
+#footer {
+	background-color: #fff;
+	margin: 0;
+	margin-top: 60%;
+	width: 100%;
+	padding-top: 1%;
+}
+#footer1 {
+	text-align: center;
+}
+#footer2 {
+	text-align: center;
+}
+#footer2-left {
+	margin-right: 24%;
+}
