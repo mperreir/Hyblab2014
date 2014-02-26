@@ -1,0 +1,506 @@
+html {
+    height: 100%;
+}
+body {
+    padding: 0;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+
+    .wrapper {
+        height: 100% !important;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .main {
+        float: left;
+        width: 100%;
+        margin: 0 auto;
+
+        section {
+            overflow: hidden;
+
+            .page_container {
+                position: relative;
+                top: 5%;
+                height: 95%;
+                margin: 0 auto 0;
+                z-index: 3;
+            }
+
+            & > img {
+                position: absolute;
+                max-width: 100%;
+                z-index: 1;
+            }
+        }
+
+        section.page1 {
+            background: url('../images/visuel.png');
+            background-position : right;
+            background-repeat : no-repeat;
+            background-color: #9fddbe;
+
+            h1 {
+                margin: 5% 10%;
+                text-align: left;
+            }
+
+            h2 {
+                margin: 5% 10%;
+                text-align: left;
+            }
+
+            p {
+                float: left;
+                width: 30%;
+                margin-top: 20%;
+                text-align: left;
+            }
+
+            img {
+                width: 60%;
+            }
+        }
+
+        section.page2 {
+            background-color: #cae3d8;
+            height: 100%;
+
+            .page_container {
+
+                h1 {
+                    text-align: left;
+                    margin: 5% 10%;
+                }
+
+                #legende {
+                    float: left;
+                    height: 100%;
+                    width: 30%;
+                    margin: 0 0 0 9%;
+
+                    .selection {
+                        text-align: left;
+                        height: 25%;
+                        padding: 0;
+                        margin: 5% 0 5% 0;
+
+                        .slider-container {
+                            height: 100%;
+                            float: left;
+                            padding: 0;
+
+                            img {
+                                height: 100%;
+                                max-height: 120px;
+                            }
+                        }
+
+                        .choices {
+                            padding: 0;
+                            margin: 0;
+                            height: 100%;
+
+                            ul {
+                                height: 100%;
+                                padding: 0 0 10% 0;
+                                margin: 0 0 0 5%;
+                                width: 100%;
+
+                                li {
+                                    padding: 0;
+                                    margin: 0;
+                                    height: 33%;
+                                    list-style-type: none;
+                                    font-family: 'Trebuchet MS';
+
+                                    .year2007{
+                                        color :#E8471E;
+                                    }
+
+                                    .year2008{
+                                        color :#0E8149;
+                                    }
+
+                                    .year2009{
+                                        color :#925E15;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    #moyennes {
+                        height: 15%;
+                        text-align: left;
+                    }
+
+                    #colors-container {
+                        height: 25%;
+                        text-align: left;
+                    }
+                }
+
+                #map-container {
+                    margin-left: 40%;
+                    position: relative;
+                    height: 95%;
+                    width: 60%;
+
+                    #circle-container {
+                        display: inline-block;
+                        position: absolute;
+                        top: 15%;
+                        left: -5%;
+                        height: 35%;
+                        width: 35%;
+                    }
+
+                    #boutonCartelec {
+                        display: inline-block;
+                        position: absolute;
+                        bottom: 10%;
+                        right: 10%;
+                    }
+                }
+            }
+        }
+
+        section.page3 {
+            background-color: #dceae9;
+
+            .page_container {
+                position: relative;
+
+                div#h2slide3 h2 {
+                    width: 36%;
+                    display: inline-block;
+                }
+
+                div#h2slide3 h2:first-child {
+                    margin-right: 12%;
+                }
+
+                div#h2slide3 h2:last-child {
+                    margin-left: 12%;
+                }
+
+                div#boutonsG {
+                    margin-right: 12%;
+                }
+
+                div#boutonsD {
+                    margin-left: 12%;
+                }
+
+                div#boutonsG, div#boutonsD {
+                    width: 36%;
+                    display: inline-block;
+                    
+                    input:checked ~ a {
+                        background-color: #B9CCCB;
+                    }
+
+                    input:checked + label {
+                        color: #000;
+                    }
+                }
+
+                div#isoloir {
+                    width: 100%;
+                    margin: 2%;
+
+                    table {
+                        width: 36%;
+                        height: 50%;
+                        border-collapse: collapse;
+
+                        .centre {
+                            text-align: center;
+                        }
+
+                        col.tabGcolG {
+                            width: 75%;
+                        }
+
+                        col.tabGcolD {
+                            width: 25%;
+                        }
+
+                        col.tabDcolG {
+                            width: 25%;
+                        }
+
+                        col.tabDcolD {
+                            width: 75%;
+                        }
+
+                        tr {
+                            height: 12%;
+
+                            td {
+                                height: 100%;
+                                vertical-align: middle;
+
+                                .rond {
+                                    border: 3px solid rgba(111, 111,111,0.7);
+                                    -moz-border-radius: 50%;
+                                    -webkit-border-radius: 390px;
+                                    border-radius: 390px;
+                                    width:0px;
+                                    height:0px;
+                                    display: inline-block;
+                                    margin: 5px 0;
+                                }
+
+                                .rondptabst {
+                                    border: 3px solid rgba(209, 76, 67, 0.3);
+                                    maring: 5px;
+                                }
+
+                                .rondgdabst {
+                                    border: 6px solid rgba(209, 76, 67, 1);
+                                    maring: 5px 2px;
+                                }
+
+                                .rondptchom {
+                                    border: 3px solid rgba(78, 148, 147, 0.3);
+                                    maring: 5px;
+                                }
+
+                                .rondgdchom {
+                                    border: 6px solid rgba(78, 148, 147, 1);
+                                    maring: 5px 2px;
+                                }
+
+                                .rondptdipl {
+                                    border: 3px solid rgba(56, 70, 71, 0.3);
+                                    maring: 5px;
+                                }
+
+                                .rondgddipl {
+                                    border: 6px solid rgba(56, 70, 71, 1);
+                                    maring: 5px 2px;
+                                }
+
+                                .rondptprop {
+                                    border: 3px solid rgba(129, 49, 65, 0.3);
+                                    maring: 5px;
+                                }
+
+                                .rondgdprop {
+                                    border: 6px solid rgba(129, 49, 65, 1);
+                                    maring: 5px 2px;
+                                }
+
+                                img {
+                                    max-width: 100%;
+                                    height: 25%;
+                                }
+                            }
+                        }
+                    }
+
+                    table#tauxIsoloirGauche {
+                        float: left;
+                        text-align: right;
+                    }
+
+                    table#tauxIsoloirDroit {
+                        text-align: left;
+                    }
+
+                    #rideau {
+                        float: left;
+                        width: 20%;
+                        margin: 0 2%;
+                    }
+                }
+
+                #boutonCartelecIsoloir {
+                    position: absolute;
+                    bottom: 5%;
+                    right: 5%;
+                }
+            }
+        }
+
+        section.page4 {
+            background-color: #4e9493;
+
+            .carousel-container {
+                margin: auto;
+            }
+        }
+
+        section.page5 {
+            background-color: #cae3d8;
+
+            #candidats {
+                height: 70%;
+
+                #ligne1{
+                    height: 30%;
+                }
+                
+                #ligne2{
+                    height: 30%;
+                    margin-left: 200px;
+                }
+                
+                #ligne3{
+                    height: 30%;
+                }
+
+                img {
+                    height: 90%;
+                    margin-right: 10%;
+                }
+            }
+        }
+
+        section.page6 {
+            background-color: #dceae9;
+
+            .page_container {
+                padding: 0;
+                margin: 0;
+                background-image: url("../IMG/personnages.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+
+                #intro-container {
+                    height: 25%;
+
+                    p {
+                        width: 60%;
+                        padding: 0 20% 0 20%;
+                        text-align: center;
+                    }
+                }
+
+                #acteurs-container {
+                    height: 55%;
+
+                    #sciencesCom{
+                        display: inline-block;
+                        width: 25%;
+                    }
+
+                    #Polytech{
+                        display: inline-block;
+                        width: 25%;
+                    }
+
+                    #AGR{
+                        display: inline-block;
+                        width: 25%;
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        margin: 0px;
+                        padding: 0px;
+
+                        a {
+                            text-decoration: none;
+                            color: #000;
+                        }
+                    }
+                }
+
+                #footer {
+                    background-color: #FFF;
+                    height: 20%;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                        margin-right: 5px;
+                        margin-left: 5px;
+                    }
+
+                    #footer1 {
+                        height: 40%;
+
+                        img {
+                            height: 80%;
+                        }
+                    }
+
+                    #footer2 {
+                        height: 40%;
+                        margin-top: 5px;
+
+                        p {
+                            display: inline-block;
+                            margin: 0 0 0 40px;
+                            padding: 0;
+                            height: 100%;
+                            vertical-align: middle;
+                        }
+                        
+                        img {
+                            height: 80%;
+                        }
+
+                        .boutonData {
+                            height: 40%;
+                            max-height: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        display: block;
+        padding: 7px;
+        width: 100%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -webkit-transition: all 500ms ease-in-out;
+        -moz-transition: all 500ms ease-in-out;
+        -o-transition: all 500ms ease-in-out;
+        transition: all 500ms ease-in-out;
+
+        a {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.40);
+            margin: 0 50px;
+        }
+    }
+
+    .menu:hover {
+        color: black;
+        background: rgba(255, 255, 255, 0.5);
+    }
+}
+
+body.disabled-onepage-scroll {
+    .onepage-wrapper {
+        section {
+            min-height: 100%;
+            height: auto;
+        }
+    }
+}
