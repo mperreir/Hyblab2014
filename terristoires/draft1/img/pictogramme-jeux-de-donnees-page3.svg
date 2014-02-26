@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Calque_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 708 478"
+	 width="708em" height="478em" enable-background="new 0 0 708 478" xml:space="preserve">
+<switch>
+	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+		<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
+		</i:pgfRef>
+	</foreignObject>
+	<g i:extraneous="self">
+		<g>
+			<g>
+				<rect x="516.648" y="178.057" fill="#C2AB6B" width="181.653" height="53.78"/>
+				<ellipse fill="#C2AB6B" cx="607.542" cy="231.003" rx="90.894" ry="45.939"/>
+				<ellipse fill="#F6DD8A" cx="606.532" cy="181.59" rx="91.903" ry="45.939"/>
+				<path fill="none" stroke="#C2AB6B" stroke-miterlimit="10" d="M698.436,181.428c0,25.394-41.146,45.979-91.903,45.979
+					s-91.903-20.586-91.903-45.979"/>
+			</g>
+			<g>
+				<path fill="#5A9594" d="M233.238,95.768v192.707h0.674c7.51,41.977,78.053,74.882,163.983,74.882s156.473-32.905,163.983-74.882
+					h0.674V95.768H233.238z"/>
+				<path fill="none" stroke="#BE625C" stroke-miterlimit="10" d="M562.552,95.768c0,45.456-73.719,82.306-164.657,82.306
+					s-164.657-36.849-164.657-82.306"/>
+				<ellipse fill="#6AAFAE" cx="397.895" cy="96.058" rx="164.657" ry="82.306"/>
+			</g>
+			<g>
+				<rect x="9.761" y="109.65" fill="#BE625C" width="329.314" height="285.82"/>
+				<ellipse fill="#D36C66" cx="174.418" cy="106.575" rx="164.657" ry="82.306"/>
+				<ellipse fill="#BE625C" cx="174.418" cy="388.046" rx="164.657" ry="82.306"/>
+				<path fill="none" stroke="#BE625C" stroke-miterlimit="10" d="M339.074,202.473c0,45.456-73.719,82.306-164.657,82.306
+					S9.761,247.929,9.761,202.473"/>
+			</g>
+		</g>
+	</g>
+</switch>
+</svg>

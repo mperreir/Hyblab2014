@@ -1,0 +1,44 @@
+<table border Id="monTableau">
+<TR>
+<TD> salut </TD>
+<TD> salut </TD>
+<TD> salut </TD>
+</TR>
+<TR>
+<TD> salut </TD>
+<TD> salut </TD>
+<TD> salut </TD>
+</TR>
+<TR>
+<TD> salut </TD>
+<TD> salut </TD>
+<TD> salut </TD>
+</TR>
+</table>
+
+
+
+
+<script type="text/javascript"> 
+var arrayLignes = document.getElementById("monTableau").rows; //l'array est stocké dans une variable
+var longueur = arrayLignes.length;//on peut donc appliquer la propriété length
+var i=0; //on définit un incrémenteur qui représentera la clé
+
+while(i<longueur)
+{
+    if(i % 2 == 0)//si la clé est paire
+    {
+        arrayLignes[i].style.backgroundColor = "#bdcbf5";
+    }
+    else //elle est impaire
+    {
+        arrayLignes[i].style.backgroundColor = "#829eeb";
+    }
+    i++;
+}
+
+var ligne = document.getElementById("monTableau").insertRow(-1);
+var colonne1 = ligne.insertCell(0);
+colonne1.innerHTML += "resultat"
+
+</script>

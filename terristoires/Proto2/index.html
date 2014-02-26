@@ -1,0 +1,40 @@
+
+<table style="middle;width:100%">
+<TR>
+	<TD ALIGN="right">progressbar Ville 1</TD>
+	<TD ALIGN="middle">Critere</TD>
+	<TD ALIGN="left">progressbar Ville 2</TD>
+</TR>
+
+<TR>
+	<TD  ALIGN="right" style="width:40%"><div id="dataviz-cr1" style="background: red right; height:16px; width:500px; "> </div></TD>
+	<TD ALIGN="middle" style="width:20%"> Mobilité </TD>
+	<TD ALIGN="left" style="width:40%"> <div id="dataviz-cr2" style="background: red left; height:16px; width:500px; "> </div></TD>
+</TR>
+
+
+</table>
+
+
+<script type="text/javascript" src="jquery.js"> </script>
+<script type="text/javascript"> 
+	var taillebase=100;
+	
+	function settaille(tailleim, id)
+	{
+	$('#dataviz-cr'+id).animate({width: tailleim+'%'},750);
+	}
+	</script>
+<BR>
+	Valeur 1 :
+<button onclick="settaille(100, 1);">100</button>
+<button onclick="settaille(50, 1);">50</button>
+<button onclick="settaille(25, 1);">25</button>
+<button onclick="settaille(0, 1);">0</button>
+<BR>
+Valeur 2 :
+<button onclick="settaille(100, 2);">100</button>
+<button onclick="settaille(50, 2);">50</button>
+<button onclick="settaille(25, 2);">25</button>
+<button onclick="settaille(0, 2);">0</button>
+<BR>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Calque_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 762 440.736"
+	 width="762em" height="440.736em" enable-background="new 0 0 762 440.736" xml:space="preserve">
+<switch>
+	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+		<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
+		</i:pgfRef>
+	</foreignObject>
+	<g i:extraneous="self">
+		<g>
+			<g>
+				<polygon fill="#5A9594" points="291.492,0 471.221,131.624 291.492,265.437 291.492,147.499 10.506,147.499 10.506,112.876 
+					291.492,112.876 				"/>
+				<rect x="11.168" y="93.213" fill="#5A9594" width="280.986" height="72.118"/>
+			</g>
+			<g>
+				<polygon fill="#BE625C" points="471.883,440.736 292.154,309.112 471.883,175.299 471.883,293.237 752.869,293.237 
+					752.869,327.86 471.883,327.86 				"/>
+				<rect x="471.221" y="275.405" fill="#BE625C" width="280.986" height="72.118"/>
+			</g>
+			<g>
+				<polygon fill="#5A9594" points="291.492,0 471.221,131.624 291.492,265.437 291.492,147.499 10.506,147.499 10.506,112.876 
+					291.492,112.876 				"/>
+				<rect x="11.168" y="93.213" fill="#5A9594" width="280.986" height="72.118"/>
+			</g>
+		</g>
+	</g>
+</switch>
+</svg>
