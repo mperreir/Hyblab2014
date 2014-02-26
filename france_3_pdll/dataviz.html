@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="dataviz.css" />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="module/canvasjs/canvasjs.min.js"></script>
+		<script src="module/canvasjs/canvasjs.min.js"></script>
+		<script src="raphael-min.js"></script>
+		<script src="morris.js"></script>
+		<script language="JavaScript" type="text/javascript" src="dataviz.js"></script>
+		<script language="JavaScript" type="text/javascript" src="fonctions.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			window.onload = chargement();
+		</script>
+        <title>Dataviz</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+		<div id="entete" class=map>
+			<img src="img/entete.jpg" />
+		</div>
+		
+		<!-- <audio id="got_theme" src="data/game_of_thrones_theme.mp3" autoplay loop></audio> -->
+		
+		<div id="intro">
+			<p>
+				L'élection municipale de 2008 à Angers s'est jouée à 667 voix de différence en faveur de la gauche. Comment expliquer un si faible écart ? Quel est le facteur clé qui peut faire pencher la balance?
+			</p>
+		</div>
+		
+		<h1>OÙ EST LA <a class="droite">DROITE</a>? OÙ EST LA <a class="gauche">GAUCHE</a>?</h1>
+		<div id="dataviz1" class="dataviz">
+			<div class="ext1"> 
+				<div class="int1">
+					<div id="boutons">
+						<img id="button_2007_left_right" src="img/boutons/bouton2007_off.png" onClick="change(2007)"/>
+						<img id="button_2008_left_right" src="img/boutons/bouton2008_on.png" onClick="change(2008)"/>
+						<img id="button_2012_left_right" src="img/boutons/bouton2012_off.png" onClick="change(2012)"/>
+					</div>
+					<div id="map" >
+						<img src="img/dataviz1/bkg_map.png" width="98%" height="82%" style="width:100%; height:100%;" />
+					</div><!--end of map -->
+							  
+					<div id="nord" style="width:180px; height:180px; position:absolute; z-index:2; left: 479px; top: 117px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" width="130px" height="130px" style="position:absolute; left: 509px; top: 149px; z-index:1;"/>      
+								
+					<div id="nord-ouest" style="width:230px; height:230px; position:absolute; z-index:2; left: 170px; top: 209px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="130px" height="130px" style="position:absolute; left: 214px; top: 246px; z-index:1; width: 156px; height: 151px;"/>
+								
+					<div id="ouest" style="width:300px; height:300px; position:absolute; z-index:2; left: 36px; top: 497px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="380px" height="380px" style="position:absolute; left: 74px; top: 541px; z-index:1; width: 218px; height: 216px;"/>
+								
+					<div id="centre-ville" style="width:380px; height:380px; position:absolute; z-index:2; left: ; top: 364px; left: 327px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="800px" height="px" style="position:absolute; left: 367px; top: 412px; z-index:1; width: 309px; height: 296px;"/>					
+								
+					<div id="nord-east" style="width:280px; height:280px; position:absolute; z-index:2; left: 701px; top: 196px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="250px" height="250px" style="position:absolute; left: 740px; top: 234px; z-index:1; width: 214px; height: 211px;"/>
+								
+					<div id="east" style="width:250px; height:250px; position:absolute; z-index:2; left: 723px; top: 483px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="250px" height="250px" style="position:absolute; left: 752px; top: 521px; z-index:1; width: 189px; height: 186px;"/>
+
+					<div id="trelaze" style="width:200px; height:200px; position:absolute; z-index:2; left: 609px; top: 772px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="200px" height="200px" style="position:absolute; left: 638px; top: 801px; z-index:1; width: 156px; height: 151px;"/>
+								
+					<div id="sud" style="width:310px; height:310px; position:absolute; z-index:2; left: 245px; top: 766px;"></div>
+					<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="260px" height="260px" style="position:absolute; left: 283px; top: 811px; z-index:1; width: 234px; height: 237px;"/>			
+					
+				</div>			
+			</div>
+		</div>	<!-- fin dataviz 1 -->
+					<div class="DatavizFooter">
+						<p class="legend"> <img src="img/dataviz1/legend_red.png" /> Vote <a class="gauche">PS</a> en % au second tour </p>
+						<p class="legend"> <img src="img/dataviz1/legend_blue.png" /> Vote <a class="droite">UMP</a> en % au second tour </p>
+						<p class="sources"> Céline Colange, Laurent Beauguitte et Sylviano Freire-Diaz, 2013, Base de données socio-électorales Cartelec (2007-2010), <a class="cartelec" href="http://www.cartelec.net.﻿"> cartelec </a> </p>
+					</div>	
+		
+		
+		<h1>QUI VOTE À <a class="droite">DROITE</a>? QUI VOTE À <a class="gauche">GAUCHE</a>?</h1>
+		
+		<div id="dataviz2" class="dataviz">
+			<div id="graph1"></div>
+			<div id="text_graph_gauche"></div>
+			<div id="text_graph_droite"></div>
+			
+			<h2>Le vote à <a class="ps">gauche</a></h2>
+			<div id="text_gauche"></div>
+			<div id="perso_gauche">
+				<div id="perso_cs4_g">
+					<img id="img_cs4_g"/>
+				</div>
+				<div id="perso_cs5_g">
+					<img id="img_cs5_g"/>
+				</div>
+				<div id="perso_cs6_g">
+					<img id="img_cs6_g"/>
+				</div>
+			</div>
+			
+			<h2>Le vote à <a class="ump">droite</a></h2>
+			<div id="text_droite"></div>
+			<div id="perso_droite">
+				<div id="perso_cs3_d">
+					<img id="img_cs3_d"/>
+				</div>
+				<div id="perso_cs4_d">
+					<img id="img_cs4_d"/>
+				</div>
+				<div id="perso_cs5_d">
+					<img id="img_cs5_d"/>
+				</div>
+			</div>
+			
+			<div class="div_text_dv2">
+				<div id="play_dv2" class="button_play" onclick="play_dv2('audio_dv2', 'got_theme', this)">
+				</div>
+				<audio id="audio_dv2" src="data/pihet_dataviz2.mp3"></audio>
+				<div class="photo">
+				</div>
+				<p id="text_dv2" class="text">
+					<a class="mise_valeur">Christian Pihet</a> est professeur de géographie à l’université d’Angers et membre du conseil de développement de la communauté d’agglomération Angers-Loire Métropole. Il a travaillé sur le projet Cartelec, la cartographie française par bureaux de vote couplés avec les statistiques IRIS de l'INSEE.
+					Pour lui, il est difficile de prévoir la répartition des votes en fonction des catégories de population. D’une part, parce que le changement de population dans certains quartiers contribue au renouvellement des tendances politiques, et d’autre part en raison de facteurs culturels et historiques. Ceci explique pourquoi une partie des milieux populaires, généralement étiquetés à gauche, ont porté leurs voix sur la droite et le  centre lors de la dernière élection municipale, d’une manière bien plus large qu’au niveau national.
+				</p>
+			</div>
+			
+		</div>
+<!--end of dataviz2 -->		
+		<h1>OÙ SONT LES <a id="swing">SWING</a>-<a id="bureau">BUREAUX</a>?</h1>
+		
+		<div id="dataviz3" class="dataviz">
+			<div  class="swing_text" >
+				<p> Un swing bureau se caractérise par un très faible écart entre les résultats des deux candidats au deuxième tour. Ici, un écart de moins de 20 voix. En 2008, ces bureaux se trouvaient dans les quartiers de Belle-Beille, Balzac, Madeleine - Saint-Léonard, Saint-Serge, la Fayette-Eblé et Roserais – Orgemont. Cependant, la carte électorale étant relativement stable à Angers et représentative du vote national, ces bureaux ne sont en réalité pas l’enjeu majeur du scrutin.
+				</p>
+			</div>
+			<div class="int3">
+				<div class="swing">
+					<img src="img/dataviz3/Carte/carte-sans-pointeur.png"/>
+					<img usemap="#pushpin" src="img/dataviz3/Carte/pointeurs.png" style="z-index:10"/>
+				</div>
+				<div class="bureau">
+					<img id="209"  src="" style="z-index:5"/>
+					<img id="311"  src="" style="z-index:5"/>
+					<img id="401"  src="" style="z-index:5"/>
+					<img id="407"  src="" style="z-index:5"/>
+					<img id="501"  src="" style="z-index:5"/>
+					<img id="506"  src="" style="z-index:5"/>
+					<img id="512"  src="" style="z-index:5"/>
+					<img id="602"  src="" style="z-index:5"/>
+					<img id="603"  src="" style="z-index:5"/>
+				</div>
+				<map name="pushpin">
+						<area alt=""  href="javascript:popup(506)" shape="poly" coords="265,698,243,656,248,636,266,629,280,634,291,653"/>	
+						<area alt=""  href="javascript:popup(512)" shape="poly" coords="414,730,437,690,433,668,419,660,403,663,390,683" />
+						<area alt=""  href="javascript:popup(407)" shape="poly" coords="633,615,658,572,649,552,635,545,618,552,608,571" />
+						<area alt=""  href="javascript:popup(311)" shape="poly" coords="390,626,414,585,409,565,393,556,375,564,367,582" />
+						<area alt=""  href="javascript:popup(501)" shape="poly" coords="318,600,344,559,333,535,316,533,303,539,296,555" />
+						<area alt=""  href="javascript:popup(603)" shape="poly" coords="251,496,227,455,238,433,256,429,269,437,277,459" />
+						<area alt=""  href="javascript:popup(602)" shape="poly" coords="306,463,282,421,288,406,301,395,318,398,331,417" />
+						<area alt=""  href="javascript:popup(209)" shape="poly" coords="506,462,484,417,490,400,506,394,522,403,532,421" />
+						<area alt=""  href="javascript:popup(401)" shape="poly" coords="589,580,567,539,574,519,587,512,604,517,614,535" />
+				</map>					
+			</div>
+		</div>
+			<div class="DatavizFooter">
+				<p class="legend"> <img src="img/dataviz3/carte/pointeur-rouge.png" /> Victoire du candidat <a class="gauche">PS</a> avec un écart inférieur à 2,1% au second tour</p>
+				<p class="legend">	<img src="img/dataviz3/carte/pointeur-bleu.png" /> Victoire du candidat <a class="droite">UMP</a> avec un écart inférieur à 3,4% au second tour</p>
+				<p class="sources"> Céline Colange, Laurent Beauguitte et Sylviano Freire-Diaz, 2013, Base de données socio-électorales Cartelec (2007-2010), <a class="cartelec" href="http://www.cartelec.net.﻿"> cartelec </a> </p>
+			</div>
+	<!--end of dataviz3 -->
+		
+		<h1>LES <a class="abstention">ABSTENTIONNISTES</a> ONT LES CLEFS DE LA VILLE?</h1>
+		
+		<h2>OÙ S'<a class="abstention">ABSTIENT</a>-ON?</h2>
+		<div id="dataviz4" class="dataviz">
+			<div id="boutons">
+				<img id="button_2007_abstention" src="img/boutons/bouton2007_off.png" onClick="change(20071)"/>
+				<img id="button_2008_abstention" src="img/boutons/bouton2008_on.png" onClick="change(20081)"/>
+				<img id="button_2012_abstention" src="img/boutons/bouton2012_off.png" onClick="change(20121)"/>
+			</div>
+			<div id="map" >
+             	<img src="img/dataviz1/bkg_map.png" width="98%" height="82%" style="width:100%; height:100%;" />
+            </div><!--end of map -->
+            
+  
+			<div id="nord_A" style="width:180px; height:180px; position:absolute; z-index:2; left: 479px; top: 117px;"></div>
+        	<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" width="130px" height="130px" style="position:absolute; left: 509px; top: 149px; z-index:1;"/>      
+            
+			<div id="nord-ouest_A" style="width:230px; height:230px; position:absolute; z-index:2; left: 170px; top: 209px;"></div>
+  			<img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="130px" height="130px" style="position:absolute; left: 214px; top: 246px; z-index:1; width: 156px; height: 151px;"/>
+            
+			<div id="ouest_A" style="width:300px; height:300px; position:absolute; z-index:2; left: 36px; top: 497px;"></div>
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="130px" height="130px" style="position:absolute; left: 214px; top: 246px; z-index:1; width: 156px; height: 151px;"/>
+            
+			<div id="centre-ville_A" style="width:380px; height:380px; position:absolute; z-index:2; left: ; top: 364px; left: 327px;"></div>
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="380px" height="380px" style="position:absolute; left: 74px; top: 541px; z-index:1; width: 218px; height: 216px;"/>
+            
+			<div id="nord-east_A" style="width:280px; height:280px; position:absolute; z-index:2; left: 701px; top: 196px;"></div>
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="250px" height="250px" style="position:absolute; left: 740px; top: 234px; z-index:1; width: 214px; height: 211px;"/>
+            
+			<div id="east_A" style="width:250px; height:250px; position:absolute; z-index:2; left: 723px; top: 483px;"></div>
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="250px" height="250px" style="position:absolute; left: 752px; top: 521px; z-index:1; width: 189px; height: 186px;"/>
+
+			<div id="trelaze_A" style="width:200px; height:200px; position:absolute; z-index:2; left: 609px; top: 772px;"></div>
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="200px" height="200px" style="position:absolute; left: 638px; top: 801px; z-index:1; width: 156px; height: 151px;"/>
+            
+			<div id="sud_A" style="width:310px; height:310px; position:absolute; z-index:2; left: 245px; top: 766px;"></div>
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="260px" height="260px" style="position:absolute; left: 283px; top: 811px; z-index:1; width: 234px; height: 237px;"/>
+            
+            <img src="img/dataviz1/2007/centre ville/centre-centre-ville.png" alt="" width="800px" height="px" style="position:absolute; left: 367px; top: 412px; z-index:1; width: 309px; height: 296px;"/>			
+</div>
+<!--end of dataviz4 -->  
+<div class="DatavizFooter">
+		<p class="legend"> <img src="img/dataviz4/legend_yellow.png" /> Abstentionnistes en % au second tour</p>
+		<p class="legend"> <img src="img/dataviz4/legend_grey.png" /> Votants en % au second tour </p>
+		<p class="sources"> Céline Colange, Laurent Beauguitte et Sylviano Freire-Diaz, 2013, Base de données socio-électorales Cartelec (2007-2010), <a class="cartelec" href="http://www.cartelec.net.﻿"> cartelec </a> </p>
+</div>
+	
+		<h2>QUI S'<a class="abstention">ABSTIENT</a>?</h2>
+		
+		<div id="dataviz5" class="dataviz">
+			<div id="div_text">
+				<p class="text">
+					L’abstention dans ces quartiers majoritairement populaires, ne s’explique pas nécessairement par la catégorie sociale, mais par ce que <a class="mise_valeur">Christian Pihet</a> définit comme « l’effet de lieux ». C’est à dire que leur propension à voter dépend plus de facteurs culturels historiques et des candidats en tant qu’hommes légitimes à gouverner.
+				</p>
+				<p class="text">
+					<a class="mise_valeur">Alain Machefer</a> écrivain et jounaliste observateur de la vie politique locale, auteur de « Angers, la machine à perdre » considère lui aussi, dans l’entretien qu’il a consacré à France 3 Pays de la Loire, que <a class="bold">l’élection sera avant tout une histoire d'hommes et non de chiffres. </a>
+				</p>
+			</div>
+			<div id="div_img">
+				<img id="perso" src="img/dataviz5/perso.png"/>
+			</div>
+			<iframe id="hangout" width="853" height="480" src="//www.youtube.com/embed/7aedW8NNuOY" frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+<!--end of dataviz5 -->
+		<h1>QUI VA L'EMPORTER?</h1>
+		
+		<div id="dataviz6" class="dataviz">
+			<div class="div_text_dv6">
+				<div id="sound_dv6" class="button_sound" onclick="play_dv6('audio_dv6', 'got_theme', this)">
+				</div>
+				<audio id="audio_dv6" src="data/pihet_dataviz6.mp3"></audio>
+				<div id="text_dv6">
+					Dans cette lutte d’hommes pour le pouvoir, 4 candidats se démarquent et peuvent aspirer à la victoire : <a class="ump">Christophe Béchu</a>, <a class="ump">président UMP</a> du Conseil Général de Maine et Loire, <a class="ps">Frédéric Béatse</a>, <a class="ps">le maire PS sortant</a>, <a class="udi">Laurent Géraud</a>, <a class="udi">candidat UDI</a>, et <a class="ps">Jean-Luc Rotureau</a>, <a class="ps">dissident PS</a> ex-adjoint du maire. A ces candidats s’ajoute un cinquième, le grand inconnu de cette élection qui pourrait être incarné par le candidat FN, Gaëtan Diran, favorisé par le fait que pour la première fois, seulement 10% des suffrages exprimés sont nécessaires pour se maintenir au second tour. Découvrez notre ananlyse sur les facteurs pouvant faire gagner chaque candidats.
+				</div>
+			</div>
+			
+			<div class="div_throne">
+				<div id="bechu" class="pic">
+					<p class="text_candidat">
+						Pour <a class="ump">Christophe Béchu</a>, au contraire, une forte abstention serait une aubaine. Il peut aussi espérer que la politique nationale actuelle favorise la droite si les électeurs angevins sanctionnent le gouvernement au travers des urnes en mars. Le maintien au second tour de l’UDI ou du FN serait en sa défaveur. En revanche, celui de Jean-Luc Rotureau permettrait de diviser les voix à gauche et lui serait bénéfique. Néanmoins, il bénéficie certes d’une image sympathique et dynamique mais elle est entachée par ses différents mandats électoraux rarement menés à terme.
+					</p>
+				</div>
+				<div id="beatse" class="pic">
+					<p class="text_candidat">
+						Pour <a class="ps">Frédéric Béatse</a>, il s’agit de rassembler les abstentionnistes. Une abstention inférieure à 20% des inscrits lui serait favorable, soit une forte mobilisation dans les quartiers périphériques historiquement à gauche. Il profiterait également de la situation si Jean-Luc Rotureau ne se maintenait pas au second tour. En revanche cela lui serait favorable que les candidat UDI ou FN se maintiennent pour empiéter sur les voix de Christophe Béchu. Enfin, un facteur historique entre en compte : depuis 30 ans, aucun maire sortant à Angers n’a été battu.
+					</p>
+				</div>
+			</div>
+
+			<div class="div_throne">
+				<div id="geraud" class="pic">
+					<p class="text_candidat">
+						Pour <a class="udi">Laurent Géraud</a>, une forte mobilisation des centristes lui est nécessaire pour se maintenir, notamment si les centristes du centre ville choisissent une candidature dissidente à l’UMP. Il lui serait également bénéfique que l’électorat des quartiers populaires reste au centre droit et que les deux candidats de gauche se maintiennent au second tour.
+					</p>
+				</div>
+				<div id="rotureau" class="pic">
+					<p class="text_candidat">
+						Pour <a class="ps">Jean-Luc Rotureau</a>, candidat dissident PS, il se pourrait qu’il attire le vote d’électeurs de gauche souhaitant sanctionner Frédéric Béatse pour son putch à la mairie en janvier 2012. Il lui serait également favorable que le candidat centriste ne dépasse pas les 10% des voix et choisisse de fusionner sa liste avec la sienne. Il bénéficie de plus d’une légitimité et d’une popularité dues à son passé syndicaliste et son ancienneté dans le paysage politique angevin.  A l’instar de Frédéric Béatse, il lui serait favorable que le scrutin reste un enjeu local et ne soit pas une sanction du pouvoir national. 
+					</p>
+				</div>			
+				<div id="inconnu" class="pic">
+					<p class="text_candidat">
+						Pour le grand inconu, avec le nouveau mode de scrutin, il suffit de 10% des suffrages exprimés pour se maintenir au second tour, ce qui laisse présager au moins un inconnu. Marine Le Pen a atteint les 10% lors de la dernière présidentielle, score qui pourrait se reproduire pour le candidat FN. Une très forte abstention profiterait à la droite et à ses extrêmes. En cas de triangulaire ou quadrangulaire, l’issue du scrutin sera une fois encore liée au taux d’abstention.
+					</p>
+				</div>
+			</div>
+		</div>
+<!--end of dataviz6 -->
+		<footer>
+			<img usemap="#partner" src="img/Bandeau partenaire Com&medias.jpg"/>
+			<map name="partner">
+				<area alt="" title="" shape="rect" coords="16,110,163,131" />
+				<area alt="" title="" href="http://www.cometmedias.com/" shape="rect" coords="13,29,156,62" />
+				<area alt="" title="" href="http://www.ouestmedialab.fr/" shape="rect" coords="164,29,271,68" />
+				<area alt="" title="" href="http://www.agrnantes.fr/" shape="rect" coords="276,33,409,66" />
+				<area alt="" title="" href="http://web.polytech.univ-nantes.fr/" shape="rect" coords="415,29,533,61" />
+				<area alt="" title="" href="http://www.sciencescom.org/" shape="rect" coords="541,16,619,68" />
+				<area alt="" title="" href="http://www.orange.fr/" shape="rect" coords="624,18,683,73" />
+				<area alt="" title="" href="http://www.paysdelaloire.fr/" shape="rect" coords="689,25,807,62" />
+				<area alt="" title="" href="http://www.univ-nantes.fr/" shape="rect" coords="813,15,908,73" />
+				<area alt="" title="" href="http://www.hyblab.fr/" shape="rect" coords="790,93,909,144" />
+			</map>
+		</footer>
+
+    </body>
+</html>
