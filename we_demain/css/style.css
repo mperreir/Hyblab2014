@@ -284,7 +284,7 @@ li.image.right, li.website.right, a.website.right{
 }
 
 #horizontal{
-    width: 7650px;
+    width: 7800px;
     height: 100%;
     overflow-y: hidden;
     font-size: 0.8em;
@@ -319,11 +319,16 @@ h3.section-sub-title{
     top: 100px;
     min-width: 700px;
     z-index: 2;
+    font-size: 0.9em;
 }
 
 .transition{
     min-width: 250px;
     background-color: #16353A;
+}
+
+.transition-texte{
+    color:#FFD34E;
 }
 
 .arrow-container{
@@ -685,10 +690,11 @@ h2, h3, h4, h5 {
     cursor: auto;
 }
 
-/*CREDITS*/
-#conclusion .post{
-    height: 100%;
+#bouton-continuer-div{
+    margin-left: 100px;
 }
+
+/*CREDITS*/
 
 .credit-title{
     color:#CAC09C;
@@ -696,9 +702,13 @@ h2, h3, h4, h5 {
 }
 
 #conclu-partage img{
-    height: 90px;
+    height: 50px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#wea{
+    color: #FFD34E;
 }
 
 #credits div{
@@ -714,10 +724,22 @@ h2, h3, h4, h5 {
     left: 0;
     right: 0;
     margin: 0 auto;
+    font-size: 0.9em;
 }
 
-#conclusion div{
-    margin-top: 50px;
+#recommandez,#conclu-partage{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#recommandez{
+    top: 80px;
+}
+
+#conclu-partage{
+    top:170px;
 }
 
 #conclusion #bandeau {
@@ -774,7 +796,7 @@ h2, h3, h4, h5 {
 	font-family: Oswald;
 	font-weight: 100;
 	letter-spacing: 2px;
-	font-size: 20px;
+	font-size: 16px;
 	color: black;
 	display: inline-block;
 	vertical-align: middle;
