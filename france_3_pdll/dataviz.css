@@ -188,9 +188,9 @@
 
 	#text_graph_droite
 	{
-		font-family: 'armataregular';
+		font-family: 'bebas_neueregular';
 		font-weight: bold;
-		font-size: 75px;
+		font-size: 60px;
 		text-align: center;
 		width: 50%;
 		float:left;
@@ -204,9 +204,9 @@
 
 	#text_graph_gauche
 	{
-		font-family: 'armataregular';
+		font-family: 'bebas_neueregular';
 		font-weight: bold;
-		font-size: 75px;
+		font-size: 60px;
 		text-align: center;
 		width: 50%;
 		float:left;
@@ -643,8 +643,22 @@
 	}
 /* } */
 
-footer
+footer .img
 {
 	padding-top: 25px;
 }
 
+.partner
+{
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	max-width: 1000px;
+}
+
+#crédit
+{
+	padding: 25px;
+	width:100%;
+	max-width: 1000px;
+}
