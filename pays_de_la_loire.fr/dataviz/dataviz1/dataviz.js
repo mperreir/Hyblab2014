@@ -51,6 +51,12 @@ function creerDiagramme() {
         title: {
             text: sportSelectionne.replace(/_/g, " ")
         },
+        subtitle: {
+            style: {
+                fontSize:'15px'
+            },
+            y: 40
+        },
         xAxis: {
             categories: regionsC,
             tickmarkPlacement: 'on',
@@ -110,7 +116,7 @@ function creerDiagramme() {
             point: {
                 events: {
                     click: function () {
-                        chart.setTitle(null, {text: this.category + ', ' + this.y + ' licenciés pour 10 000 habitants'});
+                        chart.setTitle(null, {text: this.category + ', <b>' + this.y + '</b> licenciés pour <b>10'+'\u00a0'+'000</b> habitants'});
                     }
                 }
             }
@@ -606,7 +612,7 @@ function afficherSport(sportSelect) {
         l4,
         dataDiagramme,
         legende;
-
+    chart.setTitle(null, {text: 'Cliquez sur une région pour afficher les chiffres associés'});
     sportSelect = sportSelect.toString();
 	//document.getElementById("texteCompteur").innerHTML = "licenciés en France (" + sportSelect.replace(/_/g, " ") + ")";
     
@@ -705,7 +711,7 @@ function afficherSport(sportSelect) {
 		diagramme = true;
 	}
 	
-	chart.setTitle({ text: sportSelect.replace(/_/g, " ")}, {text: ''});
+	chart.setTitle({ text: sportSelect.replace(/_/g, " ")}, null);
 					
 	for (i = 0; i < regionsC.length; i += 1) {
 		regionsC[i] = regionsDeBaseC[i];
