@@ -892,11 +892,15 @@ li {
 #contentS10 a:visited{
 	color:#6C85A3;
 }
-#logos_haut {
-	display:block;
+#logos {
 	padding-top:10%;
 }
+#logos_haut {
+	background-color:#FFFFFF;
+	display:block;
+}
 #logos_bas {
+	background-color:#FFFFFF;
 	display:block;
 }
 #logo_hyblab{

@@ -43,7 +43,7 @@ function clickReglette(img){
 					x: -20 //center
 				},
 				subtitle: {
-					text: 'Source : MEITO',
+					text: 'Source : URSSAF',
 					x: -20
 				},
 				xAxis: {
@@ -106,7 +106,7 @@ function clickReglette(img){
 					x: -20 //center
 				},
 				subtitle: {
-					text: 'Source : MEITO',
+					text: 'Source : URSSAF',
 					x: -20
 				},
 				xAxis: {
@@ -167,7 +167,7 @@ function clickReglette(img){
 					x: -20 //center
 				},
 				subtitle: {
-					text: 'Source : MEITO',
+					text: 'Source : URSSAF',
 					x: -20
 				},
 				xAxis: {
@@ -228,7 +228,7 @@ function clickReglette(img){
 					x: -20 //center
 				},
 				subtitle: {
-					text: 'Source : MEITO',
+					text: 'Source : URSSAF',
 					x: -20
 				},
 				xAxis: {
@@ -289,7 +289,7 @@ function clickReglette(img){
 					x: -20 //center
 				},
 				subtitle: {
-					text: 'Source : MEITO',
+					text: 'Source : URSSAF',
 					x: -20
 				},
 				xAxis: {
